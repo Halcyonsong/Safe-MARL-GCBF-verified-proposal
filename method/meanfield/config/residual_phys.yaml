@@ -1,0 +1,19 @@
+# MF physics-gated residual repair (feature v5 base).
+architecture: meanfield_residual_phys
+base_pointer: method/meanfield/output/ACTIVE_MF_BASE.txt
+gate_mode: physics
+open_mult: 3.0
+close_mult: 1.0
+inv_ttc_ref: 5.0
+gate_mix: 0.5
+correction_hidden: 128
+delta_clip: 1.0
+steps: 600
+lr: 1.0e-4
+ce_weight: 3.0
+idle_weight: 1.5
+delta_l2: 1.0e-3
+danger_radius: 0.35
+collect_episodes: 48
+label_mode: min_intervention
+out_root: method/meanfield/output/repair

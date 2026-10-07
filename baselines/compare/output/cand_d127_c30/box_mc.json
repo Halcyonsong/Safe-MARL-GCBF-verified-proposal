@@ -1,0 +1,160 @@
+{
+  "method": "direct_uniform_sample_feature_box",
+  "domain": {
+    "d_min": 0.127,
+    "d_max": 0.4,
+    "close_hi": 0.3,
+    "radius": 0.1,
+    "d2_lo": 0.1,
+    "net_dep": false
+  },
+  "mf_ckpt": "method/meanfield/output/repair/mf_residual_v5_midF_r3_20261006/seed0/repair_best.pkl",
+  "n": 50000,
+  "seed": 1234,
+  "rows": [
+    {
+      "n": 50000,
+      "n_l2_safe": 50000,
+      "n_fail": 0,
+      "l2_safe_rate": 1.0,
+      "fail_rate": 0.0,
+      "margin_mean": 0.04536484899393937,
+      "margin_p10": 0.01642436801395545,
+      "margin_min": 0.009072276862544276,
+      "mean_d2": 0.14536484899393937,
+      "mean_abs_a_inf": 0.0,
+      "p90_abs_a_inf": 0.0,
+      "mean_d0": 0.1591649689203079,
+      "mean_c0": 0.23000199877280866,
+      "policy": "coast_a0",
+      "note": "a=0 envelope reference"
+    },
+    {
+      "n": 50000,
+      "n_l2_safe": 50000,
+      "n_fail": 0,
+      "l2_safe_rate": 1.0,
+      "fail_rate": 0.0,
+      "margin_mean": 0.03735647789677052,
+      "margin_p10": 0.008336819994796038,
+      "margin_min": 7.227686254426824e-05,
+      "mean_d2": 0.13735647789677052,
+      "mean_abs_a_inf": 0.8898190107965384,
+      "p90_abs_a_inf": 1.0,
+      "mean_d0": 0.1591649689203079,
+      "mean_c0": 0.23000199877280866,
+      "policy": "mf_cand",
+      "note": "ckpt=method/meanfield/output/repair/mf_residual_v5_midF_r3_20261006/seed0/repair_best.pkl"
+    },
+    {
+      "n": 50000,
+      "n_l2_safe": 50000,
+      "n_fail": 0,
+      "l2_safe_rate": 1.0,
+      "fail_rate": 0.0,
+      "margin_mean": 0.03728588435390204,
+      "margin_p10": 0.008270707665134214,
+      "margin_min": 7.227686254426824e-05,
+      "mean_d2": 0.13728588435390204,
+      "mean_abs_a_inf": 0.8976627377819255,
+      "p90_abs_a_inf": 1.0,
+      "mean_d0": 0.1591649689203079,
+      "mean_c0": 0.23000199877280866,
+      "policy": "mf_r2",
+      "note": "acceptance r2"
+    },
+    {
+      "n": 50000,
+      "n_l2_safe": 50000,
+      "n_fail": 0,
+      "l2_safe_rate": 1.0,
+      "fail_rate": 0.0,
+      "margin_mean": 0.036574283277607374,
+      "margin_p10": 0.007629242072457501,
+      "margin_min": 0.00010451882166905013,
+      "mean_d2": 0.13657428327760737,
+      "mean_abs_a_inf": 0.9767295240368881,
+      "p90_abs_a_inf": 1.0,
+      "mean_d0": 0.1591649689203079,
+      "mean_c0": 0.23000199877280866,
+      "policy": "mappo_lag",
+      "note": "a=tanh(mean); uref omitted"
+    },
+    {
+      "policy": "gcbfplus",
+      "n": 0,
+      "n_fail": null,
+      "fail_rate": null,
+      "note": "N/A \u2014 needs GraphsTuple \u2014 use env-band script"
+    },
+    {
+      "policy": "informarl",
+      "n": 0,
+      "n_fail": null,
+      "fail_rate": null,
+      "note": "N/A \u2014 needs GraphsTuple \u2014 use env-band script"
+    }
+  ],
+  "note": "Empirical only. If d2_lo\u2265R, envelope predicts ~0 fail for all clipped policies; nonzero MAPPO fail still useful. Graph baselines need env-band pack.",
+  "hard_fringe": {
+    "d0": [
+      0.127,
+      0.137
+    ],
+    "c0_abs": [
+      0.25,
+      0.3
+    ],
+    "n": 10000,
+    "rows": [
+      {
+        "n": 10000,
+        "n_l2_safe": 10000,
+        "n_fail": 0,
+        "l2_safe_rate": 1.0,
+        "fail_rate": 0.0,
+        "margin_mean": 0.015173980293994003,
+        "margin_p10": 0.011214612117263606,
+        "margin_min": 0.009128079700669367,
+        "mean_d2": 0.115173980293994,
+        "mean_abs_a_inf": 0.0,
+        "p90_abs_a_inf": 0.0,
+        "mean_d0": 0.13182378644311116,
+        "mean_c0": 0.2774967691519525,
+        "policy": "coast_a0"
+      },
+      {
+        "n": 10000,
+        "n_l2_safe": 10000,
+        "n_fail": 0,
+        "l2_safe_rate": 1.0,
+        "fail_rate": 0.0,
+        "margin_mean": 0.007153205203744611,
+        "margin_p10": 0.002592971908650299,
+        "margin_min": 0.0001280797006693729,
+        "mean_d2": 0.10715320520374462,
+        "mean_abs_a_inf": 0.8911972322499325,
+        "p90_abs_a_inf": 1.0,
+        "mean_d0": 0.13182378644311116,
+        "mean_c0": 0.2774967691519525,
+        "policy": "mf_cand"
+      },
+      {
+        "n": 10000,
+        "n_l2_safe": 10000,
+        "n_fail": 0,
+        "l2_safe_rate": 1.0,
+        "fail_rate": 0.0,
+        "margin_mean": 0.006376621088087165,
+        "margin_p10": 0.002327177246768014,
+        "margin_min": 0.00015160106440456622,
+        "mean_d2": 0.10637662108808718,
+        "mean_abs_a_inf": 0.9774843562118709,
+        "p90_abs_a_inf": 1.0,
+        "mean_d0": 0.13182378644311116,
+        "mean_c0": 0.2774967691519525,
+        "policy": "mappo_lag"
+      }
+    ]
+  }
+}

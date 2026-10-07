@@ -1,0 +1,49 @@
+{
+  "protocol": {
+    "domain": "preventable_D",
+    "horizon": "two Euler steps held action",
+    "buckets": [
+      "l2_aa_near",
+      "l2_ao_near",
+      "l2_11_near"
+    ],
+    "samples_target_per_bucket": 2000,
+    "seed": 123,
+    "claim": "Sampling hit-rate on D. NOT formal proof. GCBF+ uses full-graph embedding of local L2 boxes (far filler agents; AO via tiny rectangle lidar hit)."
+  },
+  "policies": {
+    "residual_v2_best": {
+      "checkpoint": "method/deepset/output/phase2/phase2_seed0base_cegar_r2_20261004/seed0/V2d_r2/repair_r2_best.pkl",
+      "architecture": "deepset_residual_gate",
+      "buckets": {
+        "l2_aa_near": {
+          "n_eval_on_D": 2000,
+          "n_draw": 37910,
+          "n_skip_out_of_D": 35910,
+          "n_hit": 218,
+          "hit_rate_on_D": 0.109,
+          "min_distn": 0.09207106302991486,
+          "seconds": 63.88
+        },
+        "l2_ao_near": {
+          "n_eval_on_D": 2000,
+          "n_draw": 68748,
+          "n_skip_out_of_D": 66748,
+          "n_hit": 498,
+          "hit_rate_on_D": 0.249,
+          "min_distn": 0.03770828857468185,
+          "seconds": 87.82
+        },
+        "l2_11_near": {
+          "n_eval_on_D": 2000,
+          "n_draw": 28200,
+          "n_skip_out_of_D": 26200,
+          "n_hit": 441,
+          "hit_rate_on_D": 0.2205,
+          "min_distn": 0.03379425498328639,
+          "seconds": 72.59
+        }
+      }
+    }
+  }
+}

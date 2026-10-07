@@ -1,0 +1,147 @@
+{
+  "property": "l2_two_step_collision_on_D_residual_sampling",
+  "claim": "On preventable-D: after two Euler steps with a=clip(base+g\u00b7\u03b4) held, relative pose does not enter collision proxy. Dense sampling diagnosis; NOT IBP/Marabou complete proof of residual ONNX.",
+  "checkpoint": "method/deepset/output/phase2/phase2_seed0base_20261004/seed0/V2d/repair_best.pkl",
+  "base_checkpoint": "method/deepset/output/stage1/redistill/stage1_redistill_20261004_183322/seed0/deepset_actor512_student_best.pkl",
+  "architecture": "deepset_residual_gate",
+  "gate_mode": "hybrid",
+  "samples_per_bucket": 4000,
+  "seed": 0,
+  "buckets": [
+    {
+      "bucket": "l2_aa_near",
+      "k": 1,
+      "m": 0,
+      "verdict": "violated",
+      "method": "sampling_on_D",
+      "n_eval_on_D": 4000,
+      "n_draw": 76252,
+      "n_skip_out_of_D": 72252,
+      "n_hit": 736,
+      "hit_rate_on_D": 0.184,
+      "min_distn": 0.08968620768184521,
+      "mean_gate_on_D": 0.6520539759173989,
+      "first_counterexample": {
+        "x": [
+          3.775205707768363,
+          0.507268409044991,
+          0.3647782954007741,
+          -0.44053584839966153,
+          -0.11922949168911057,
+          -0.07022593882142336,
+          -0.011150453166535734,
+          0.47646232193604454,
+          0.11027647524073136,
+          -0.0764570549122956,
+          -0.4603264289983997,
+          0.7262404083786356
+        ],
+        "a": [
+          0.7459630966186523,
+          -0.33312124013900757
+        ],
+        "gate": 0.6358973383903503,
+        "distn": 0.09630432339795773,
+        "kind": "aa",
+        "threshold": 0.1
+      },
+      "elapsed_s": 128.975,
+      "note": "sampling_clear \u2260 formal proven; only no CE in this sample budget. violated = concrete two-step collision on D under residual \u03c0."
+    },
+    {
+      "bucket": "l2_ao_near",
+      "k": 0,
+      "m": 1,
+      "verdict": "violated",
+      "method": "sampling_on_D",
+      "n_eval_on_D": 4000,
+      "n_draw": 137955,
+      "n_skip_out_of_D": 133955,
+      "n_hit": 1259,
+      "hit_rate_on_D": 0.31475,
+      "min_distn": 0.033620846512532644,
+      "mean_gate_on_D": 0.6796006500571966,
+      "first_counterexample": {
+        "x": [
+          1.2429899676379277,
+          3.903649480238363,
+          0.1008266809701559,
+          -0.2622740824318204,
+          0.15457464120638464,
+          -0.3206540739531567,
+          -0.3331278242588819,
+          0.2896961600955178,
+          -0.048563429929244645,
+          -0.05169653081477535,
+          0.4802771852625791,
+          0.2509102819191473
+        ],
+        "a": [
+          -0.36460423469543457,
+          -0.2186192274093628
+        ],
+        "gate": 0.7829959392547607,
+        "distn": 0.044955446590660884,
+        "kind": "ao",
+        "threshold": 0.05
+      },
+      "elapsed_s": 178.303,
+      "note": "sampling_clear \u2260 formal proven; only no CE in this sample budget. violated = concrete two-step collision on D under residual \u03c0."
+    },
+    {
+      "bucket": "l2_11_near",
+      "k": 1,
+      "m": 1,
+      "verdict": "violated",
+      "method": "sampling_on_D",
+      "n_eval_on_D": 4000,
+      "n_draw": 57450,
+      "n_skip_out_of_D": 53450,
+      "n_hit": 1150,
+      "hit_rate_on_D": 0.2875,
+      "min_distn": 0.029528351662381335,
+      "mean_gate_on_D": 0.3692578972876072,
+      "first_counterexample": {
+        "x": [
+          2.736850806760355,
+          2.458384849640532,
+          0.32290430411859705,
+          -0.21863697796948633,
+          -0.011367556485679775,
+          -0.4650029630914776,
+          -0.25848566756022273,
+          -0.046169196276847124,
+          -0.1138091988379275,
+          0.0512534370012635,
+          -0.7675091216651788,
+          -0.05243442776930651,
+          0.07388283385148048,
+          -0.08159321071306516,
+          -0.5838239646019601,
+          0.9060811882286919
+        ],
+        "a": [
+          -0.2332303524017334,
+          -0.18907637894153595
+        ],
+        "gate": 0.4252789616584778,
+        "distn": 0.04677420974357574,
+        "kind": "aa_ao",
+        "threshold": 0.05
+      },
+      "elapsed_s": 142.549,
+      "note": "sampling_clear \u2260 formal proven; only no CE in this sample budget. violated = concrete two-step collision on D under residual \u03c0."
+    }
+  ],
+  "summary": {
+    "verdict_counts": {
+      "violated": 3
+    },
+    "all_sampling_clear": false,
+    "interpretation": {
+      "violated": "Found in-D two-step collision under residual \u2014 claim false on sample",
+      "sampling_clear": "No CE in budget \u2014 necessary but not sufficient for proven"
+    },
+    "scope": "Only listed (k,m) near boxes + preventable-D + two steps. Does not cover k>=2, long horizon, or Marabou encoding of residual."
+  }
+}

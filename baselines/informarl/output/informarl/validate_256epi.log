@@ -1,0 +1,11 @@
+{
+  "success_rate": 0.628418,
+  "safe_rate": 0.642578,
+  "finish_rate": 0.962891,
+  "cost": 5.78271484375,
+  "reward": -1.9338099753949791,
+  "wall_time_s": 24.237,
+  "train_step": 350,
+  "cost_weight": 1.0
+}
+wrote runs/baseline/informarl/validate_256epi.json

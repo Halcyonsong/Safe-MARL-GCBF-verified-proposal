@@ -1,0 +1,22 @@
+# Mean-field MLP — feature v5: 4-quad weighted mean + inv_ttc_max.
+architecture: meanfield_mlp
+feature_version: 5
+feature_spec: "4quad_agent(n,min_d,cmax,cwmean,invttc)+obs(n,min_d,cmax,invttc)"
+hidden: 512
+input_dim: 44
+action_dim: 2
+# Layout:
+#   [0:8]    ego
+#   [8:28]   agent Q0..Q3 × (n, min_d, close_max, close_wmean, inv_ttc_max)
+#   [28:44]  obs   Q0..Q3 × (n, min_d, close_max, inv_ttc_max)
+# Time threat = inv_ttc_max of nearest-in-quad (not mean).
+# Mean closing = distance-weighted w=exp(-d/(0.5*comm_radius)).
+# Keep 4 quadrants (8-sector deferred).
+nearest_agents: 0
+nearest_obs: 0
+quadrants: 4
+global_nearest: false
+dist_tau_scale: 0.5
+inv_ttc_max_clip: 20.0
+teacher_run: baselines/gcbfplus/log/gcbf+/seed0_20261001232611
+out_root: method/meanfield/output/distill

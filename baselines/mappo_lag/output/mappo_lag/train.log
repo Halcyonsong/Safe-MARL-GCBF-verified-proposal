@@ -1,0 +1,55 @@
+[mappo_lag] out=runs/baseline/mappo_lag/seed0_train steps=400 cost_limit=0.5
+  step    1 | team_cost=9.344 agent_cost=9.344 λ=1.044 pg=0.5837 ent=1.838
+  step   10 | team_cost=5.141 agent_cost=5.141 λ=1.294 pg=-0.0286 ent=1.795
+  step   20 | team_cost=3.000 agent_cost=2.969 λ=1.512 pg=-0.0144 ent=1.675
+  step   30 | team_cost=0.938 agent_cost=0.938 λ=1.661 pg=-0.1767 ent=1.548
+  step   40 | team_cost=2.281 agent_cost=2.281 λ=1.752 pg=-0.0214 ent=1.427
+  step   50 | team_cost=2.188 agent_cost=2.188 λ=1.818 pg=0.0320 ent=1.312
+  [eval@50] suc=61.7% safe=85.9% fin=68.0% cost=2.141 λ=1.818
+  [best] suc=61.7% @ step 50
+  step   60 | team_cost=3.219 agent_cost=3.219 λ=1.910 pg=0.1688 ent=1.250
+  step   70 | team_cost=1.469 agent_cost=1.469 λ=1.954 pg=0.0058 ent=1.150
+  step   80 | team_cost=1.125 agent_cost=1.125 λ=1.988 pg=0.0120 ent=1.044
+  step   90 | team_cost=1.312 agent_cost=1.312 λ=2.024 pg=0.0557 ent=0.966
+  step  100 | team_cost=0.969 agent_cost=0.969 λ=2.078 pg=-0.0282 ent=0.877
+  [eval@100] suc=62.5% safe=89.8% fin=64.1% cost=2.656 λ=2.078
+  [best] suc=62.5% @ step 100
+  step  110 | team_cost=0.656 agent_cost=0.656 λ=2.113 pg=-0.0541 ent=0.817
+  step  120 | team_cost=0.312 agent_cost=0.312 λ=2.153 pg=-0.0664 ent=0.771
+  step  130 | team_cost=1.656 agent_cost=1.656 λ=2.180 pg=0.1241 ent=0.715
+  step  140 | team_cost=1.000 agent_cost=1.000 λ=2.210 pg=-0.0063 ent=0.670
+  step  150 | team_cost=1.344 agent_cost=1.344 λ=2.267 pg=-0.0618 ent=0.617
+  [eval@150] suc=53.9% safe=89.1% fin=59.4% cost=1.359 λ=2.267
+  step  160 | team_cost=1.875 agent_cost=1.875 λ=2.323 pg=0.0792 ent=0.561
+  step  170 | team_cost=0.125 agent_cost=0.125 λ=2.342 pg=-0.0939 ent=0.461
+  step  180 | team_cost=2.031 agent_cost=2.031 λ=2.389 pg=0.1597 ent=0.442
+  step  190 | team_cost=0.188 agent_cost=0.188 λ=2.442 pg=-0.1110 ent=0.439
+  step  200 | team_cost=1.844 agent_cost=1.844 λ=2.478 pg=0.1744 ent=0.412
+  [eval@200] suc=55.5% safe=91.4% fin=59.4% cost=1.000 λ=2.478
+  step  210 | team_cost=0.969 agent_cost=0.969 λ=2.535 pg=0.0123 ent=0.351
+  step  220 | team_cost=2.531 agent_cost=2.531 λ=2.603 pg=0.1124 ent=0.333
+  step  230 | team_cost=0.469 agent_cost=0.469 λ=2.683 pg=-0.1607 ent=0.312
+  step  240 | team_cost=2.062 agent_cost=2.062 λ=2.744 pg=0.0901 ent=0.262
+  step  250 | team_cost=2.609 agent_cost=2.609 λ=2.854 pg=0.2513 ent=0.272
+  [eval@250] suc=54.7% safe=85.9% fin=63.3% cost=2.258 λ=2.854
+  step  260 | team_cost=1.734 agent_cost=1.734 λ=2.911 pg=0.1827 ent=0.266
+  step  270 | team_cost=2.094 agent_cost=2.094 λ=2.981 pg=0.0016 ent=0.261
+  step  280 | team_cost=1.188 agent_cost=1.188 λ=3.083 pg=-0.1407 ent=0.239
+  step  290 | team_cost=1.031 agent_cost=1.031 λ=3.151 pg=-0.0628 ent=0.212
+  step  300 | team_cost=1.312 agent_cost=1.312 λ=3.186 pg=0.0821 ent=0.155
+  [eval@300] suc=63.3% safe=90.6% fin=68.0% cost=0.953 λ=3.186
+  [best] suc=63.3% @ step 300
+  step  310 | team_cost=3.344 agent_cost=3.344 λ=3.224 pg=0.4459 ent=0.142
+  step  320 | team_cost=2.016 agent_cost=2.016 λ=3.279 pg=0.1382 ent=0.113
+  step  330 | team_cost=1.406 agent_cost=1.406 λ=3.316 pg=0.0551 ent=0.064
+  step  340 | team_cost=1.594 agent_cost=1.562 λ=3.367 pg=0.0080 ent=0.070
+  step  350 | team_cost=0.312 agent_cost=0.312 λ=3.419 pg=-0.1371 ent=0.061
+  [eval@350] suc=66.4% safe=92.2% fin=70.3% cost=0.984 λ=3.419
+  [best] suc=66.4% @ step 350
+  step  360 | team_cost=1.219 agent_cost=1.219 λ=3.446 pg=0.0646 ent=0.027
+  step  370 | team_cost=0.188 agent_cost=0.188 λ=3.481 pg=-0.1384 ent=-0.004
+  step  380 | team_cost=2.266 agent_cost=2.266 λ=3.530 pg=0.0714 ent=-0.021
+  step  390 | team_cost=1.281 agent_cost=1.281 λ=3.598 pg=0.0338 ent=-0.009
+  step  400 | team_cost=1.484 agent_cost=1.484 λ=3.636 pg=0.0682 ent=-0.008
+  [eval@400] suc=62.5% safe=85.2% fin=71.1% cost=3.734 λ=3.636
+[mappo_lag] done wall=105s best={'reward': -24.865372002124786, 'cost': 0.984375, 'safe_rate': 0.921875, 'finish_rate': 0.703125, 'success_rate': 0.6640625, 'step': 350, 'lambda': 3.419375000000002, 'train_team_cost': 0.3125}

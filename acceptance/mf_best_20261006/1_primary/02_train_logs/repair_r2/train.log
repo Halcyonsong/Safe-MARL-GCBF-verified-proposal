@@ -1,0 +1,35 @@
+[mf-res] loaded 262 CEs from 1 file(s) (raw=736 skipped=474)
+[mf-res] warm-start delta from runs/meanfield/repair/mf_residual_v5_20261005/seed0/repair_best.pkl
+[mf-res] base=runs/meanfield/distill/mf_distill_20261005_v5/seed0/meanfield_mlp512_student_step9000.pkl ce=['runs/meanfield/repair/mf_residual_v5_r2_20261005/seed0/ce_train_merged.json'] n_ce=262 init=runs/meanfield/repair/mf_residual_v5_20261005/seed0/repair_best.pkl steps=500 corr_h=128 gate=physics
+step=0001 loss=1.34019 ce=1.31669 anchor=0.02285 reg=0.00066 g_ce=0.615 g_n=0.068
+step=0050 loss=1.49478 ce=1.46487 anchor=0.02921 reg=0.00070 g_ce=0.605 g_n=0.079
+step=0100 loss=1.10131 ce=1.06962 anchor=0.03092 reg=0.00077 g_ce=0.604 g_n=0.084
+[eval] step=100 safe=95.31% finish=90.62% success=85.94% BEST
+step=0150 loss=1.11099 ce=1.06607 anchor=0.04416 reg=0.00075 g_ce=0.601 g_n=0.085
+step=0200 loss=1.18116 ce=1.14062 anchor=0.03971 reg=0.00083 g_ce=0.618 g_n=0.081
+[eval] step=200 safe=96.88% finish=92.19% success=89.06% BEST
+step=0250 loss=1.22393 ce=1.17074 anchor=0.05233 reg=0.00087 g_ce=0.598 g_n=0.125
+step=0300 loss=1.29771 ce=1.24869 anchor=0.04810 reg=0.00092 g_ce=0.609 g_n=0.080
+[eval] step=300 safe=96.88% finish=90.62% success=87.50% 
+step=0350 loss=1.24194 ce=1.18775 anchor=0.05326 reg=0.00093 g_ce=0.610 g_n=0.098
+step=0400 loss=1.13245 ce=1.08833 anchor=0.04322 reg=0.00090 g_ce=0.609 g_n=0.088
+[eval] step=400 safe=95.31% finish=90.62% success=87.50% 
+step=0450 loss=0.99079 ce=0.96450 anchor=0.02527 reg=0.00101 g_ce=0.610 g_n=0.070
+step=0500 loss=1.30680 ce=1.24948 anchor=0.05631 reg=0.00101 g_ce=0.612 g_n=0.094
+[eval] step=500 safe=96.88% finish=90.62% success=87.50% 
+[mf-res] resampling CEs on residual best…
+[mf-ce] start episodes=24 danger_r=0.35 stride=2 ckpt=repair_best.pkl
+[mf-ce] ep 1/24 kept=0 hit=0 danger=179 elapsed=16.7s
+[mf-ce] ep 4/24 kept=0 hit=0 danger=995 elapsed=49.7s
+[mf-ce] ep 8/24 kept=14 hit=14 danger=2139 elapsed=94.8s
+[mf-ce] ep 12/24 kept=33 hit=33 danger=3542 elapsed=144.6s
+[mf-ce] ep 16/24 kept=33 hit=33 danger=5024 elapsed=195.6s
+[mf-ce] ep 20/24 kept=33 hit=33 danger=6240 elapsed=248.3s
+[mf-ce] ep 24/24 kept=33 hit=33 danger=7089 elapsed=300.3s
+Traceback (most recent call last):
+  File "/home/xiang/workspace/python-project/Safe-MARL-GCBF-verified-proposal/stage_mf/retrain_residual.py", line 627, in <module>
+    main()
+  File "/home/xiang/workspace/python-project/Safe-MARL-GCBF-verified-proposal/stage_mf/retrain_residual.py", line 619, in main
+    f"[mf-res] done. baseline_hit={100*base_sum.get('hit_rate_on_danger', float('nan')):.2f}% "
+                                       ^^^^^^^^
+NameError: name 'base_sum' is not defined. Did you mean: 'post_sum'?

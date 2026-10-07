@@ -1,0 +1,18 @@
+{
+  "sources": [
+    "method/meanfield/output/repair/mf_residual_v5_20261005/seed0/ce_post_residual.json",
+    "method/meanfield/output/repair/mf_residual_v5_r2_20261005/seed0/ce_from_r1.json",
+    "method/meanfield/output/repair/mf_residual_v5_20261005/seed0/ce_baseline.json"
+  ],
+  "track": "meanfield",
+  "merged": true,
+  "n_kept": 736,
+  "n_labels_safe": 262,
+  "kind_counts": {
+    "ao": 329,
+    "aa": 397,
+    "both": 10
+  },
+  "hit_rate_on_danger": null,
+  "note": "merged CE pool for r2 training; hit_rate not meaningful"
+}

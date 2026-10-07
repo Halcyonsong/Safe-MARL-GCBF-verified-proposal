@@ -1,0 +1,37 @@
+# Residual-gate V2 (AA+AO ablation / balanced single-threat).
+# dual_ce_weight = 0 → no dual training signal (even if CE file had dual rows).
+# For joint AA+AO+(1,1) use l2_residual_gate_v2d.yaml / run_phase2_seed.sh V2d.
+
+base_checkpoint: method/deepset/output/stage1/frozen/deepset_actor512_stage1_baseline.pkl
+ce_json: method/deepset/output/stage3/ce/l2_counterexamples.json
+
+gate_mode: hybrid
+open_mult: 3.0
+close_mult: 1.0
+gate_hidden: 64
+correction_hidden: 128
+
+steps: 800
+lr: 8.0e-5
+ce_weight: 2.5
+ao_ce_weight: 1.75
+dual_ce_weight: 0.0           # pure V2: do not train dual
+idle_weight: 1.5
+delta_l2: 1.0e-3
+gate_sparse: 5.0e-3
+gate_ce_open: 0.0
+
+ce_batch: 320
+normal_batch: 768
+eval_every: 100
+eval_episodes: 8
+eval_seed: 1234
+eval_buckets: [l2_aa_near, l2_ao_near, l2_11_near]  # report (1,1) transfer
+resample: 2000
+
+min_success: 0.80
+min_safe: 0.92
+max_aa_hit: 0.20
+max_ao_hit: 0.35
+
+checkpoint: method/deepset/output/stage3/repair/deepset_residual_gate_v2.pkl

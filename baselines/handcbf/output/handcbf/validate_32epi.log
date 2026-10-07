@@ -1,0 +1,45 @@
+2026-10-06 13:05:10.309 | DEBUG    | jaxproxqp.settings:default:62 - Using default settings for float32
+> Running test.py Namespace(num_agents=8, obs=4, area_size=4.0, max_step=None, path=None, n_rays=32, alpha=1.0, max_travel=None, cbf=None, seed=1234, debug=False, cpu=False, u_ref=False, env='DoubleIntegrator', algo='dec_share_cbf', step=None, epi=32, offset=0, no_video=True, nojit_rollout=False, log=True, dpi=100)
+jit rollout!
+epi: 0, reward: -14.273, cost: 0.000, safe rate: 100.000%,finish rate: 100.000%, success rate: 100.000%
+epi: 1, reward: -19.920, cost: 0.000, safe rate: 100.000%,finish rate: 87.500%, success rate: 87.500%
+epi: 2, reward: -7.566, cost: 0.000, safe rate: 100.000%,finish rate: 100.000%, success rate: 100.000%
+epi: 3, reward: -33.445, cost: 0.000, safe rate: 100.000%,finish rate: 62.500%, success rate: 62.500%
+epi: 4, reward: -25.754, cost: 0.000, safe rate: 100.000%,finish rate: 87.500%, success rate: 87.500%
+epi: 5, reward: -19.833, cost: 0.000, safe rate: 100.000%,finish rate: 75.000%, success rate: 75.000%
+epi: 6, reward: -29.040, cost: 0.000, safe rate: 100.000%,finish rate: 87.500%, success rate: 87.500%
+epi: 7, reward: -20.666, cost: 0.000, safe rate: 100.000%,finish rate: 87.500%, success rate: 87.500%
+epi: 8, reward: -23.374, cost: 0.000, safe rate: 100.000%,finish rate: 75.000%, success rate: 75.000%
+epi: 9, reward: -17.831, cost: 0.000, safe rate: 100.000%,finish rate: 100.000%, success rate: 100.000%
+epi: 10, reward: -20.099, cost: 0.000, safe rate: 100.000%,finish rate: 87.500%, success rate: 87.500%
+epi: 11, reward: -24.928, cost: 0.000, safe rate: 100.000%,finish rate: 100.000%, success rate: 100.000%
+epi: 12, reward: -22.633, cost: 0.000, safe rate: 100.000%,finish rate: 87.500%, success rate: 87.500%
+epi: 13, reward: -32.649, cost: 0.000, safe rate: 100.000%,finish rate: 75.000%, success rate: 75.000%
+epi: 14, reward: -11.163, cost: 0.000, safe rate: 100.000%,finish rate: 100.000%, success rate: 100.000%
+epi: 15, reward: -23.870, cost: 0.000, safe rate: 100.000%,finish rate: 87.500%, success rate: 87.500%
+epi: 16, reward: -34.042, cost: 0.000, safe rate: 100.000%,finish rate: 75.000%, success rate: 75.000%
+epi: 17, reward: -27.373, cost: 0.000, safe rate: 100.000%,finish rate: 87.500%, success rate: 87.500%
+epi: 18, reward: -29.846, cost: 0.000, safe rate: 100.000%,finish rate: 75.000%, success rate: 75.000%
+epi: 19, reward: -48.270, cost: 0.000, safe rate: 100.000%,finish rate: 62.500%, success rate: 62.500%
+epi: 20, reward: -17.226, cost: 0.000, safe rate: 100.000%,finish rate: 87.500%, success rate: 87.500%
+epi: 21, reward: -33.757, cost: 0.000, safe rate: 100.000%,finish rate: 75.000%, success rate: 75.000%
+epi: 22, reward: -25.976, cost: 0.000, safe rate: 100.000%,finish rate: 100.000%, success rate: 100.000%
+epi: 23, reward: -13.800, cost: 0.000, safe rate: 100.000%,finish rate: 100.000%, success rate: 100.000%
+epi: 24, reward: -56.285, cost: 0.000, safe rate: 100.000%,finish rate: 75.000%, success rate: 75.000%
+epi: 25, reward: -32.290, cost: 0.000, safe rate: 100.000%,finish rate: 75.000%, success rate: 75.000%
+epi: 26, reward: -18.360, cost: 0.000, safe rate: 100.000%,finish rate: 100.000%, success rate: 100.000%
+epi: 27, reward: -25.002, cost: 0.000, safe rate: 100.000%,finish rate: 87.500%, success rate: 87.500%
+epi: 28, reward: -27.500, cost: 0.000, safe rate: 100.000%,finish rate: 87.500%, success rate: 87.500%
+epi: 29, reward: -37.416, cost: 0.000, safe rate: 100.000%,finish rate: 62.500%, success rate: 62.500%
+epi: 30, reward: -15.945, cost: 0.000, safe rate: 100.000%,finish rate: 100.000%, success rate: 100.000%
+epi: 31, reward: -39.157, cost: 0.000, safe rate: 100.000%,finish rate: 62.500%, success rate: 62.500%
+reward: -25.915, min/max reward: -56.285/-7.566, cost: 0.000, min/max cost: 0.000/0.000, safe_rate: 100.000%, finish_rate: 84.766%, success_rate: 84.766%
+{
+  "success_rate": 0.8476600000000001,
+  "safe_rate": 1.0,
+  "finish_rate": 0.8476600000000001,
+  "cost": 0.0,
+  "reward": -25.915,
+  "wall_time_s": 56.65
+}
+wrote runs/baseline/handcbf/validate_32epi.json

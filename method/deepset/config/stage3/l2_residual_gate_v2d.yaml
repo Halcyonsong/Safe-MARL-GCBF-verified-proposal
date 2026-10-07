@@ -1,0 +1,40 @@
+# Residual-gate V2d (joint) — Phase-2 main acceptance path.
+# Freezes Stage1 distilled DeepSet; trains gate + δ only.
+# CE buckets include dual (1,1); dual_ce_weight mild (not ≫ AA/AO).
+
+base_checkpoint: method/deepset/output/stage1/frozen/deepset_actor512_stage1_baseline.pkl
+# Prefer per-run CE under method/deepset/output/phase2/<id>/... ; path below is local default only.
+ce_buckets: [l2_aa_near, l2_ao_near, l2_11_near]
+label_mode: min_intervention
+
+gate_mode: hybrid
+open_mult: 3.0
+close_mult: 1.0
+gate_hidden: 64
+correction_hidden: 128
+
+steps: 800
+lr: 8.0e-5
+ce_weight: 2.5
+ao_ce_weight: 1.75
+dual_ce_weight: 1.75      # joint push; keep ≤ ~2.0
+idle_weight: 1.5
+delta_l2: 1.0e-3
+gate_sparse: 5.0e-3
+gate_ce_open: 0.0
+
+ce_batch: 320
+normal_batch: 768
+eval_every: 100
+eval_episodes: 8
+eval_seed: 1234
+eval_buckets: [l2_aa_near, l2_ao_near, l2_11_near]
+resample: 2000
+
+min_success: 0.80
+min_safe: 0.92
+max_aa_hit: 0.20
+max_ao_hit: 0.35
+
+# Prefer: method/deepset/output/phase2/<run_id>/seed*/V2d/repair.pkl
+checkpoint: method/deepset/output/stage3/repair/deepset_residual_gate_v2d.pkl

@@ -1,0 +1,32 @@
+# Stage2 v1: L1 action-bound verification of frozen DeepSet Actor.
+
+status: implemented_l1
+verifier: ibp_and_marabou
+property: action_bounds
+claim: "a(x) in [-1,1]^2 on each declared (k,m) input box"
+
+student_checkpoint: method/deepset/output/stage1/frozen/deepset_actor512_stage1_baseline.pkl
+report: method/deepset/output/stage2/l1_action_bounds_report.json
+onnx_dir: method/deepset/output/stage2/onnx
+
+# Continuous scales used by default_l1_buckets()
+v_abs: 1.5
+dist_abs: 0.5
+dist_abs_near: 0.2
+dv_abs: 3.0
+action_limit: 1.0
+
+buckets:
+  - km_0_0
+  - km_1_0
+  - km_0_1
+  - km_1_1
+  - km_1_0_near
+  - km_0_1_near
+
+timeout_s_per_onesided: 30
+samples_per_bucket: 2000
+
+scope_note: >
+  Results apply only to listed presence modes and axis-aligned boxes.
+  This does not prove multi-agent collision freedom or infinite-horizon safety.

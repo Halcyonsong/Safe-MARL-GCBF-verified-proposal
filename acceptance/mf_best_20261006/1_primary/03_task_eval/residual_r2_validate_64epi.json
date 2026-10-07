@@ -1,0 +1,9 @@
+{
+  "reward": -30.731300778687,
+  "cost": 0.400390625,
+  "safe_rate": 0.94921875,
+  "finish_rate": 0.849609375,
+  "success_rate": 0.826171875,
+  "episodes": 64,
+  "eval_seed": 1234
+}

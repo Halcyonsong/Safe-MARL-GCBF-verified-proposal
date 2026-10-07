@@ -1,0 +1,47 @@
+# Stage2 formal verification defaults.
+# Verifies the frozen Stage1 DeepSet student. Repair lives in Stage3.
+
+status: l1_and_l2_implemented
+verifier: sampling_ibp_marabou_onnx
+properties: [action_bounds_L1, l2_two_step_collision_on_D]
+
+student_checkpoint: method/deepset/output/stage1/frozen/deepset_actor512_stage1_baseline.pkl
+baseline_manifest: method/deepset/output/stage1/frozen/BASELINE_MANIFEST.json
+architecture: deepset
+hidden: 512
+teacher_kind: actor
+danger_finetuned: false
+
+env: DoubleIntegrator
+area_size: 4.0
+num_agents: 8
+obs: 4
+n_rays: 32
+
+# Verification-facing input contract
+ego_dim: 8
+entity_dim: 7
+entity_slots: 40
+n_max_agents: 8
+n_max_obs: 32
+aggregate: masked_sum
+padding: presence_zero
+activation: relu
+
+# L1
+l1_config: method/deepset/config/stage2/l1_action_bounds.yaml
+l1_report: method/deepset/output/stage2/l1_action_bounds_report.json
+l1_marabou_smoke: method/deepset/output/stage2/l1_marabou_smoke.json
+
+# L2
+l2_config: method/deepset/config/stage2/l2_collision.yaml
+l2_report: method/deepset/output/stage2/l2_collision_report.json
+onnx_dir: method/deepset/output/stage2/onnx
+
+# Empirical reference only (not a formal guarantee)
+empirical_success_rate_32epi: 0.87109
+empirical_safe_rate_32epi: 0.94141
+empirical_finish_rate_32epi: 0.92969
+
+# Counterexample-guided repair → Stage3
+stage3_config: method/deepset/config/stage3/default.yaml

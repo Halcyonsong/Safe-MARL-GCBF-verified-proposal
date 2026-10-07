@@ -1,0 +1,12 @@
+[collect] midF band d0∈[0.125,0.145] c0∈[0.15,0.3] target_agents=600 episodes≤600
+  epi=1 graphs=0 agents_in_band=0/600 wall=10.6s
+  epi=10 graphs=35 agents_in_band=40/600 wall=82.1s
+  epi=20 graphs=51 agents_in_band=58/600 wall=165.8s
+  epi=30 graphs=76 agents_in_band=84/600 wall=249.5s
+  epi=40 graphs=95 agents_in_band=111/600 wall=334.1s
+  epi=50 graphs=135 agents_in_band=159/600 wall=418.4s
+  epi=60 graphs=148 agents_in_band=173/600 wall=502.5s
+  epi=70 graphs=195 agents_in_band=226/600 wall=586.6s
+  epi=80 graphs=219 agents_in_band=253/600 wall=670.8s
+  epi=90 graphs=244 agents_in_band=285/600 wall=755.4s
+  epi=100 graphs=265 agents_in_band=312/600 wall=839.4s

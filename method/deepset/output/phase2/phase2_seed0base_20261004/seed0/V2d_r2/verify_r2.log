@@ -1,0 +1,18 @@
+/home/xiang/miniconda3/envs/safe_marl_verify/lib/python3.11/site-packages/maraboupy/Marabou.py:27: UserWarning: Tensorflow parser is unavailable because tensorflow package is not installed
+  warnings.warn("Tensorflow parser is unavailable because tensorflow package is not installed")
+[verify-residual] ckpt=runs/phase2/phase2_seed0base_cegar_r2_20261004/seed0/V2d_r2/repair_r2_best.pkl
+  base=runs/stage1/redistill/stage1_redistill_20261004_183322/seed0/deepset_actor512_student_best.pkl gate_mode=hybrid
+  samples/bucket=4000 seed=0
+  claim: two-step collision on preventable-D (AA coast / AO static). Sampling diagnosis only — not Marabou proven.
+
+=== l2_aa_near k=1 m=0 ===
+  [violated] hits=418/4000 rate=10.45% min_dist=0.0906231986713531 gate=0.633 (126.433s)
+
+=== l2_ao_near k=0 m=1 ===
+  [violated] hits=984/4000 rate=24.60% min_dist=0.03559655797375161 gate=0.684 (170.397s)
+
+=== l2_11_near k=1 m=1 ===
+  [violated] hits=906/4000 rate=22.65% min_dist=0.02945269433863514 gate=0.399 (145.46s)
+
+==== SUMMARY verdict_counts={'violated': 3} ====
+wrote runs/phase2/phase2_seed0base_cegar_r2_20261004/seed0/V2d_r2/verify_r2_residual_sampling.json

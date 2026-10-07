@@ -1,0 +1,411 @@
+{
+  "mode": "residual_gate_frozen_base",
+  "architecture": "deepset_residual_gate",
+  "base_checkpoint": "method/deepset/output/stage1/redistill/stage1_redistill_20261004_183322/seed0/deepset_actor512_student_best.pkl",
+  "label_mode": "min_intervention",
+  "ce_json": "method/deepset/output/phase2/phase2_seed0base_cegar_r2_20261004/seed0/V2d_r2/ce_r2.json",
+  "gate_mode": "hybrid",
+  "open_mult": 3.0,
+  "close_mult": 1.0,
+  "gate_hidden": 64,
+  "correction_hidden": 128,
+  "ce_weight": 2.5,
+  "ao_ce_weight": 1.75,
+  "dual_ce_weight": 2.0,
+  "idle_weight": 1.5,
+  "delta_l2": 0.001,
+  "gate_sparse": 0.005,
+  "gate_ce_open": 0.0,
+  "lr": 6e-05,
+  "seed": 1,
+  "init_residual_from": "method/deepset/output/phase2/phase2_seed0base_20261004/seed0/V2d/repair_best.pkl",
+  "n_ce": 3075,
+  "steps": 600,
+  "selection_limits": {
+    "min_success": 0.85,
+    "min_safe": 0.92,
+    "max_aa_hit": 0.18,
+    "max_ao_hit": 0.32
+  },
+  "eval_seed": 1234,
+  "eval_history": [
+    {
+      "step": 50,
+      "loss": 0.20946185290813446,
+      "mean_hit_D": 0.23416666666666663,
+      "hit_D": {
+        "l2_aa_near": 0.14125,
+        "l2_ao_near": 0.3,
+        "l2_11_near": 0.26125
+      },
+      "mean_gate_on_D": {
+        "l2_aa_near": 0.6727759884670377,
+        "l2_ao_near": 0.6722694064490498,
+        "l2_11_near": 0.4172503551654518
+      },
+      "eligible": true,
+      "wall_time_s": 249.944,
+      "reward": -11.689582884311676,
+      "cost": 1.46875,
+      "safe_rate": 0.921875,
+      "finish_rate": 0.953125,
+      "success_rate": 0.875
+    },
+    {
+      "step": 100,
+      "loss": 0.2583785355091095,
+      "mean_hit_D": 0.2316666666666667,
+      "hit_D": {
+        "l2_aa_near": 0.1375,
+        "l2_ao_near": 0.2975,
+        "l2_11_near": 0.26
+      },
+      "mean_gate_on_D": {
+        "l2_aa_near": 0.6516608653590084,
+        "l2_ao_near": 0.6726591546460986,
+        "l2_11_near": 0.4132117797899991
+      },
+      "eligible": false,
+      "wall_time_s": 353.089,
+      "reward": -11.413291990756989,
+      "cost": 1.515625,
+      "safe_rate": 0.90625,
+      "finish_rate": 0.96875,
+      "success_rate": 0.875
+    },
+    {
+      "step": 150,
+      "loss": 0.26479223370552063,
+      "mean_hit_D": 0.22958333333333333,
+      "hit_D": {
+        "l2_aa_near": 0.135,
+        "l2_ao_near": 0.29625,
+        "l2_11_near": 0.2575
+      },
+      "mean_gate_on_D": {
+        "l2_aa_near": 0.6287800965458155,
+        "l2_ao_near": 0.6730620303936302,
+        "l2_11_near": 0.4046638808678836
+      },
+      "eligible": false,
+      "wall_time_s": 457.226,
+      "reward": -11.474360406398773,
+      "cost": 1.546875,
+      "safe_rate": 0.90625,
+      "finish_rate": 0.96875,
+      "success_rate": 0.875
+    },
+    {
+      "step": 200,
+      "loss": 0.19698603451251984,
+      "mean_hit_D": 0.22583333333333333,
+      "hit_D": {
+        "l2_aa_near": 0.1375,
+        "l2_ao_near": 0.29125,
+        "l2_11_near": 0.24875
+      },
+      "mean_gate_on_D": {
+        "l2_aa_near": 0.6123179804161191,
+        "l2_ao_near": 0.6733554126508534,
+        "l2_11_near": 0.39965292629785837
+      },
+      "eligible": false,
+      "wall_time_s": 559.759,
+      "reward": -11.413322508335114,
+      "cost": 1.578125,
+      "safe_rate": 0.90625,
+      "finish_rate": 0.953125,
+      "success_rate": 0.859375
+    },
+    {
+      "step": 250,
+      "loss": 0.22242066264152527,
+      "mean_hit_D": 0.21791666666666668,
+      "hit_D": {
+        "l2_aa_near": 0.12375,
+        "l2_ao_near": 0.28125,
+        "l2_11_near": 0.24875
+      },
+      "mean_gate_on_D": {
+        "l2_aa_near": 0.6244889164343477,
+        "l2_ao_near": 0.6731689866445959,
+        "l2_11_near": 0.39494942685589196
+      },
+      "eligible": true,
+      "wall_time_s": 665.473,
+      "reward": -10.030227720737457,
+      "cost": 1.359375,
+      "safe_rate": 0.921875,
+      "finish_rate": 0.96875,
+      "success_rate": 0.890625
+    },
+    {
+      "step": 300,
+      "loss": 0.22178152203559875,
+      "mean_hit_D": 0.21666666666666667,
+      "hit_D": {
+        "l2_aa_near": 0.1225,
+        "l2_ao_near": 0.28125,
+        "l2_11_near": 0.24625
+      },
+      "mean_gate_on_D": {
+        "l2_aa_near": 0.6235789686441422,
+        "l2_ao_near": 0.673175402879715,
+        "l2_11_near": 0.3945129468291998
+      },
+      "eligible": true,
+      "wall_time_s": 766.826,
+      "reward": -9.917846441268921,
+      "cost": 1.375,
+      "safe_rate": 0.921875,
+      "finish_rate": 0.984375,
+      "success_rate": 0.90625
+    },
+    {
+      "step": 350,
+      "loss": 0.22470222413539886,
+      "mean_hit_D": 0.2125,
+      "hit_D": {
+        "l2_aa_near": 0.12,
+        "l2_ao_near": 0.2725,
+        "l2_11_near": 0.245
+      },
+      "mean_gate_on_D": {
+        "l2_aa_near": 0.6140261612087489,
+        "l2_ao_near": 0.6735962465032935,
+        "l2_11_near": 0.3862724132090807
+      },
+      "eligible": true,
+      "wall_time_s": 873.074,
+      "reward": -9.88949978351593,
+      "cost": 1.390625,
+      "safe_rate": 0.921875,
+      "finish_rate": 0.984375,
+      "success_rate": 0.90625
+    },
+    {
+      "step": 400,
+      "loss": 0.21217256784439087,
+      "mean_hit_D": 0.20791666666666667,
+      "hit_D": {
+        "l2_aa_near": 0.12,
+        "l2_ao_near": 0.26625,
+        "l2_11_near": 0.2375
+      },
+      "mean_gate_on_D": {
+        "l2_aa_near": 0.6134217262640596,
+        "l2_ao_near": 0.6741501213423908,
+        "l2_11_near": 0.3926901048608124
+      },
+      "eligible": true,
+      "wall_time_s": 975.139,
+      "reward": -9.915956914424896,
+      "cost": 1.375,
+      "safe_rate": 0.921875,
+      "finish_rate": 0.984375,
+      "success_rate": 0.90625
+    },
+    {
+      "step": 450,
+      "loss": 0.22509579360485077,
+      "mean_hit_D": 0.20333333333333334,
+      "hit_D": {
+        "l2_aa_near": 0.105,
+        "l2_ao_near": 0.2675,
+        "l2_11_near": 0.2375
+      },
+      "mean_gate_on_D": {
+        "l2_aa_near": 0.6324844383448363,
+        "l2_ao_near": 0.6744531688652933,
+        "l2_11_near": 0.38923581638373433
+      },
+      "eligible": true,
+      "wall_time_s": 1079.021,
+      "reward": -9.8948734998703,
+      "cost": 1.375,
+      "safe_rate": 0.921875,
+      "finish_rate": 0.96875,
+      "success_rate": 0.890625
+    },
+    {
+      "step": 500,
+      "loss": 0.2038792073726654,
+      "mean_hit_D": 0.19749999999999998,
+      "hit_D": {
+        "l2_aa_near": 0.1025,
+        "l2_ao_near": 0.25375,
+        "l2_11_near": 0.23625
+      },
+      "mean_gate_on_D": {
+        "l2_aa_near": 0.6350372480601072,
+        "l2_ao_near": 0.6746766714565456,
+        "l2_11_near": 0.3859324615634978
+      },
+      "eligible": true,
+      "wall_time_s": 1179.616,
+      "reward": -9.897616386413574,
+      "cost": 1.375,
+      "safe_rate": 0.921875,
+      "finish_rate": 0.984375,
+      "success_rate": 0.90625
+    },
+    {
+      "step": 550,
+      "loss": 0.22349047660827637,
+      "mean_hit_D": 0.19999999999999998,
+      "hit_D": {
+        "l2_aa_near": 0.10375,
+        "l2_ao_near": 0.25875,
+        "l2_11_near": 0.2375
+      },
+      "mean_gate_on_D": {
+        "l2_aa_near": 0.6412777353450656,
+        "l2_ao_near": 0.6748008541576564,
+        "l2_11_near": 0.3849807076156139
+      },
+      "eligible": true,
+      "wall_time_s": 1285.167,
+      "reward": -9.875446319580078,
+      "cost": 1.375,
+      "safe_rate": 0.921875,
+      "finish_rate": 0.984375,
+      "success_rate": 0.90625
+    },
+    {
+      "step": 600,
+      "loss": 0.20746329426765442,
+      "mean_hit_D": 0.19958333333333333,
+      "hit_D": {
+        "l2_aa_near": 0.1025,
+        "l2_ao_near": 0.2575,
+        "l2_11_near": 0.23875
+      },
+      "mean_gate_on_D": {
+        "l2_aa_near": 0.6507092796266079,
+        "l2_ao_near": 0.6749470396339894,
+        "l2_11_near": 0.3784010957181454
+      },
+      "eligible": true,
+      "wall_time_s": 1389.398,
+      "reward": -9.86169582605362,
+      "cost": 1.359375,
+      "safe_rate": 0.921875,
+      "finish_rate": 0.984375,
+      "success_rate": 0.90625
+    }
+  ],
+  "has_eligible_checkpoint": true,
+  "before_D_init_residual": {
+    "l2_aa_near": {
+      "n_eval_on_D": 400,
+      "n_draw": 7556,
+      "n_hit": 65,
+      "hit_rate_on_D": 0.1625,
+      "min_distn": 0.08998362607041308,
+      "mean_gate_on_D": 0.6506993778795004
+    },
+    "l2_ao_near": {
+      "n_eval_on_D": 400,
+      "n_draw": 13720,
+      "n_hit": 146,
+      "hit_rate_on_D": 0.365,
+      "min_distn": 0.033919310469395954,
+      "mean_gate_on_D": 0.6695932326093316
+    },
+    "l2_11_near": {
+      "n_eval_on_D": 400,
+      "n_draw": 5510,
+      "n_hit": 115,
+      "hit_rate_on_D": 0.2875,
+      "min_distn": 0.03534083842484235,
+      "mean_gate_on_D": 0.37217408664524554
+    }
+  },
+  "before_D_base": {
+    "l2_aa_near": {
+      "n_eval_on_D": 2000,
+      "n_draw": 37910,
+      "n_hit": 719,
+      "hit_rate_on_D": 0.3595,
+      "min_distn": 0.08268143313033612
+    },
+    "l2_ao_near": {
+      "n_eval_on_D": 2000,
+      "n_draw": 66480,
+      "n_hit": 860,
+      "hit_rate_on_D": 0.43,
+      "min_distn": 0.031199258682382266
+    },
+    "l2_11_near": {
+      "n_eval_on_D": 2000,
+      "n_draw": 29263,
+      "n_hit": 782,
+      "hit_rate_on_D": 0.391,
+      "min_distn": 0.031112234651839592
+    }
+  },
+  "after_last_D": {
+    "l2_aa_near": {
+      "n_eval_on_D": 2000,
+      "n_draw": 37910,
+      "n_hit": 214,
+      "hit_rate_on_D": 0.107,
+      "min_distn": 0.09221688993641267,
+      "mean_gate_on_D": 0.6463597362339497
+    },
+    "l2_ao_near": {
+      "n_eval_on_D": 2000,
+      "n_draw": 66480,
+      "n_hit": 524,
+      "hit_rate_on_D": 0.262,
+      "min_distn": 0.03665999875750459,
+      "mean_gate_on_D": 0.6741460653319955
+    },
+    "l2_11_near": {
+      "n_eval_on_D": 2000,
+      "n_draw": 29263,
+      "n_hit": 484,
+      "hit_rate_on_D": 0.242,
+      "min_distn": 0.03276375757895551,
+      "mean_gate_on_D": 0.3935283193513751
+    }
+  },
+  "after_best_D": {
+    "l2_aa_near": {
+      "n_eval_on_D": 2000,
+      "n_draw": 37910,
+      "n_hit": 218,
+      "hit_rate_on_D": 0.109,
+      "min_distn": 0.09207106302991486,
+      "mean_gate_on_D": 0.6306930981427431
+    },
+    "l2_ao_near": {
+      "n_eval_on_D": 2000,
+      "n_draw": 66480,
+      "n_hit": 520,
+      "hit_rate_on_D": 0.26,
+      "min_distn": 0.03607122915812096,
+      "mean_gate_on_D": 0.6738765371255576
+    },
+    "l2_11_near": {
+      "n_eval_on_D": 2000,
+      "n_draw": 29263,
+      "n_hit": 470,
+      "hit_rate_on_D": 0.235,
+      "min_distn": 0.03292340263045519,
+      "mean_gate_on_D": 0.4008581482730806
+    }
+  },
+  "best_success_short_eval": 0.90625,
+  "best_mean_hit_D": 0.19749999999999998,
+  "wall_time_total_s": 1851.054,
+  "checkpoint": "method/deepset/output/phase2/phase2_seed0base_cegar_r2_20261004/seed0/V2d_r2/repair_r2.pkl",
+  "best_checkpoint": "method/deepset/output/phase2/phase2_seed0base_cegar_r2_20261004/seed0/V2d_r2/repair_r2_best.pkl",
+  "eval_csv": "method/deepset/output/phase2/phase2_seed0base_cegar_r2_20261004/seed0/V2d_r2/repair_r2.csv",
+  "claim": "Empirical residual repair only. Base remains the frozen distilled DeepSet. Not a formal safety proof.",
+  "run_meta": {
+    "method": "V2d_r2",
+    "train_seed": 1,
+    "phase2_run_id": "phase2_seed0base_cegar_r2_20261004"
+  }
+}

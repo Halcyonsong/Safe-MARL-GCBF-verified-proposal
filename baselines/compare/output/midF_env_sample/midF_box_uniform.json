@@ -1,0 +1,63 @@
+{
+  "method": "uniform_midF_product_box",
+  "n": 30000,
+  "seed": 1234,
+  "box": {
+    "d_min": 0.125,
+    "d_max": 0.4,
+    "close_hi": 0.3,
+    "R": 0.1
+  },
+  "rows": [
+    {
+      "policy": "coast_a0",
+      "n": 30000,
+      "n_fail": 0,
+      "fail_rate": 0.0,
+      "l2_safe_rate": 1.0,
+      "margin_mean": 0.04568773644108766,
+      "margin_p10": 0.01483775278887588,
+      "margin_min": 0.007072396406879178,
+      "mean_abs_a_inf": 0.0,
+      "mean_d2": 0.14568773644108768
+    },
+    {
+      "policy": "mf_base",
+      "n": 30000,
+      "n_fail": 53,
+      "fail_rate": 0.0017666666666666666,
+      "l2_safe_rate": 0.9982333333333333,
+      "margin_mean": 0.04028288221332728,
+      "margin_p10": 0.009248748025974146,
+      "margin_min": -0.0017230166351929616,
+      "mean_abs_a_inf": 0.6005393586400433,
+      "mean_d2": 0.14028288221332727
+    },
+    {
+      "policy": "mf_r2",
+      "n": 30000,
+      "n_fail": 113,
+      "fail_rate": 0.003766666666666667,
+      "l2_safe_rate": 0.9962333333333333,
+      "margin_mean": 0.03921409978370719,
+      "margin_p10": 0.00808908751093993,
+      "margin_min": -0.0019110376697847736,
+      "mean_abs_a_inf": 0.7192929619311629,
+      "mean_d2": 0.13921409978370722
+    },
+    {
+      "policy": "mappo_lag",
+      "n": 30000,
+      "n_fail": 139,
+      "fail_rate": 0.004633333333333333,
+      "l2_safe_rate": 0.9953666666666666,
+      "margin_mean": 0.037924349092296736,
+      "margin_p10": 0.0069602990644360456,
+      "margin_min": -0.0017821023318181084,
+      "mean_abs_a_inf": 0.8625985943101036,
+      "mean_d2": 0.13792434909229676
+    }
+  ],
+  "n_hard_fringe_in_draw": 4516,
+  "note": "Feature policies only. Graph policies need env GraphsTuple."
+}

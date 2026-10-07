@@ -1,0 +1,58 @@
+{
+  "policy_id": "gcbf_baseline_mid_step270",
+  "policy_kind": "gcbf",
+  "label": "gcbf_mid_scale_step270",
+  "role": "same-family ablation lower bound (not task upper bound)",
+  "checkpoint": "baselines/gcbf/log/gcbf/seed0_20261006111544/models/270",
+  "artifacts": "baselines/gcbf/output/gcbf_mid/",
+  "algo": "gcbf",
+  "env": "DoubleIntegrator",
+  "num_agents": 8,
+  "area_size": 4.0,
+  "obs": 4,
+  "n_rays": 32,
+  "train_seed": 0,
+  "train_steps_paused_at": 270,
+  "train_steps_planned": 1000,
+  "train_hparams": {
+    "n_env_train": 8,
+    "n_env_test": 16,
+    "batch_size": 128,
+    "buffer_size": 512,
+    "inner_epoch": 8,
+    "lr_actor": 1e-05,
+    "lr_cbf": 1e-05,
+    "loss_action_coef": 0.0001,
+    "loss_h_dot_coef": 0.01,
+    "note": "Mid-scale; paused after probe. Enough for ablation vs GCBF+."
+  },
+  "episodes": 32,
+  "eval_seed": 1234,
+  "teacher_step": 270,
+  "reward": -203.456,
+  "cost": 9.246,
+  "safe_rate": 0.62109,
+  "finish_rate": 0.8125,
+  "success_rate": 0.55469,
+  "online_pol_refine": false,
+  "appendix_refine_32epi": {
+    "online_pol_refine": true,
+    "success_rate": 0.59375,
+    "safe_rate": 0.6015625,
+    "finish_rate": 0.95703125
+  },
+  "compare_ref_gcbf_weak_32epi": {
+    "success_rate": 0.515625,
+    "safe_rate": 0.5390625,
+    "finish_rate": 0.9140625
+  },
+  "compare_ref_gcbfplus_32epi": {
+    "success_rate": 0.9140625,
+    "safe_rate": 0.95703125,
+    "finish_rate": 0.953125
+  },
+  "claim": "Empirical ablation only. GCBF (non-plus) mid-scale @270. Not formal verification. Not a task upper bound.",
+  "sufficient_as_baseline": true,
+  "sufficient_reason": "Shows clear same-family gap vs GCBF+ under identical eval protocol; matches paper expectation that GCBFv0 << GCBF+; further training unlikely to close gap to ~91% without QP teacher.",
+  "recorded_at": "2026-10-06T04:20:09Z"
+}

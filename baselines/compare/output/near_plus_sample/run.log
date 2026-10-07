@@ -1,0 +1,69 @@
+[box] sampling n=50000 from near_plus product box (dim=44)…
+[box] drawn in 0.03s
+[score] coast_a0 L2-safe=100.00%
+  mf fwd 2048/50000
+  mf fwd 12288/50000
+  mf fwd 22528/50000
+  mf fwd 32768/50000
+  mf fwd 43008/50000
+[score] mf_r2 L2-safe=100.00% fwd=4.13s
+[score] mappo_lag L2-safe=100.00% fwd=0.16s
+[
+  {
+    "n": 50000,
+    "n_l2_safe": 50000,
+    "l2_safe_rate": 1.0,
+    "mean_d2": 0.15888206038613237,
+    "mean_abs_a_inf": 0.0,
+    "policy": "coast_a0",
+    "note": "a=0 reference; envelope expects mostly safe in this box"
+  },
+  {
+    "n": 50000,
+    "n_l2_safe": 50000,
+    "l2_safe_rate": 1.0,
+    "mean_d2": 0.15249879248303813,
+    "mean_abs_a_inf": 0.7092519892326898,
+    "policy": "mf_r2",
+    "note": "acceptance policy; formal PROVEN_FULL on this box",
+    "fwd_s": 4.13
+  },
+  {
+    "n": 50000,
+    "n_l2_safe": 50000,
+    "l2_safe_rate": 1.0,
+    "mean_d2": 0.15111612284483122,
+    "mean_abs_a_inf": 0.8628819490334578,
+    "policy": "mappo_lag",
+    "note": "a=tanh(mean) only; uref omitted (needs graph). Approximate vs deploy.",
+    "fwd_s": 0.16
+  },
+  {
+    "policy": "ds_r2",
+    "n": 0,
+    "n_l2_safe": 0,
+    "l2_safe_rate": null,
+    "mean_d2": null,
+    "mean_abs_a_inf": null,
+    "note": "N/A under direct box sampling \u2014 DeepSet needs ego/entity local sets (graph)"
+  },
+  {
+    "policy": "gcbfplus",
+    "n": 0,
+    "n_l2_safe": 0,
+    "l2_safe_rate": null,
+    "mean_d2": null,
+    "mean_abs_a_inf": null,
+    "note": "N/A under direct box sampling \u2014 GNN actor needs GraphsTuple"
+  },
+  {
+    "policy": "handcbf",
+    "n": 0,
+    "n_l2_safe": 0,
+    "l2_safe_rate": null,
+    "mean_d2": null,
+    "mean_abs_a_inf": null,
+    "note": "N/A under direct box sampling \u2014 CBF-QP needs GraphsTuple"
+  }
+]
+wrote runs/compare_baselines/near_plus_sample/REPORT.md in 4.4s

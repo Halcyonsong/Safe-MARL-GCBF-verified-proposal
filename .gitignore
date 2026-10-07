@@ -1,0 +1,123 @@
+# =============================================================================
+# Safe-MARL-GCBF-verified-proposal — GitHub policy: reproducible research repo
+# =============================================================================
+# Track: code · docs · configs · scripts · tests · full acceptance pack ·
+#        ACTIVE pointers · essential MF/DeepSet ckpts · baseline paper weights.
+# Ignore: training dumps · intermediate step*.pkl · giant logs · refer PDFs ·
+#         IDE / caches / wandb.
+# Approx tracked size: ~80–110 MB (vs ~1.3 GB working tree).
+# =============================================================================
+
+# ----- Python / tooling -----
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# ----- IDE / OS -----
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ----- Experiment noise -----
+wandb/
+.wandb/
+*.pid
+*.syncstate
+nohup.out
+*.outer.log
+
+# ----- Third-party PDFs (copyright; keep locally) -----
+refer/
+
+# ----- Backup / temp -----
+*.bak
+*.tmp
+/tmp/
+
+# =============================================================================
+# Method outputs: ignore by default, then re-include essentials
+# =============================================================================
+method/**/output/**
+method/**/log/**
+
+# Keep directory placeholders & root READMEs / pointers
+!method/**/output/
+!method/**/log/
+!method/meanfield/output/README.md
+!method/meanfield/output/ACTIVE_*.txt
+!method/meanfield/output/LATEST_*.txt
+!method/deepset/output/**/README.md
+!method/deepset/output/**/INDEX.md
+!method/deepset/output/phase2/ACTIVE_*.txt
+
+# --- Mean-field: ACTIVE distill v5 (best + step9000 only) + r2 repair + near_plus verify ---
+!method/meanfield/output/distill/
+!method/meanfield/output/distill/mf_distill_20261005_v5/
+!method/meanfield/output/distill/mf_distill_20261005_v5/**
+method/meanfield/output/distill/mf_distill_20261005_v5/**/meanfield_mlp512_student_step*.pkl
+# keep the ACTIVE step9000 checkpoint (negate the step-ignore for this one file)
+!method/meanfield/output/distill/mf_distill_20261005_v5/seed0/meanfield_mlp512_student_step9000.pkl
+
+!method/meanfield/output/repair/
+!method/meanfield/output/repair/mf_residual_v5_r2_20261005/
+!method/meanfield/output/repair/mf_residual_v5_r2_20261005/**
+
+!method/meanfield/output/verify/
+!method/meanfield/output/verify/mf_feat44_near_plus_r2/
+!method/meanfield/output/verify/mf_feat44_near_plus_r2/**
+
+# --- DeepSet: Phase-1 frozen + ACTIVE V2d_r2 (no steps/) ---
+!method/deepset/output/stage1/
+!method/deepset/output/stage1/frozen/
+!method/deepset/output/stage1/frozen/**
+
+!method/deepset/output/phase2/
+!method/deepset/output/phase2/phase2_seed0base_20261004/
+!method/deepset/output/phase2/phase2_seed0base_20261004/seed0/
+!method/deepset/output/phase2/phase2_seed0base_20261004/seed0/V2d_r2/
+!method/deepset/output/phase2/phase2_seed0base_20261004/seed0/V2d_r2/**
+method/deepset/output/phase2/phase2_seed0base_20261004/seed0/V2d_r2/steps/
+
+# =============================================================================
+# Baselines: keep code/config/scripts + paper outputs; drop training logs & packs
+# =============================================================================
+baselines/**/log/**
+!baselines/**/log/
+# Exception: GCBF+ teacher used by DeepSet distill (~3MB)
+!baselines/gcbfplus/log/
+!baselines/gcbfplus/log/**
+
+# Keep baseline outputs (eval JSON + paper ckpts)
+# but drop bulky env sample packs and duplicate "latest" weights
+baselines/compare/output/**/env_pack.pkl
+baselines/compare/output/**/env_feats_only.pkl
+baselines/**/output/**/latest.pkl
+
+# Intermediate / per-epoch dumps if any appear under output
+baselines/**/output/**/steps/
+baselines/**/output/**/models/
+
+# =============================================================================
+# Acceptance pack: track in full (incl. L3 appendix)
+# =============================================================================
+# (no ignore rules — acceptance/ is uploaded)
+
+# =============================================================================
+# Global weight hygiene (extra safety net)
+# =============================================================================
+# Intermediate step checkpoints anywhere (ACTIVE exceptions already un-ignored)
+**/steps/
+**/*_step[0-9]*.pkl
+# Re-allow the one MF ACTIVE step9000 file after the global step rule
+!method/meanfield/output/distill/mf_distill_20261005_v5/seed0/meanfield_mlp512_student_step9000.pkl

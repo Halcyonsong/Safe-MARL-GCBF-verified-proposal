@@ -1,0 +1,36 @@
+# Mid-scale GCBF — enough for stable trend, not full official wall-time.
+# Eval protocol UNCHANGED vs GCBF+/DeepSet/MF:
+#   DoubleIntegrator · 8 agents · area 4 · obs 4 · rays 32 · epi 32 · eval_seed 1234
+#
+# vs weak (2/32/4): 4× parallel envs, 4× batch, 2× inner, paper lr
+# vs official (16/256/8): half envs, half batch → ~2–3× faster
+
+env: DoubleIntegrator
+algo: gcbf
+area_size: 4.0
+num_agents: 8
+obs: 4
+n_rays: 32
+seed: 0
+
+steps: 1000
+n_env_train: 8
+n_env_test: 16
+buffer_size: 512
+batch_size: 128
+inner_epoch: 8
+horizon: 32
+gnn_layers: 1
+alpha: 1.0
+
+lr_actor: 1.0e-5
+lr_cbf: 1.0e-5
+loss_action_coef: 1.0e-4
+loss_unsafe_coef: 1.0
+loss_safe_coef: 1.0
+loss_h_dot_coef: 0.01
+
+eval_interval: 1
+eval_epi: 1
+save_interval: 10
+log_dir: ./logs

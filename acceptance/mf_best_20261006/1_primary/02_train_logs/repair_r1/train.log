@@ -1,0 +1,29 @@
+[mf-res] loaded 211 CEs (skipped 331) from runs/meanfield/repair/mf_residual_v5_20261005/seed0/ce_baseline.json
+[mf-res] base=runs/meanfield/distill/mf_distill_20261005_v5/seed0/meanfield_mlp512_student_step9000.pkl ce=runs/meanfield/repair/mf_residual_v5_20261005/seed0/ce_baseline.json n_ce=211 steps=600 corr_h=128 gate=physics
+step=0001 loss=2.75757 ce=2.74851 anchor=0.00859 reg=0.00047 g_ce=0.605 g_n=0.068
+step=0050 loss=2.42894 ce=2.42326 anchor=0.00521 reg=0.00048 g_ce=0.610 g_n=0.076
+step=0100 loss=2.24328 ce=2.22611 anchor=0.01688 reg=0.00029 g_ce=0.614 g_n=0.081
+[eval] step=100 safe=90.62% finish=93.75% success=84.38% BEST
+step=0150 loss=1.79348 ce=1.77795 anchor=0.01522 reg=0.00031 g_ce=0.601 g_n=0.083
+step=0200 loss=1.57359 ce=1.54927 anchor=0.02395 reg=0.00036 g_ce=0.623 g_n=0.085
+[eval] step=200 safe=93.75% finish=93.75% success=87.50% BEST
+step=0250 loss=1.57882 ce=1.54436 anchor=0.03407 reg=0.00039 g_ce=0.630 g_n=0.134
+step=0300 loss=1.60167 ce=1.57893 anchor=0.02234 reg=0.00040 g_ce=0.610 g_n=0.069
+[eval] step=300 safe=93.75% finish=92.19% success=85.94% 
+step=0350 loss=1.47435 ce=1.43681 anchor=0.03712 reg=0.00043 g_ce=0.605 g_n=0.101
+step=0400 loss=1.23274 ce=1.19889 anchor=0.03341 reg=0.00044 g_ce=0.593 g_n=0.091
+[eval] step=400 safe=93.75% finish=89.06% success=84.38% 
+step=0450 loss=1.29469 ce=1.27945 anchor=0.01475 reg=0.00048 g_ce=0.623 g_n=0.061
+step=0500 loss=1.29201 ce=1.25144 anchor=0.04007 reg=0.00050 g_ce=0.603 g_n=0.102
+[eval] step=500 safe=95.31% finish=90.62% success=85.94% 
+step=0550 loss=1.43750 ce=1.38623 anchor=0.05075 reg=0.00052 g_ce=0.617 g_n=0.122
+step=0600 loss=1.35520 ce=1.28618 anchor=0.06852 reg=0.00050 g_ce=0.614 g_n=0.093
+[eval] step=600 safe=93.75% finish=92.19% success=85.94% 
+[mf-res] resampling CEs on residual best…
+[mf-ce] start episodes=16 danger_r=0.35 stride=1 ckpt=repair_best.pkl
+[mf-ce] ep 1/16 kept=0 hit=0 danger=334 elapsed=29.5s
+[mf-ce] ep 4/16 kept=0 hit=0 danger=2218 elapsed=99.5s
+[mf-ce] ep 8/16 kept=15 hit=15 danger=4837 elapsed=197.4s
+[mf-ce] ep 12/16 kept=93 hit=93 danger=7337 elapsed=301.5s
+[mf-ce] ep 16/16 kept=128 hit=128 danger=9783 elapsed=401.0s
+[mf-res] done. baseline_hit=5.95% post_hit=1.31% task32 success=83.20% safe=92.97% best=runs/meanfield/repair/mf_residual_v5_20261005/seed0/repair_best.pkl

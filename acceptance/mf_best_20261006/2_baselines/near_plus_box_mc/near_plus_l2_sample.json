@@ -1,0 +1,78 @@
+{
+  "claim": "Empirical Monte-Carlo on the same near_plus product box as MF L2 acceptance. NOT a formal proof (formal proof already exists for mf_r2).",
+  "method": "direct_uniform_sample_feature_box",
+  "domain": {
+    "mode": "near_plus",
+    "min_d": [
+      0.14,
+      0.4
+    ],
+    "close_abs": 0.3,
+    "inv_ttc_max": 8.0,
+    "force_Q0_occupied": true,
+    "R": 0.1,
+    "dim": 44
+  },
+  "n": 50000,
+  "seed": 1234,
+  "wall_time_s": 4.44,
+  "graph_policies": "N/A \u2014 cannot build GraphsTuple from abstract features",
+  "rows": [
+    {
+      "n": 50000,
+      "n_l2_safe": 50000,
+      "l2_safe_rate": 1.0,
+      "mean_d2": 0.15888206038613237,
+      "mean_abs_a_inf": 0.0,
+      "policy": "coast_a0",
+      "note": "a=0 reference; envelope expects mostly safe in this box"
+    },
+    {
+      "n": 50000,
+      "n_l2_safe": 50000,
+      "l2_safe_rate": 1.0,
+      "mean_d2": 0.15249879248303813,
+      "mean_abs_a_inf": 0.7092519892326898,
+      "policy": "mf_r2",
+      "note": "acceptance policy; formal PROVEN_FULL on this box",
+      "fwd_s": 4.13
+    },
+    {
+      "n": 50000,
+      "n_l2_safe": 50000,
+      "l2_safe_rate": 1.0,
+      "mean_d2": 0.15111612284483122,
+      "mean_abs_a_inf": 0.8628819490334578,
+      "policy": "mappo_lag",
+      "note": "a=tanh(mean) only; uref omitted (needs graph). Approximate vs deploy.",
+      "fwd_s": 0.16
+    },
+    {
+      "policy": "ds_r2",
+      "n": 0,
+      "n_l2_safe": 0,
+      "l2_safe_rate": null,
+      "mean_d2": null,
+      "mean_abs_a_inf": null,
+      "note": "N/A under direct box sampling \u2014 DeepSet needs ego/entity local sets (graph)"
+    },
+    {
+      "policy": "gcbfplus",
+      "n": 0,
+      "n_l2_safe": 0,
+      "l2_safe_rate": null,
+      "mean_d2": null,
+      "mean_abs_a_inf": null,
+      "note": "N/A under direct box sampling \u2014 GNN actor needs GraphsTuple"
+    },
+    {
+      "policy": "handcbf",
+      "n": 0,
+      "n_l2_safe": 0,
+      "l2_safe_rate": null,
+      "mean_d2": null,
+      "mean_abs_a_inf": null,
+      "note": "N/A under direct box sampling \u2014 CBF-QP needs GraphsTuple"
+    }
+  ]
+}

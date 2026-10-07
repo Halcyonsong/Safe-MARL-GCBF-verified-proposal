@@ -1,0 +1,5 @@
+[collect] midF band d0∈[0.126,0.136] c0∈[0.23,0.28] target_agents=200 episodes≤600
+  epi=1 graphs=0 agents_in_band=0/200 wall=29.4s
+  epi=10 graphs=9 agents_in_band=10/200 wall=248.0s
+  epi=20 graphs=12 agents_in_band=13/200 wall=483.2s
+  [ckpt] partial pack n_in_band=15 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl

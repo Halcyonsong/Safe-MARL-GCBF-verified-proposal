@@ -1,0 +1,11 @@
+{
+  "success_rate": 0.67627,
+  "safe_rate": 0.883789,
+  "finish_rate": 0.746582,
+  "cost": 1.87548828125,
+  "reward": -21.31484527885914,
+  "wall_time_s": 14.045,
+  "train_step": 350,
+  "lambda": 3.419375000000002
+}
+wrote runs/baseline/mappo_lag/validate_256epi.json

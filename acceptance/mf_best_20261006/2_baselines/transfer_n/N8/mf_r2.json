@@ -1,0 +1,12 @@
+{
+  "success_rate": 0.82,
+  "safe_rate": 0.965,
+  "finish_rate": 0.84,
+  "cost": 0.305,
+  "source": "acceptance 32epi",
+  "policy_id": "mf_r2",
+  "num_agents": 8,
+  "episodes": 32,
+  "eval_seed": 1234,
+  "note": "train-protocol reference (not re-run)"
+}

@@ -1,0 +1,98 @@
+{
+  "out_dir": "baselines/mappo_lag/output/mappo_lag/seed0_train",
+  "steps": 400,
+  "wall_time_s": 105.0,
+  "best": {
+    "reward": -24.865372002124786,
+    "cost": 0.984375,
+    "safe_rate": 0.921875,
+    "finish_rate": 0.703125,
+    "success_rate": 0.6640625,
+    "step": 350,
+    "lambda": 3.419375000000002,
+    "train_team_cost": 0.3125
+  },
+  "history": [
+    {
+      "reward": -19.483209133148193,
+      "cost": 2.140625,
+      "safe_rate": 0.859375,
+      "finish_rate": 0.6796875,
+      "success_rate": 0.6171875,
+      "step": 50,
+      "lambda": 1.8183593750000002,
+      "train_team_cost": 2.1875
+    },
+    {
+      "reward": -26.883861482143402,
+      "cost": 2.65625,
+      "safe_rate": 0.8984375,
+      "finish_rate": 0.640625,
+      "success_rate": 0.625,
+      "step": 100,
+      "lambda": 2.0781250000000004,
+      "train_team_cost": 0.96875
+    },
+    {
+      "reward": -25.846910774707794,
+      "cost": 1.359375,
+      "safe_rate": 0.890625,
+      "finish_rate": 0.59375,
+      "success_rate": 0.5390625,
+      "step": 150,
+      "lambda": 2.2671093750000004,
+      "train_team_cost": 1.34375
+    },
+    {
+      "reward": -22.29332047700882,
+      "cost": 1.0,
+      "safe_rate": 0.9140625,
+      "finish_rate": 0.59375,
+      "success_rate": 0.5546875,
+      "step": 200,
+      "lambda": 2.4782812500000007,
+      "train_team_cost": 1.84375
+    },
+    {
+      "reward": -23.997462272644043,
+      "cost": 2.2578125,
+      "safe_rate": 0.859375,
+      "finish_rate": 0.6328125,
+      "success_rate": 0.546875,
+      "step": 250,
+      "lambda": 2.8538281250000015,
+      "train_team_cost": 2.609375
+    },
+    {
+      "reward": -23.10418713092804,
+      "cost": 0.953125,
+      "safe_rate": 0.90625,
+      "finish_rate": 0.6796875,
+      "success_rate": 0.6328125,
+      "step": 300,
+      "lambda": 3.1857031250000025,
+      "train_team_cost": 1.3125
+    },
+    {
+      "reward": -24.865372002124786,
+      "cost": 0.984375,
+      "safe_rate": 0.921875,
+      "finish_rate": 0.703125,
+      "success_rate": 0.6640625,
+      "step": 350,
+      "lambda": 3.419375000000002,
+      "train_team_cost": 0.3125
+    },
+    {
+      "reward": -27.479337990283966,
+      "cost": 3.734375,
+      "safe_rate": 0.8515625,
+      "finish_rate": 0.7109375,
+      "success_rate": 0.625,
+      "step": 400,
+      "lambda": 3.6359375000000007,
+      "train_team_cost": 1.484375
+    }
+  ],
+  "final_lambda": 3.6359375000000007
+}

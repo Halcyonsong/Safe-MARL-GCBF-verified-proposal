@@ -1,0 +1,8 @@
+# Primary mean-field config: 3×256 ReLU MLP, 30-D hybrid input (v2).
+defaults: default.yaml
+hidden: 256
+feature_version: 2
+nearest_agents: 2
+nearest_obs: 1
+rest: mean_xydv
+use_counts: true

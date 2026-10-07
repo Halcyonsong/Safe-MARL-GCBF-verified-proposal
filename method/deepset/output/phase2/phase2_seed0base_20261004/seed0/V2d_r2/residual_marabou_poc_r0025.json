@@ -1,0 +1,111 @@
+{
+  "checkpoint": "method/deepset/output/phase2/LATEST/seed0/V2d_r2/repair_r2_best.pkl",
+  "kind": "residual_marabou_feasibility_poc",
+  "rows": [
+    {
+      "bucket": "aa",
+      "status": "unsat",
+      "elapsed_s": 0.5440709590911865,
+      "timeout_s": 15,
+      "input_box": {
+        "lo": [
+          1.975,
+          1.975,
+          -0.025,
+          -0.025,
+          -0.025,
+          -0.025,
+          -0.025,
+          -0.025,
+          0.125,
+          -0.025,
+          -0.025,
+          -0.025
+        ],
+        "hi": [
+          2.025,
+          2.025,
+          0.025,
+          0.025,
+          0.025,
+          0.025,
+          0.025,
+          0.025,
+          0.175,
+          0.025,
+          0.025,
+          0.025
+        ]
+      },
+      "square_half": 0.07071067811865475,
+      "relaxation": "g in [0,1] + McCormick envelope for g*delta",
+      "delta_interval": {
+        "lo": [
+          -26.813355332829985,
+          -32.60920306580862
+        ],
+        "hi": [
+          36.60113767462217,
+          34.68066129884679
+        ]
+      },
+      "network_vars": 7841,
+      "network_equations": 4246,
+      "network_inequalities": 0,
+      "meaning": "UNSAT is a conservative proof for the real residual on this square proxy; SAT is only a witness for the relaxed gate/product model; timeout is unknown."
+    },
+    {
+      "bucket": "ao",
+      "status": "unsat",
+      "elapsed_s": 0.4698348045349121,
+      "timeout_s": 15,
+      "input_box": {
+        "lo": [
+          1.975,
+          1.975,
+          -0.025,
+          -0.025,
+          -0.025,
+          -0.025,
+          -0.025,
+          -0.025,
+          0.125,
+          -0.025,
+          -0.025,
+          -0.025
+        ],
+        "hi": [
+          2.025,
+          2.025,
+          0.025,
+          0.025,
+          0.025,
+          0.025,
+          0.025,
+          0.025,
+          0.175,
+          0.025,
+          0.025,
+          0.025
+        ]
+      },
+      "square_half": 0.035355339059327376,
+      "relaxation": "g in [0,1] + McCormick envelope for g*delta",
+      "delta_interval": {
+        "lo": [
+          -28.54773167892839,
+          -34.909343890301564
+        ],
+        "hi": [
+          39.10026507570605,
+          36.767567539319515
+        ]
+      },
+      "network_vars": 7841,
+      "network_equations": 4246,
+      "network_inequalities": 0,
+      "meaning": "UNSAT is a conservative proof for the real residual on this square proxy; SAT is only a witness for the relaxed gate/product model; timeout is unknown."
+    }
+  ],
+  "note": "The learned sigmoid/physics gate is over-approximated by arbitrary g in [0,1]. Only UNSAT is a sound certificate for the deployed residual on the queried box."
+}

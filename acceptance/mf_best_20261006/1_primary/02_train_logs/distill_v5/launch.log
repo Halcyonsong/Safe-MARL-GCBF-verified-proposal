@@ -1,0 +1,2 @@
+[mf-v5] feature_v5 4quad wmean+invttc_max hidden=512 dim=44
+[CudaDevice(id=0)]

@@ -1,0 +1,36 @@
+# Official GCBF+ baseline defaults (comparison only).
+# Memory-limited GPU settings are used by scripts/run_baseline_gcbfplus.sh.
+# Official-scale settings remain available via CLI overrides.
+
+env: DoubleIntegrator
+algo: gcbf+
+area_size: 4.0
+num_agents: 8
+obs: 4
+n_rays: 32
+seed: 0
+
+steps: 1000
+n_env_train: 2
+n_env_test: 4
+buffer_size: 256
+batch_size: 32
+inner_epoch: 4
+horizon: 32
+gnn_layers: 1
+alpha: 1.0
+
+lr_actor: 3.0e-5
+lr_cbf: 3.0e-5
+loss_action_coef: 1.0e-4
+loss_unsafe_coef: 1.0
+loss_safe_coef: 1.0
+loss_h_dot_coef: 0.01
+
+eval_interval: 1
+save_interval: 10
+
+# Kept teacher pointer for comparisons
+teacher_run: baselines/gcbfplus/log/gcbf+/seed0_20261001232611
+teacher_step: 1000
+teacher_artifacts: baselines/gcbfplus/output/gcbfplus/

@@ -1,0 +1,195 @@
+[collect] midF band d0∈[0.125,0.15] c0∈[0.12,0.3] target_agents=400 episodes≤400
+  epi=1 graphs=0 agents_in_band=0/400 wall=6.8s
+  epi=10 graphs=18 agents_in_band=21/400 wall=39.0s
+  epi=20 graphs=39 agents_in_band=44/400 wall=80.0s
+  [ckpt] partial pack n_in_band=56 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=30 graphs=60 agents_in_band=67/400 wall=119.1s
+  epi=40 graphs=76 agents_in_band=89/400 wall=161.9s
+  epi=50 graphs=107 agents_in_band=127/400 wall=202.3s
+  [ckpt] partial pack n_in_band=127 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=60 graphs=118 agents_in_band=140/400 wall=244.7s
+  epi=70 graphs=149 agents_in_band=177/400 wall=285.2s
+  [ckpt] partial pack n_in_band=183 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=80 graphs=164 agents_in_band=195/400 wall=326.8s
+  epi=90 graphs=185 agents_in_band=222/400 wall=367.9s
+  epi=100 graphs=198 agents_in_band=239/400 wall=408.9s
+  [ckpt] partial pack n_in_band=239 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=110 graphs=216 agents_in_band=261/400 wall=450.5s
+  epi=120 graphs=250 agents_in_band=303/400 wall=492.5s
+  [ckpt] partial pack n_in_band=314 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=130 graphs=283 agents_in_band=346/400 wall=534.5s
+  epi=140 graphs=305 agents_in_band=372/400 wall=574.9s
+  epi=150 graphs=319 agents_in_band=388/400 wall=616.7s
+  [ckpt] partial pack n_in_band=388 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+[collect] saved runs/compare_baselines/midF_env_sample/env_pack.pkl graphs=329 in_band=400 wall=640.93s
+[build] coast_a0 …
+  [coast_a0] scored 50/329 graphs
+  [coast_a0] scored 100/329 graphs
+  [coast_a0] scored 150/329 graphs
+  [coast_a0] scored 200/329 graphs
+  [coast_a0] scored 250/329 graphs
+  [coast_a0] scored 300/329 graphs
+[score] coast_a0: n=400 L2-safe=100.00% fail=0 margin_mean=0.0268 ‖a‖∞=0.000 wall=0.01s
+[build] mf_base …
+  [mf_base] scored 50/329 graphs
+  [mf_base] scored 100/329 graphs
+  [mf_base] scored 150/329 graphs
+  [mf_base] scored 200/329 graphs
+  [mf_base] scored 250/329 graphs
+  [mf_base] scored 300/329 graphs
+[score] mf_base: n=400 L2-safe=100.00% fail=0 margin_mean=0.0246 ‖a‖∞=0.250 wall=0.48s
+[build] mf_r2 …
+  [mf_r2] scored 50/329 graphs
+  [mf_r2] scored 100/329 graphs
+  [mf_r2] scored 150/329 graphs
+  [mf_r2] scored 200/329 graphs
+  [mf_r2] scored 250/329 graphs
+  [mf_r2] scored 300/329 graphs
+[score] mf_r2: n=400 L2-safe=100.00% fail=0 margin_mean=0.0236 ‖a‖∞=0.357 wall=0.46s
+[build] mappo_lag …
+  [mappo_lag] scored 50/329 graphs
+  [mappo_lag] scored 100/329 graphs
+  [mappo_lag] scored 150/329 graphs
+  [mappo_lag] scored 200/329 graphs
+  [mappo_lag] scored 250/329 graphs
+  [mappo_lag] scored 300/329 graphs
+[score] mappo_lag: n=400 L2-safe=100.00% fail=0 margin_mean=0.0213 ‖a‖∞=0.611 wall=0.42s
+[build] ds_r2 …
+  [ds_r2] scored 50/329 graphs
+  [ds_r2] scored 100/329 graphs
+  [ds_r2] scored 150/329 graphs
+  [ds_r2] scored 200/329 graphs
+  [ds_r2] scored 250/329 graphs
+  [ds_r2] scored 300/329 graphs
+[score] ds_r2: n=400 L2-safe=100.00% fail=0 margin_mean=0.0219 ‖a‖∞=0.549 wall=0.76s
+[build] gcbfplus …
+  [gcbfplus] scored 50/329 graphs
+  [gcbfplus] scored 100/329 graphs
+  [gcbfplus] scored 150/329 graphs
+  [gcbfplus] scored 200/329 graphs
+  [gcbfplus] scored 250/329 graphs
+  [gcbfplus] scored 300/329 graphs
+[score] gcbfplus: n=400 L2-safe=99.75% fail=1 margin_mean=0.0220 ‖a‖∞=0.536 wall=0.64s
+[build] informarl …
+  [informarl] scored 50/329 graphs
+  [informarl] scored 100/329 graphs
+  [informarl] scored 150/329 graphs
+  [informarl] scored 200/329 graphs
+  [informarl] scored 250/329 graphs
+  [informarl] scored 300/329 graphs
+[score] informarl: n=400 L2-safe=100.00% fail=0 margin_mean=0.0222 ‖a‖∞=0.507 wall=0.67s
+[
+  {
+    "policy": "coast_a0",
+    "n": 400,
+    "l2_safe_rate": 1.0,
+    "n_fail": 0,
+    "fail_rate": 0.0,
+    "margin_mean": 0.0268044463224709,
+    "margin_p10": 0.015707866847515104,
+    "margin_min": 0.009119175076484687,
+    "mean_abs_a_inf": 0.0,
+    "p90_abs_a_inf": 0.0,
+    "mean_d0": 0.1389757227152586,
+    "mean_c0": 0.2028546065464616,
+    "mean_d2": 0.1268044463224709,
+    "fwd_s": 0.01
+  },
+  {
+    "policy": "mf_base",
+    "n": 400,
+    "l2_safe_rate": 1.0,
+    "n_fail": 0,
+    "fail_rate": 0.0,
+    "margin_mean": 0.024553099885805275,
+    "margin_p10": 0.012904162764549261,
+    "margin_min": 0.005164157569408412,
+    "mean_abs_a_inf": 0.2501496040739585,
+    "p90_abs_a_inf": 0.45675324499607095,
+    "mean_d0": 0.1389757227152586,
+    "mean_c0": 0.2028546065464616,
+    "mean_d2": 0.12455309988580528,
+    "fwd_s": 0.48
+  },
+  {
+    "policy": "mf_r2",
+    "n": 400,
+    "l2_safe_rate": 1.0,
+    "n_fail": 0,
+    "fail_rate": 0.0,
+    "margin_mean": 0.023592079028193835,
+    "margin_p10": 0.011309205737709988,
+    "margin_min": 0.002661738634109498,
+    "mean_abs_a_inf": 0.3569296993641183,
+    "p90_abs_a_inf": 0.6398690700531008,
+    "mean_d0": 0.1389757227152586,
+    "mean_c0": 0.2028546065464616,
+    "mean_d2": 0.12359207902819383,
+    "fwd_s": 0.46
+  },
+  {
+    "policy": "mappo_lag",
+    "n": 400,
+    "l2_safe_rate": 1.0,
+    "n_fail": 0,
+    "fail_rate": 0.0,
+    "margin_mean": 0.021304025485310695,
+    "margin_p10": 0.009299867701530452,
+    "margin_min": 0.001331998467445361,
+    "mean_abs_a_inf": 0.6111578707955778,
+    "p90_abs_a_inf": 1.0,
+    "mean_d0": 0.1389757227152586,
+    "mean_c0": 0.2028546065464616,
+    "mean_d2": 0.12130402548531069,
+    "fwd_s": 0.42
+  },
+  {
+    "policy": "ds_r2",
+    "n": 400,
+    "l2_safe_rate": 1.0,
+    "n_fail": 0,
+    "fail_rate": 0.0,
+    "margin_mean": 0.021863759400434786,
+    "margin_p10": 0.00907134256660938,
+    "margin_min": 0.001331998467445361,
+    "mean_abs_a_inf": 0.548965213559568,
+    "p90_abs_a_inf": 1.0,
+    "mean_d0": 0.1389757227152586,
+    "mean_c0": 0.2028546065464616,
+    "mean_d2": 0.1218637594004348,
+    "fwd_s": 0.76
+  },
+  {
+    "policy": "gcbfplus",
+    "n": 400,
+    "l2_safe_rate": 0.9975,
+    "n_fail": 1,
+    "fail_rate": 0.0025,
+    "margin_mean": 0.02198301174579188,
+    "margin_p10": 0.01038123857080936,
+    "margin_min": -0.002351992011070253,
+    "mean_abs_a_inf": 0.5357149529643357,
+    "p90_abs_a_inf": 0.9143327653408051,
+    "mean_d0": 0.1389757227152586,
+    "mean_c0": 0.2028546065464616,
+    "mean_d2": 0.12198301174579189,
+    "fwd_s": 0.64
+  },
+  {
+    "policy": "informarl",
+    "n": 400,
+    "l2_safe_rate": 1.0,
+    "n_fail": 0,
+    "fail_rate": 0.0,
+    "margin_mean": 0.022245748470379034,
+    "margin_p10": 0.010279411435127258,
+    "margin_min": 0.00207100123167038,
+    "mean_abs_a_inf": 0.5065219835657626,
+    "p90_abs_a_inf": 0.8489681899547578,
+    "mean_d0": 0.1389757227152586,
+    "mean_c0": 0.2028546065464616,
+    "mean_d2": 0.12224574847037903,
+    "fwd_s": 0.67
+  }
+]
+wrote runs/compare_baselines/midF_env_sample/REPORT.md

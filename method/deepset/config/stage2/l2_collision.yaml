@@ -1,0 +1,37 @@
+# Stage2 L2: two-step collision verification on preventable set D.
+
+status: implemented_sampling_ibp_marabou
+property: l2_two_step_collision_on_D
+student_checkpoint: method/deepset/output/stage1/frozen/deepset_actor512_stage1_baseline.pkl
+
+env: DoubleIntegrator
+horizon_euler_steps: 2
+claim_set: preventable_D
+
+# Outer search envelopes (axis-aligned); claim filter is nonlinear D
+v_abs: 0.5
+dv_abs: 1.0
+dist_abs: 0.20
+
+buckets:
+  - l2_aa_near_smoke
+  - l2_aa_near
+  - l2_ao_near_smoke
+  - l2_ao_near
+  - l2_11_near
+
+timeout_s: 30
+samples_per_bucket: 4000
+report: method/deepset/output/stage2/l2_collision_report.json
+onnx_dir: method/deepset/output/stage2/onnx
+
+assumptions:
+  l2_aa: neighbor acceleration = 0 (coast)
+  l2_ao: lidar hit static; hit-ball radius = car_radius (not full rectangle)
+  marabou_proxy: inscribed square on outer box (SAT ⇒ real crash under assumptions)
+  clip: encoded as -1 + ReLU(a+1) - ReLU(a-1) in ONNX
+
+scope_note: >
+  Does not cover k>=2, m>=2, full rectangle obstacles, arbitrary neighbor
+  policies, closed-loop second action, or infinite-horizon safety.
+  Feedback training lives in Stage3 (method/deepset/config/stage3/).

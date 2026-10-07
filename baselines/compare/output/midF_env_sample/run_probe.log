@@ -1,0 +1,94 @@
+[collect] midF band d0∈[0.125,0.4] c0∈[0.0,0.3] target_agents=500 episodes≤80
+  epi=1 graphs=105 agents_in_band=266/500 wall=6.7s
+[collect] saved runs/compare_baselines/midF_env_sample/env_pack.pkl graphs=209 in_band=501 wall=12.33s
+[build] coast_a0 …
+  [coast_a0] scored 50/209 graphs
+  [coast_a0] scored 100/209 graphs
+  [coast_a0] scored 150/209 graphs
+  [coast_a0] scored 200/209 graphs
+[score] coast_a0: n=501 L2-safe=100.00% fail=0 margin_mean=0.2060 ‖a‖∞=0.000 wall=0.01s
+[build] mf_base …
+  [mf_base] scored 50/209 graphs
+  [mf_base] scored 100/209 graphs
+  [mf_base] scored 150/209 graphs
+  [mf_base] scored 200/209 graphs
+[score] mf_base: n=501 L2-safe=100.00% fail=0 margin_mean=0.2048 ‖a‖∞=0.137 wall=0.45s
+[build] mf_r2 …
+  [mf_r2] scored 50/209 graphs
+  [mf_r2] scored 100/209 graphs
+  [mf_r2] scored 150/209 graphs
+  [mf_r2] scored 200/209 graphs
+[score] mf_r2: n=501 L2-safe=100.00% fail=0 margin_mean=0.2046 ‖a‖∞=0.159 wall=0.39s
+[build] mappo_lag …
+  [mappo_lag] scored 50/209 graphs
+  [mappo_lag] scored 100/209 graphs
+  [mappo_lag] scored 150/209 graphs
+  [mappo_lag] scored 200/209 graphs
+[score] mappo_lag: n=501 L2-safe=100.00% fail=0 margin_mean=0.2030 ‖a‖∞=0.335 wall=0.34s
+[
+  {
+    "policy": "coast_a0",
+    "n": 501,
+    "l2_safe_rate": 1.0,
+    "n_fail": 0,
+    "fail_rate": 0.0,
+    "margin_mean": 0.20602677746127152,
+    "margin_p10": 0.1017724674940109,
+    "margin_min": 0.019262666404247272,
+    "mean_abs_a_inf": 0.0,
+    "p90_abs_a_inf": 0.0,
+    "mean_d0": 0.3090566939520027,
+    "mean_c0": 0.050498608178852274,
+    "mean_d2": 0.30602677746127155,
+    "fwd_s": 0.01
+  },
+  {
+    "policy": "mf_base",
+    "n": 501,
+    "l2_safe_rate": 1.0,
+    "n_fail": 0,
+    "fail_rate": 0.0,
+    "margin_mean": 0.20478991333755403,
+    "margin_p10": 0.0989078595638275,
+    "margin_min": 0.0186847142651677,
+    "mean_abs_a_inf": 0.13742934707972776,
+    "p90_abs_a_inf": 0.4290696680545807,
+    "mean_d0": 0.3090566939520027,
+    "mean_c0": 0.050498608178852274,
+    "mean_d2": 0.304789913337554,
+    "fwd_s": 0.45
+  },
+  {
+    "policy": "mf_r2",
+    "n": 501,
+    "l2_safe_rate": 1.0,
+    "n_fail": 0,
+    "fail_rate": 0.0,
+    "margin_mean": 0.20459971299566923,
+    "margin_p10": 0.0976657499447465,
+    "margin_min": 0.014478161811828594,
+    "mean_abs_a_inf": 0.15856271840025718,
+    "p90_abs_a_inf": 0.44022712111473083,
+    "mean_d0": 0.3090566939520027,
+    "mean_c0": 0.050498608178852274,
+    "mean_d2": 0.30459971299566924,
+    "fwd_s": 0.39
+  },
+  {
+    "policy": "mappo_lag",
+    "n": 501,
+    "l2_safe_rate": 1.0,
+    "n_fail": 0,
+    "fail_rate": 0.0,
+    "margin_mean": 0.20301362639607326,
+    "margin_p10": 0.0977156118750572,
+    "margin_min": 0.012707061111927015,
+    "mean_abs_a_inf": 0.33479456279980774,
+    "p90_abs_a_inf": 0.7052678465843201,
+    "mean_d0": 0.3090566939520027,
+    "mean_c0": 0.050498608178852274,
+    "mean_d2": 0.30301362639607327,
+    "fwd_s": 0.34
+  }
+]
+wrote runs/compare_baselines/midF_env_sample/REPORT.md

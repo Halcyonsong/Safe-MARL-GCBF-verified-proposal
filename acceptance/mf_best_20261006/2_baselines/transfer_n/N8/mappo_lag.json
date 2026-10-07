@@ -1,0 +1,12 @@
+{
+  "success_rate": 0.684,
+  "safe_rate": 0.906,
+  "finish_rate": 0.727,
+  "cost": 1.383,
+  "source": "BASELINE_COMPARE @32",
+  "policy_id": "mappo_lag",
+  "num_agents": 8,
+  "episodes": 32,
+  "eval_seed": 1234,
+  "note": "train-protocol reference (not re-run)"
+}

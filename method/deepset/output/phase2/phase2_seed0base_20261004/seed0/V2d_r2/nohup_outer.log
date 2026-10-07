@@ -1,0 +1,124 @@
+[cegar-r2] parent=runs/phase2/phase2_seed0base_20261004/seed0/V2d
+[cegar-r2] residual_best=runs/phase2/phase2_seed0base_20261004/seed0/V2d/repair_best.pkl
+[cegar-r2] base=runs/stage1/redistill/stage1_redistill_20261004_183322/seed0/deepset_actor512_student_best.pkl
+[cegar-r2] out=runs/phase2/phase2_seed0base_cegar_r2_20261004/seed0/V2d_r2
+[cegar-r2] Day0 verify residual on D (samples=4000) ...
+/home/xiang/miniconda3/envs/safe_marl_verify/lib/python3.11/site-packages/maraboupy/Marabou.py:27: UserWarning: Tensorflow parser is unavailable because tensorflow package is not installed
+  warnings.warn("Tensorflow parser is unavailable because tensorflow package is not installed")
+[verify-residual] ckpt=runs/phase2/phase2_seed0base_20261004/seed0/V2d/repair_best.pkl
+  base=runs/stage1/redistill/stage1_redistill_20261004_183322/seed0/deepset_actor512_student_best.pkl gate_mode=hybrid
+  samples/bucket=4000 seed=0
+  claim: two-step collision on preventable-D (AA coast / AO static). Sampling diagnosis only — not Marabou proven.
+
+=== l2_aa_near k=1 m=0 ===
+  [violated] hits=736/4000 rate=18.40% min_dist=0.08968620768184521 gate=0.652 (128.975s)
+
+=== l2_ao_near k=0 m=1 ===
+  [violated] hits=1259/4000 rate=31.47% min_dist=0.033620846512532644 gate=0.680 (178.303s)
+
+=== l2_11_near k=1 m=1 ===
+  [violated] hits=1150/4000 rate=28.75% min_dist=0.029528351662381335 gate=0.369 (142.549s)
+
+==== SUMMARY verdict_counts={'violated': 3} ====
+wrote runs/phase2/phase2_seed0base_cegar_r2_20261004/seed0/V2d_r2/verify_r1_residual_sampling.json
+[cegar-r2] Day0 violated_buckets=3 → collect residual CE ...
+/home/xiang/miniconda3/envs/safe_marl_verify/lib/python3.11/site-packages/maraboupy/Marabou.py:27: UserWarning: Tensorflow parser is unavailable because tensorflow package is not installed
+  warnings.warn("Tensorflow parser is unavailable because tensorflow package is not installed")
+collecting residual CE l2_aa_near draws<=80000 keep=1536 ...
+  in_D=4227/80000 hits=765 rate_on_D=18.10% kept=765 mean_Δa=0.4206
+collecting residual CE l2_ao_near draws<=80000 keep=1536 ...
+  in_D=2340/80000 hits=775 rate_on_D=33.12% kept=775 mean_Δa=0.5856
+collecting residual CE l2_11_near draws<=80000 keep=1536 ...
+  in_D=5321/76055 hits=1536 rate_on_D=28.87% kept=1536 mean_Δa=0.5842
+wrote runs/phase2/phase2_seed0base_cegar_r2_20261004/seed0/V2d_r2/ce_r2.json
+[cegar-r2] Day1 residual repair steps=600 warm-start from r1 best ...
+/home/xiang/miniconda3/envs/safe_marl_verify/lib/python3.11/site-packages/maraboupy/Marabou.py:27: UserWarning: Tensorflow parser is unavailable because tensorflow package is not installed
+  warnings.warn("Tensorflow parser is unavailable because tensorflow package is not installed")
+[residual] loaded 3075 CEs (skipped 1); modes=['min_intervention']; mean_Δa=0.5436064422833476; counts={'aa': 765, 'ao': 775, 'dual': 1535, 'other': 0}
+[residual] warm-start gate/correction from runs/phase2/phase2_seed0base_20261004/seed0/V2d/repair_best.pkl
+[residual] base=runs/stage1/redistill/stage1_redistill_20261004_183322/seed0/deepset_actor512_student_best.pkl gate_mode=hybrid corr_h=128 gate_h=64 normals=16384 ce=3075 ce_weight=2.5 ao×=1.75 dual×=2.0
+[residual] hit-rate on D BEFORE (random init corr): {"l2_aa_near": {"n_eval_on_D": 400, "n_draw": 7556, "n_hit": 65, "hit_rate_on_D": 0.1625, "min_distn": 0.08998362607041308, "mean_gate_on_D": 0.6506993778795004}, "l2_ao_near": {"n_eval_on_D": 400, "n_draw": 13720, "n_hit": 146, "hit_rate_on_D": 0.365, "min_distn": 0.033919310469395954, "mean_gate_on_D": 0.6695932326093316}, "l2_11_near": {"n_eval_on_D": 400, "n_draw": 5510, "n_hit": 115, "hit_rate_on_D": 0.2875, "min_distn": 0.03534083842484235, "mean_gate_on_D": 0.37217408664524554}}
+[residual] hit-rate on D BASE only: {"l2_aa_near": {"n_eval_on_D": 2000, "n_draw": 37910, "n_hit": 719, "hit_rate_on_D": 0.3595, "min_distn": 0.08268143313033612}, "l2_ao_near": {"n_eval_on_D": 2000, "n_draw": 66480, "n_hit": 860, "hit_rate_on_D": 0.43, "min_distn": 0.031199258682382266}, "l2_11_near": {"n_eval_on_D": 2000, "n_draw": 29263, "n_hit": 782, "hit_rate_on_D": 0.391, "min_distn": 0.031112234651839592}}
+step=0001 loss=0.266990 mse=0.265636 g_ce=0.535 g_n=0.022 |δ|=1.0514 elapsed=148.6s
+[eval] step=0050 safe=92.19% finish=95.31% success=87.50% mean_D_hit=23.42% D_hits[l2_aa_near=14.12% l2_ao_near=30.00% l2_11_near=26.12%]
+[residual] best=runs/phase2/phase2_seed0base_cegar_r2_20261004/seed0/V2d_r2/repair_r2_best.pkl mean_D_hit=23.42% success=87.50%
+step=0060 loss=0.225621 mse=0.223723 g_ce=0.555 g_n=0.022 |δ|=1.3008 elapsed=251.2s
+[eval] step=0100 safe=90.62% finish=96.88% success=87.50% mean_D_hit=23.17% D_hits[l2_aa_near=13.75% l2_ao_near=29.75% l2_11_near=26.00%]
+[residual] rejected by success/safe/AA/AO selection floors
+step=0120 loss=0.225794 mse=0.224383 g_ce=0.538 g_n=0.021 |δ|=1.1077 elapsed=357.5s
+[eval] step=0150 safe=90.62% finish=96.88% success=87.50% mean_D_hit=22.96% D_hits[l2_aa_near=13.50% l2_ao_near=29.62% l2_11_near=25.75%]
+[residual] rejected by success/safe/AA/AO selection floors
+step=0180 loss=0.248694 mse=0.247146 g_ce=0.551 g_n=0.022 |δ|=1.1454 elapsed=460.1s
+[eval] step=0200 safe=90.62% finish=95.31% success=85.94% mean_D_hit=22.58% D_hits[l2_aa_near=13.75% l2_ao_near=29.12% l2_11_near=24.88%]
+[residual] rejected by success/safe/AA/AO selection floors
+step=0240 loss=0.219877 mse=0.217888 g_ce=0.547 g_n=0.011 |δ|=1.2448 elapsed=565.8s
+[eval] step=0250 safe=92.19% finish=96.88% success=89.06% mean_D_hit=21.79% D_hits[l2_aa_near=12.38% l2_ao_near=28.12% l2_11_near=24.88%]
+[residual] best=runs/phase2/phase2_seed0base_cegar_r2_20261004/seed0/V2d_r2/repair_r2_best.pkl mean_D_hit=21.79% success=89.06%
+step=0300 loss=0.221782 mse=0.219459 g_ce=0.548 g_n=0.010 |δ|=1.3176 elapsed=670.4s
+[eval] step=0300 safe=92.19% finish=98.44% success=90.62% mean_D_hit=21.67% D_hits[l2_aa_near=12.25% l2_ao_near=28.12% l2_11_near=24.62%]
+[residual] best=runs/phase2/phase2_seed0base_cegar_r2_20261004/seed0/V2d_r2/repair_r2_best.pkl mean_D_hit=21.67% success=90.62%
+[eval] step=0350 safe=92.19% finish=98.44% success=90.62% mean_D_hit=21.25% D_hits[l2_aa_near=12.00% l2_ao_near=27.25% l2_11_near=24.50%]
+[residual] best=runs/phase2/phase2_seed0base_cegar_r2_20261004/seed0/V2d_r2/repair_r2_best.pkl mean_D_hit=21.25% success=90.62%
+step=0360 loss=0.196178 mse=0.194355 g_ce=0.515 g_n=0.013 |δ|=1.1522 elapsed=874.0s
+[eval] step=0400 safe=92.19% finish=98.44% success=90.62% mean_D_hit=20.79% D_hits[l2_aa_near=12.00% l2_ao_near=26.62% l2_11_near=23.75%]
+[residual] best=runs/phase2/phase2_seed0base_cegar_r2_20261004/seed0/V2d_r2/repair_r2_best.pkl mean_D_hit=20.79% success=90.62%
+step=0420 loss=0.224768 mse=0.222933 g_ce=0.531 g_n=0.006 |δ|=1.2016 elapsed=979.8s
+[eval] step=0450 safe=92.19% finish=96.88% success=89.06% mean_D_hit=20.33% D_hits[l2_aa_near=10.50% l2_ao_near=26.75% l2_11_near=23.75%]
+[residual] best=runs/phase2/phase2_seed0base_cegar_r2_20261004/seed0/V2d_r2/repair_r2_best.pkl mean_D_hit=20.33% success=89.06%
+step=0480 loss=0.204141 mse=0.202147 g_ce=0.533 g_n=0.006 |δ|=1.2788 elapsed=1081.9s
+[eval] step=0500 safe=92.19% finish=98.44% success=90.62% mean_D_hit=19.75% D_hits[l2_aa_near=10.25% l2_ao_near=25.37% l2_11_near=23.62%]
+[residual] best=runs/phase2/phase2_seed0base_cegar_r2_20261004/seed0/V2d_r2/repair_r2_best.pkl mean_D_hit=19.75% success=90.62%
+step=0540 loss=0.205040 mse=0.201854 g_ce=0.529 g_n=0.006 |δ|=1.4720 elapsed=1186.1s
+[eval] step=0550 safe=92.19% finish=98.44% success=90.62% mean_D_hit=20.00% D_hits[l2_aa_near=10.38% l2_ao_near=25.87% l2_11_near=23.75%]
+step=0600 loss=0.207463 mse=0.204032 g_ce=0.538 g_n=0.008 |δ|=1.5696 elapsed=1290.4s
+[eval] step=0600 safe=92.19% finish=98.44% success=90.62% mean_D_hit=19.96% D_hits[l2_aa_near=10.25% l2_ao_near=25.75% l2_11_near=23.88%]
+[residual] hit-rate on D AFTER (last): {"l2_aa_near": {"n_eval_on_D": 2000, "n_draw": 37910, "n_hit": 214, "hit_rate_on_D": 0.107, "min_distn": 0.09221688993641267, "mean_gate_on_D": 0.6463597362339497}, "l2_ao_near": {"n_eval_on_D": 2000, "n_draw": 66480, "n_hit": 524, "hit_rate_on_D": 0.262, "min_distn": 0.03665999875750459, "mean_gate_on_D": 0.6741460653319955}, "l2_11_near": {"n_eval_on_D": 2000, "n_draw": 29263, "n_hit": 484, "hit_rate_on_D": 0.242, "min_distn": 0.03276375757895551, "mean_gate_on_D": 0.3935283193513751}}
+[residual] hit-rate on D AFTER (best): {"l2_aa_near": {"n_eval_on_D": 2000, "n_draw": 37910, "n_hit": 218, "hit_rate_on_D": 0.109, "min_distn": 0.09207106302991486, "mean_gate_on_D": 0.6306930981427431}, "l2_ao_near": {"n_eval_on_D": 2000, "n_draw": 66480, "n_hit": 520, "hit_rate_on_D": 0.26, "min_distn": 0.03607122915812096, "mean_gate_on_D": 0.6738765371255576}, "l2_11_near": {"n_eval_on_D": 2000, "n_draw": 29263, "n_hit": 470, "hit_rate_on_D": 0.235, "min_distn": 0.03292340263045519, "mean_gate_on_D": 0.4008581482730806}}
+[residual] summary runs/phase2/phase2_seed0base_cegar_r2_20261004/seed0/V2d_r2/repair_r2.json
+[residual] eval_csv runs/phase2/phase2_seed0base_cegar_r2_20261004/seed0/V2d_r2/repair_r2.csv
+[cegar-r2] Day2 verify r2 ...
+/home/xiang/miniconda3/envs/safe_marl_verify/lib/python3.11/site-packages/maraboupy/Marabou.py:27: UserWarning: Tensorflow parser is unavailable because tensorflow package is not installed
+  warnings.warn("Tensorflow parser is unavailable because tensorflow package is not installed")
+[verify-residual] ckpt=runs/phase2/phase2_seed0base_cegar_r2_20261004/seed0/V2d_r2/repair_r2_best.pkl
+  base=runs/stage1/redistill/stage1_redistill_20261004_183322/seed0/deepset_actor512_student_best.pkl gate_mode=hybrid
+  samples/bucket=4000 seed=0
+  claim: two-step collision on preventable-D (AA coast / AO static). Sampling diagnosis only — not Marabou proven.
+
+=== l2_aa_near k=1 m=0 ===
+  [violated] hits=418/4000 rate=10.45% min_dist=0.0906231986713531 gate=0.633 (126.433s)
+
+=== l2_ao_near k=0 m=1 ===
+  [violated] hits=984/4000 rate=24.60% min_dist=0.03559655797375161 gate=0.684 (170.397s)
+
+=== l2_11_near k=1 m=1 ===
+  [violated] hits=906/4000 rate=22.65% min_dist=0.02945269433863514 gate=0.399 (145.46s)
+
+==== SUMMARY verdict_counts={'violated': 3} ====
+wrote runs/phase2/phase2_seed0base_cegar_r2_20261004/seed0/V2d_r2/verify_r2_residual_sampling.json
+checkpoint=runs/phase2/phase2_seed0base_cegar_r2_20261004/seed0/V2d_r2/repair_r2_best.pkl architecture=deepset_residual_gate base=runs/stage1/redistill/stage1_redistill_20261004_183322/seed0/deepset_actor512_student_best.pkl gate_mode=hybrid episodes=32 reward=-12.929 cost=1.039 safe_rate=93.359% finish_rate=94.141% success_rate=87.891%
+NOTE: empirical rollout metrics are not formal safety verification.
+wrote runs/phase2/phase2_seed0base_cegar_r2_20261004/seed0/V2d_r2/validate_32epi.json
+/home/xiang/miniconda3/envs/safe_marl_verify/lib/python3.11/site-packages/maraboupy/Marabou.py:27: UserWarning: Tensorflow parser is unavailable because tensorflow package is not installed
+  warnings.warn("Tensorflow parser is unavailable because tensorflow package is not installed")
+=== residual v2 best on L2-D ===
+  l2_aa_near: in_D=2000/37910 hits=218 rate=10.90% min_dist=0.09207106302991486 (63.88s)
+  l2_ao_near: in_D=2000/68748 hits=498 rate=24.90% min_dist=0.03770828857468185 (87.82s)
+  l2_11_near: in_D=2000/28200 hits=441 rate=22.05% min_dist=0.03379425498328639 (72.59s)
+
+=== summary hit_rate_on_D (%) ===
+policy                       aa_near       ao_near       11_near
+residual_v2_best              10.90%        24.90%        22.05%
+
+wrote runs/phase2/phase2_seed0base_cegar_r2_20261004/seed0/V2d_r2/d_hit_seed123.json
+[cegar-r2] done → runs/phase2/phase2_seed0base_cegar_r2_20261004/seed0/V2d_r2/MANIFEST.json
+=== CEGAR R2 SUMMARY ===
+verify_r1_residual_sampling.json {'violated': 3}
+  l2_aa_near: violated hit=18.40%
+  l2_ao_near: violated hit=31.47%
+  l2_11_near: violated hit=28.75%
+verify_r2_residual_sampling.json {'violated': 3}
+  l2_aa_near: violated hit=10.45%
+  l2_ao_near: violated hit=24.60%
+  l2_11_near: violated hit=22.65%
+checkpoint=runs/phase2/phase2_seed0base_cegar_r2_20261004/seed0/V2d_r2/repair_r2_best.pkl architecture=deepset_residual_gate base=runs/stage1/redistill/stage1_redistill_20261004_183322/seed0/deepset_actor512_student_best.pkl gate_mode=hybrid episodes=32 reward=-12.929 cost=1.039 safe_rate=93.359% finish_rate=94.141% success_rate=87.891%
+D-hit residual_v2_best {'l2_aa_near': 0.109, 'l2_ao_near': 0.249, 'l2_11_near': 0.2205}

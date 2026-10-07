@@ -1,0 +1,189 @@
+=== Transfer N-agents · epi=32 seed=1234 ===
+MF=acceptance_meanfield_r2/01_models/residual_r2/repair_best.pkl
+DS=runs/phase2/phase2_seed0base_20261004/seed0/V2d_r2/repair_r2_best.pkl
+GCBF+=logs/DoubleIntegrator/gcbf+/seed0_20261001232611
+MAPPO=/home/xiang/workspace/python-project/Safe-MARL-GCBF-verified-proposal/runs/baseline/mappo_lag/seed0_train/best.pkl
+Infor=/home/xiang/workspace/python-project/Safe-MARL-GCBF-verified-proposal/runs/baseline/informarl/seed0_train/best.pkl
+
+######## N=16 ########
+[MF-r2]
+MF-r2 N=16 suc=72.9% safe=94.3% fin=75.6% cost=0.727
+wrote runs/compare_baselines/transfer_n/N16/mf_r2.json
+[DS-r2]
+checkpoint=runs/phase2/phase2_seed0base_20261004/seed0/V2d_r2/repair_r2_best.pkl architecture=deepset_residual_gate base=runs/stage1/redistill/stage1_redistill_20261004_183322/seed0/deepset_actor512_student_best.pkl gate_mode=hybrid episodes=32 reward=-23.124 cost=1.037 safe_rate=92.383% finish_rate=89.062% success_rate=82.812%
+NOTE: empirical rollout metrics are not formal safety verification.
+wrote runs/compare_baselines/transfer_n/N16/ds_r2.json
+[GCBF+]
+GCBF+ N=16 suc=88.7% safe=96.1% fin=91.8% cost=0.453
+[HandCBF]
+2026-10-06 14:32:06.791 | DEBUG    | jaxproxqp.settings:default:62 - Using default settings for float32
+> Running test.py Namespace(num_agents=16, obs=4, area_size=4.0, max_step=None, path=None, n_rays=32, alpha=1.0, max_travel=None, cbf=None, seed=1234, debug=False, cpu=False, u_ref=False, env='DoubleIntegrator', algo='dec_share_cbf', step=None, epi=32, offset=0, no_video=True, nojit_rollout=False, log=True, dpi=100)
+jit rollout!
+epi: 0, reward: -24.581, cost: 0.000, safe rate: 100.000%,finish rate: 81.250%, success rate: 81.250%
+epi: 1, reward: -55.590, cost: 0.000, safe rate: 100.000%,finish rate: 62.500%, success rate: 62.500%
+epi: 2, reward: -16.312, cost: 0.000, safe rate: 100.000%,finish rate: 100.000%, success rate: 100.000%
+epi: 3, reward: -53.587, cost: 0.000, safe rate: 100.000%,finish rate: 62.500%, success rate: 62.500%
+epi: 4, reward: -42.007, cost: 0.000, safe rate: 100.000%,finish rate: 87.500%, success rate: 87.500%
+epi: 5, reward: -49.262, cost: 0.000, safe rate: 100.000%,finish rate: 68.750%, success rate: 68.750%
+epi: 6, reward: -35.354, cost: 0.000, safe rate: 100.000%,finish rate: 87.500%, success rate: 87.500%
+epi: 7, reward: -29.047, cost: 0.000, safe rate: 100.000%,finish rate: 93.750%, success rate: 93.750%
+epi: 8, reward: -30.396, cost: 0.000, safe rate: 100.000%,finish rate: 81.250%, success rate: 81.250%
+epi: 9, reward: -42.246, cost: 0.000, safe rate: 100.000%,finish rate: 75.000%, success rate: 75.000%
+epi: 10, reward: -39.725, cost: 0.000, safe rate: 100.000%,finish rate: 68.750%, success rate: 68.750%
+epi: 11, reward: -30.459, cost: 0.000, safe rate: 100.000%,finish rate: 93.750%, success rate: 93.750%
+epi: 12, reward: -34.019, cost: 0.000, safe rate: 100.000%,finish rate: 75.000%, success rate: 75.000%
+epi: 13, reward: -44.688, cost: 0.000, safe rate: 100.000%,finish rate: 68.750%, success rate: 68.750%
+epi: 14, reward: -33.132, cost: 0.000, safe rate: 100.000%,finish rate: 75.000%, success rate: 75.000%
+epi: 15, reward: -40.672, cost: 0.000, safe rate: 100.000%,finish rate: 68.750%, success rate: 68.750%
+epi: 16, reward: -44.144, cost: 0.000, safe rate: 100.000%,finish rate: 75.000%, success rate: 75.000%
+epi: 17, reward: -33.875, cost: 0.000, safe rate: 100.000%,finish rate: 75.000%, success rate: 75.000%
+epi: 18, reward: -40.008, cost: 0.000, safe rate: 100.000%,finish rate: 81.250%, success rate: 81.250%
+epi: 19, reward: -44.722, cost: 0.000, safe rate: 100.000%,finish rate: 81.250%, success rate: 81.250%
+epi: 20, reward: -19.466, cost: 0.000, safe rate: 100.000%,finish rate: 93.750%, success rate: 93.750%
+epi: 21, reward: -37.195, cost: 0.000, safe rate: 100.000%,finish rate: 68.750%, success rate: 68.750%
+epi: 22, reward: -30.007, cost: 0.000, safe rate: 100.000%,finish rate: 75.000%, success rate: 75.000%
+epi: 23, reward: -33.460, cost: 0.000, safe rate: 100.000%,finish rate: 81.250%, success rate: 81.250%
+epi: 24, reward: -60.383, cost: 0.000, safe rate: 100.000%,finish rate: 50.000%, success rate: 50.000%
+epi: 25, reward: -38.787, cost: 0.000, safe rate: 100.000%,finish rate: 81.250%, success rate: 81.250%
+epi: 26, reward: -28.700, cost: 0.000, safe rate: 100.000%,finish rate: 87.500%, success rate: 87.500%
+epi: 27, reward: -35.868, cost: 0.000, safe rate: 100.000%,finish rate: 68.750%, success rate: 68.750%
+epi: 28, reward: -63.670, cost: 0.000, safe rate: 100.000%,finish rate: 62.500%, success rate: 62.500%
+epi: 29, reward: -54.925, cost: 0.000, safe rate: 100.000%,finish rate: 56.250%, success rate: 56.250%
+epi: 30, reward: -30.475, cost: 0.000, safe rate: 100.000%,finish rate: 81.250%, success rate: 81.250%
+epi: 31, reward: -35.036, cost: 0.000, safe rate: 100.000%,finish rate: 81.250%, success rate: 81.250%
+reward: -38.494, min/max reward: -63.670/-16.312, cost: 0.000, min/max cost: 0.000/0.000, safe_rate: 100.000%, finish_rate: 76.562%, success_rate: 76.562%
+{
+  "success_rate": 0.76562,
+  "safe_rate": 1.0,
+  "finish_rate": 0.76562,
+  "cost": 0.0,
+  "reward": -38.494,
+  "wall_time_s": 88.365
+}
+wrote runs/compare_baselines/transfer_n/N16/handcbf.json
+[MAPPO-Lag]
+{
+  "success_rate": 0.574219,
+  "safe_rate": 0.783203,
+  "finish_rate": 0.697266,
+  "cost": 3.59765625,
+  "reward": -29.963471353054047,
+  "wall_time_s": 5.214,
+  "train_step": 350,
+  "lambda": 3.419375000000002
+}
+wrote runs/compare_baselines/transfer_n/N16/mappo_lag.json
+[InforMARL]
+{
+  "success_rate": 0.447266,
+  "safe_rate": 0.458984,
+  "finish_rate": 0.957031,
+  "cost": 8.962890625,
+  "reward": -2.424343980848789,
+  "wall_time_s": 9.505,
+  "train_step": 350,
+  "cost_weight": 1.0
+}
+wrote runs/compare_baselines/transfer_n/N16/informarl.json
+
+######## N=32 ########
+[MF-r2]
+MF-r2 N=32 suc=48.4% safe=90.7% fin=50.8% cost=1.230
+wrote runs/compare_baselines/transfer_n/N32/mf_r2.json
+[DS-r2]
+checkpoint=runs/phase2/phase2_seed0base_20261004/seed0/V2d_r2/repair_r2_best.pkl architecture=deepset_residual_gate base=runs/stage1/redistill/stage1_redistill_20261004_183322/seed0/deepset_actor512_student_best.pkl gate_mode=hybrid episodes=32 reward=-41.549 cost=1.835 safe_rate=89.453% finish_rate=80.664% success_rate=73.926%
+NOTE: empirical rollout metrics are not formal safety verification.
+wrote runs/compare_baselines/transfer_n/N32/ds_r2.json
+[GCBF+]
+GCBF+ N=32 suc=81.9% safe=93.8% fin=86.4% cost=0.874
+[HandCBF]
+2026-10-06 14:34:43.745 | DEBUG    | jaxproxqp.settings:default:62 - Using default settings for float32
+> Running test.py Namespace(num_agents=32, obs=4, area_size=4.0, max_step=None, path=None, n_rays=32, alpha=1.0, max_travel=None, cbf=None, seed=1234, debug=False, cpu=False, u_ref=False, env='DoubleIntegrator', algo='dec_share_cbf', step=None, epi=32, offset=0, no_video=True, nojit_rollout=False, log=True, dpi=100)
+jit rollout!
+epi: 0, reward: -51.399, cost: 0.000, safe rate: 100.000%,finish rate: 75.000%, success rate: 75.000%
+epi: 1, reward: -50.262, cost: 0.000, safe rate: 100.000%,finish rate: 71.875%, success rate: 71.875%
+epi: 2, reward: -53.883, cost: 0.000, safe rate: 100.000%,finish rate: 71.875%, success rate: 71.875%
+epi: 3, reward: -51.316, cost: 2.312, safe rate: 93.750%,finish rate: 65.625%, success rate: 59.375%
+epi: 4, reward: -43.010, cost: 0.000, safe rate: 100.000%,finish rate: 71.875%, success rate: 71.875%
+epi: 5, reward: -61.478, cost: 0.000, safe rate: 100.000%,finish rate: 53.125%, success rate: 53.125%
+epi: 6, reward: -71.424, cost: 5.688, safe rate: 93.750%,finish rate: 50.000%, success rate: 50.000%
+epi: 7, reward: -49.820, cost: 0.000, safe rate: 100.000%,finish rate: 68.750%, success rate: 68.750%
+epi: 8, reward: -52.417, cost: 0.688, safe rate: 93.750%,finish rate: 62.500%, success rate: 59.375%
+epi: 9, reward: -52.052, cost: 0.000, safe rate: 100.000%,finish rate: 68.750%, success rate: 68.750%
+epi: 10, reward: -54.827, cost: 0.312, safe rate: 93.750%,finish rate: 59.375%, success rate: 56.250%
+epi: 11, reward: -51.230, cost: 0.000, safe rate: 100.000%,finish rate: 68.750%, success rate: 68.750%
+epi: 12, reward: -50.319, cost: 1.031, safe rate: 93.750%,finish rate: 59.375%, success rate: 56.250%
+epi: 13, reward: -44.618, cost: 0.000, safe rate: 100.000%,finish rate: 71.875%, success rate: 71.875%
+epi: 14, reward: -54.104, cost: 2.062, safe rate: 93.750%,finish rate: 56.250%, success rate: 53.125%
+epi: 15, reward: -54.904, cost: 0.000, safe rate: 100.000%,finish rate: 75.000%, success rate: 75.000%
+epi: 16, reward: -62.149, cost: 0.000, safe rate: 100.000%,finish rate: 62.500%, success rate: 62.500%
+epi: 17, reward: -59.622, cost: 0.875, safe rate: 93.750%,finish rate: 56.250%, success rate: 53.125%
+epi: 18, reward: -51.580, cost: 0.000, safe rate: 100.000%,finish rate: 68.750%, success rate: 68.750%
+epi: 19, reward: -54.550, cost: 0.000, safe rate: 100.000%,finish rate: 75.000%, success rate: 75.000%
+epi: 20, reward: -39.891, cost: 0.000, safe rate: 100.000%,finish rate: 78.125%, success rate: 78.125%
+epi: 21, reward: -65.411, cost: 2.125, safe rate: 78.125%,finish rate: 56.250%, success rate: 46.875%
+epi: 22, reward: -58.801, cost: 1.312, safe rate: 84.375%,finish rate: 56.250%, success rate: 56.250%
+epi: 23, reward: -46.014, cost: 0.000, safe rate: 100.000%,finish rate: 68.750%, success rate: 68.750%
+epi: 24, reward: -52.430, cost: 0.000, safe rate: 100.000%,finish rate: 62.500%, success rate: 62.500%
+epi: 25, reward: -58.836, cost: 0.500, safe rate: 93.750%,finish rate: 62.500%, success rate: 56.250%
+epi: 26, reward: -48.808, cost: 0.000, safe rate: 100.000%,finish rate: 65.625%, success rate: 65.625%
+epi: 27, reward: -58.821, cost: 0.000, safe rate: 100.000%,finish rate: 56.250%, success rate: 56.250%
+epi: 28, reward: -53.329, cost: 0.000, safe rate: 100.000%,finish rate: 68.750%, success rate: 68.750%
+epi: 29, reward: -66.359, cost: 0.750, safe rate: 90.625%,finish rate: 43.750%, success rate: 43.750%
+epi: 30, reward: -41.794, cost: 0.000, safe rate: 100.000%,finish rate: 75.000%, success rate: 75.000%
+epi: 31, reward: -45.598, cost: 0.000, safe rate: 100.000%,finish rate: 68.750%, success rate: 68.750%
+reward: -53.470, min/max reward: -71.424/-39.891, cost: 0.552, min/max cost: 0.000/5.688, safe_rate: 96.973%, finish_rate: 64.844%, success_rate: 63.672%
+{
+  "success_rate": 0.63672,
+  "safe_rate": 0.96973,
+  "finish_rate": 0.64844,
+  "cost": 0.552,
+  "reward": -53.47,
+  "wall_time_s": 132.37
+}
+wrote runs/compare_baselines/transfer_n/N32/handcbf.json
+[MAPPO-Lag]
+{
+  "success_rate": 0.391602,
+  "safe_rate": 0.540039,
+  "finish_rate": 0.625,
+  "cost": 8.328125,
+  "reward": -46.19662082195282,
+  "wall_time_s": 6.8,
+  "train_step": 350,
+  "lambda": 3.419375000000002
+}
+wrote runs/compare_baselines/transfer_n/N32/mappo_lag.json
+[InforMARL]
+{
+  "success_rate": 0.25293,
+  "safe_rate": 0.253906,
+  "finish_rate": 0.960938,
+  "cost": 14.8720703125,
+  "reward": -2.562595162540674,
+  "wall_time_s": 13.238,
+  "train_step": 350,
+  "cost_weight": 1.0
+}
+wrote runs/compare_baselines/transfer_n/N32/informarl.json
+
+=== SUMMARY ===
+   N method          suc%   safe%    fin%     cost
+  16 mf_r2           72.9    94.3    75.6    0.727
+  16 ds_r2           82.8    92.4    89.1    1.037
+  16 gcbfplus        88.7    96.1    91.8    0.453
+  16 handcbf         76.6   100.0    76.6    0.000
+  16 mappo_lag       57.4    78.3    69.7    3.598
+  16 informarl       44.7    45.9    95.7    8.963
+  32 mf_r2           48.4    90.7    50.8    1.230
+  32 ds_r2           73.9    89.5    80.7    1.835
+  32 gcbfplus        81.9    93.8    86.4    0.874
+  32 handcbf         63.7    97.0    64.8    0.552
+  32 mappo_lag       39.2    54.0    62.5    8.328
+  32 informarl       25.3    25.4    96.1   14.872
+   8 mf_r2           82.0    96.5    84.0    0.305
+   8 ds_r2           87.9    93.4    94.1    1.039
+   8 gcbfplus        91.4    95.7    95.3    0.441
+   8 handcbf         84.8   100.0    84.8    0.000
+   8 mappo_lag       68.4    90.6    72.7    1.383
+   8 informarl       60.9    62.5    95.7    6.934

@@ -1,0 +1,9 @@
+/home/xiang/miniconda3/envs/safe_marl_verify/lib/python3.11/site-packages/maraboupy/Marabou.py:27: UserWarning: Tensorflow parser is unavailable because tensorflow package is not installed
+  warnings.warn("Tensorflow parser is unavailable because tensorflow package is not installed")
+collecting residual CE l2_aa_near draws<=80000 keep=1536 ...
+  in_D=4227/80000 hits=765 rate_on_D=18.10% kept=765 mean_Δa=0.4206
+collecting residual CE l2_ao_near draws<=80000 keep=1536 ...
+  in_D=2340/80000 hits=775 rate_on_D=33.12% kept=775 mean_Δa=0.5856
+collecting residual CE l2_11_near draws<=80000 keep=1536 ...
+  in_D=5321/76055 hits=1536 rate_on_D=28.87% kept=1536 mean_Δa=0.5842
+wrote runs/phase2/phase2_seed0base_cegar_r2_20261004/seed0/V2d_r2/ce_r2.json

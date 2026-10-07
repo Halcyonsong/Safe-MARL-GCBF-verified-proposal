@@ -1,0 +1,6 @@
+[mf-repair] FAST pipeline base=runs/meanfield/distill/mf_distill_20261005_v5/seed0/meanfield_mlp512_student_step9000.pkl
+Mon Oct  5 20:46:47 CST 2026
+=== CE collect 32epi stride=2 ===
+=== residual train 600 steps ===
+Mon Oct  5 21:01:20 CST 2026
+[mf-repair] ALL DONE

@@ -1,0 +1,9 @@
+[mf-verify] 44-D feature box + two-step L2 | ckpt=runs/meanfield/repair/mf_residual_v5_r2_20261005/seed0/repair_best.pkl mode=near_plus
+/home/xiang/miniconda3/envs/safe_marl_verify/lib/python3.11/site-packages/maraboupy/Marabou.py:27: UserWarning: Tensorflow parser is unavailable because tensorflow package is not installed
+  warnings.warn("Tensorflow parser is unavailable because tensorflow package is not installed")
+[mf-verify] ckpt=runs/meanfield/repair/mf_residual_v5_r2_20261005/seed0/repair_best.pkl
+[mf-verify] mode=near_plus claims=['mf_near_plus'] R=0.1 marabou_max_w=0.08 → runs/meanfield/verify/mf_feat44_near_plus_r2
+[mf-verify] === mf_near_plus (44-D feature box) ===
+[mf-verify] mf_near_plus: PROVEN_FULL proven=1 CE=0 unknown=0 marabou=0 splits=0 wall=0.002s
+[mf-verify] DONE aggregate=PROVEN_FULL ces=0 → runs/meanfield/verify/mf_feat44_near_plus_r2
+[mf-verify] DeepSet ACTIVE_* untouched

@@ -1,0 +1,47 @@
+# Stage3: counterexample-guided repair of frozen Stage1 DeepSet.
+
+status: implemented_l2_safe_and_joint
+init_from: method/deepset/output/stage1/frozen/deepset_actor512_stage1_baseline.pkl
+architecture: deepset
+hidden: 512
+
+env: DoubleIntegrator
+area_size: 4.0
+num_agents: 8
+obs: 4
+n_rays: 32
+rollout_length: 256
+seed: 0
+
+# CE collection
+ce_dir: method/deepset/output/stage3/ce
+ce_json: method/deepset/output/stage3/ce/l2_counterexamples.json
+buckets: [l2_aa_near, l2_ao_near]
+label_mode: min_intervention   # or max_clearance | hybrid
+# hybrid knobs (when label_mode=hybrid):
+# hybrid_lam: 0.5
+# hybrid_mu: 0.15
+# hybrid_near: 1.5   # too high ≈ max_clearance on CEs; try ~1.15 next
+tries_per_bucket: 100000
+keep_per_bucket: 2048
+
+# Repair
+checkpoint: method/deepset/output/stage3/repair/deepset_l2_safe_repair.pkl
+steps: 600
+ce_batch: 256
+normal_batch: 768
+ce_weight: 2.0
+normal_source: frozen          # frozen | teacher | mixed
+lr: 3.0e-5
+eval_every: 100
+eval_episodes: 8
+resample: 2000
+
+# Teacher (only if normal_source uses teacher/mixed)
+teacher_run: baselines/gcbfplus/log/gcbf+/seed0_20261001232611
+teacher_step: 1000
+
+# Empirical references (32-epi, seed=1234)
+frozen_success: 0.871
+r1_max_clearance_success: 0.711
+joint_min_intervention_success: 0.773

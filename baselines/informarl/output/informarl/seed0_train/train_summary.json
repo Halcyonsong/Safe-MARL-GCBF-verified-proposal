@@ -1,0 +1,89 @@
+{
+  "out_dir": "baselines/informarl/output/informarl/seed0_train",
+  "steps": 400,
+  "wall_time_s": 567.6,
+  "best": {
+    "reward": -2.201677832752466,
+    "cost": 7.5546875,
+    "safe_rate": 0.6171875,
+    "finish_rate": 0.96875,
+    "success_rate": 0.609375,
+    "step": 350,
+    "train_team_cost": 2.46875
+  },
+  "history": [
+    {
+      "reward": -4.676479458808899,
+      "cost": 8.03125,
+      "safe_rate": 0.6015625,
+      "finish_rate": 0.9296875,
+      "success_rate": 0.59375,
+      "step": 50,
+      "train_team_cost": 4.03125
+    },
+    {
+      "reward": -2.1934934854507446,
+      "cost": 8.7734375,
+      "safe_rate": 0.5234375,
+      "finish_rate": 0.9609375,
+      "success_rate": 0.5078125,
+      "step": 100,
+      "train_team_cost": 4.671875
+    },
+    {
+      "reward": -3.075991839170456,
+      "cost": 7.21875,
+      "safe_rate": 0.5703125,
+      "finish_rate": 0.953125,
+      "success_rate": 0.5390625,
+      "step": 150,
+      "train_team_cost": 7.0625
+    },
+    {
+      "reward": -3.0536753237247467,
+      "cost": 6.9765625,
+      "safe_rate": 0.5234375,
+      "finish_rate": 0.9765625,
+      "success_rate": 0.515625,
+      "step": 200,
+      "train_team_cost": 3.75
+    },
+    {
+      "reward": -2.7137894481420517,
+      "cost": 8.2578125,
+      "safe_rate": 0.5,
+      "finish_rate": 0.96875,
+      "success_rate": 0.4921875,
+      "step": 250,
+      "train_team_cost": 8.28125
+    },
+    {
+      "reward": -2.6756877675652504,
+      "cost": 6.9453125,
+      "safe_rate": 0.609375,
+      "finish_rate": 0.96875,
+      "success_rate": 0.59375,
+      "step": 300,
+      "train_team_cost": 2.296875
+    },
+    {
+      "reward": -2.201677832752466,
+      "cost": 7.5546875,
+      "safe_rate": 0.6171875,
+      "finish_rate": 0.96875,
+      "success_rate": 0.609375,
+      "step": 350,
+      "train_team_cost": 2.46875
+    },
+    {
+      "reward": -1.9136625155806541,
+      "cost": 6.2890625,
+      "safe_rate": 0.6015625,
+      "finish_rate": 0.9609375,
+      "success_rate": 0.59375,
+      "step": 400,
+      "train_team_cost": 6.796875
+    }
+  ],
+  "cost_weight": 1.0
+}

@@ -1,0 +1,147 @@
+{
+  "claim": "Empirical two-step radial L2 on real env graphs whose (d0,c0) lie in the mid-F semantic band. NOT formal verification. Formal mid-F product-box probe on MF-r2 was VIOLATED (204 CEs).",
+  "band": {
+    "d0": [
+      0.125,
+      0.15
+    ],
+    "c0": [
+      0.12,
+      0.3
+    ],
+    "R": 0.1
+  },
+  "collect": {
+    "n_in_band": 400,
+    "n_graphs": 329,
+    "episodes_used": 158,
+    "explorer": "mf_base",
+    "note": "Semantic (d0,c0) band on real GraphsTuple \u2014 NOT the formal 44-D product box. Other feature dims follow the env, not box bounds."
+  },
+  "paths": {
+    "mf_base": "method/meanfield/output/distill/mf_distill_20261005_v5/seed0/meanfield_mlp512_student_step9000.pkl",
+    "mf_r2": "method/meanfield/output/repair/mf_residual_v5_r2_20261005/seed0/repair_best.pkl",
+    "mappo_lag": "/home/xiang/workspace/python-project/Safe-MARL-GCBF-verified-proposal/baselines/mappo_lag/output/mappo_lag/seed0_train/best.pkl",
+    "ds_r2": "method/deepset/output/phase2/phase2_seed0base_20261004/seed0/V2d_r2/repair_r2_best.pkl",
+    "informarl": "/home/xiang/workspace/python-project/Safe-MARL-GCBF-verified-proposal/baselines/informarl/output/informarl/seed0_train/best.pkl",
+    "gcbfplus_run": "baselines/gcbfplus/log/gcbf+/seed0_20261001232611",
+    "gcbfplus_step": 1000
+  },
+  "rows": [
+    {
+      "policy": "coast_a0",
+      "n": 400,
+      "l2_safe_rate": 1.0,
+      "n_fail": 0,
+      "fail_rate": 0.0,
+      "margin_mean": 0.0268044463224709,
+      "margin_p10": 0.015707866847515104,
+      "margin_min": 0.009119175076484687,
+      "mean_abs_a_inf": 0.0,
+      "p90_abs_a_inf": 0.0,
+      "mean_d0": 0.1389757227152586,
+      "mean_c0": 0.2028546065464616,
+      "mean_d2": 0.1268044463224709,
+      "fwd_s": 0.01
+    },
+    {
+      "policy": "mf_base",
+      "n": 400,
+      "l2_safe_rate": 1.0,
+      "n_fail": 0,
+      "fail_rate": 0.0,
+      "margin_mean": 0.024553099885805275,
+      "margin_p10": 0.012904162764549261,
+      "margin_min": 0.005164157569408412,
+      "mean_abs_a_inf": 0.2501496040739585,
+      "p90_abs_a_inf": 0.45675324499607095,
+      "mean_d0": 0.1389757227152586,
+      "mean_c0": 0.2028546065464616,
+      "mean_d2": 0.12455309988580528,
+      "fwd_s": 0.48
+    },
+    {
+      "policy": "mf_r2",
+      "n": 400,
+      "l2_safe_rate": 1.0,
+      "n_fail": 0,
+      "fail_rate": 0.0,
+      "margin_mean": 0.023592079028193835,
+      "margin_p10": 0.011309205737709988,
+      "margin_min": 0.002661738634109498,
+      "mean_abs_a_inf": 0.3569296993641183,
+      "p90_abs_a_inf": 0.6398690700531008,
+      "mean_d0": 0.1389757227152586,
+      "mean_c0": 0.2028546065464616,
+      "mean_d2": 0.12359207902819383,
+      "fwd_s": 0.46
+    },
+    {
+      "policy": "mappo_lag",
+      "n": 400,
+      "l2_safe_rate": 1.0,
+      "n_fail": 0,
+      "fail_rate": 0.0,
+      "margin_mean": 0.021304025485310695,
+      "margin_p10": 0.009299867701530452,
+      "margin_min": 0.001331998467445361,
+      "mean_abs_a_inf": 0.6111578707955778,
+      "p90_abs_a_inf": 1.0,
+      "mean_d0": 0.1389757227152586,
+      "mean_c0": 0.2028546065464616,
+      "mean_d2": 0.12130402548531069,
+      "fwd_s": 0.42
+    },
+    {
+      "policy": "ds_r2",
+      "n": 400,
+      "l2_safe_rate": 1.0,
+      "n_fail": 0,
+      "fail_rate": 0.0,
+      "margin_mean": 0.021863759400434786,
+      "margin_p10": 0.00907134256660938,
+      "margin_min": 0.001331998467445361,
+      "mean_abs_a_inf": 0.548965213559568,
+      "p90_abs_a_inf": 1.0,
+      "mean_d0": 0.1389757227152586,
+      "mean_c0": 0.2028546065464616,
+      "mean_d2": 0.1218637594004348,
+      "fwd_s": 0.76
+    },
+    {
+      "policy": "gcbfplus",
+      "n": 400,
+      "l2_safe_rate": 0.9975,
+      "n_fail": 1,
+      "fail_rate": 0.0025,
+      "margin_mean": 0.02198301174579188,
+      "margin_p10": 0.01038123857080936,
+      "margin_min": -0.002351992011070253,
+      "mean_abs_a_inf": 0.5357149529643357,
+      "p90_abs_a_inf": 0.9143327653408051,
+      "mean_d0": 0.1389757227152586,
+      "mean_c0": 0.2028546065464616,
+      "mean_d2": 0.12198301174579189,
+      "fwd_s": 0.64
+    },
+    {
+      "policy": "informarl",
+      "n": 400,
+      "l2_safe_rate": 1.0,
+      "n_fail": 0,
+      "fail_rate": 0.0,
+      "margin_mean": 0.022245748470379034,
+      "margin_p10": 0.010279411435127258,
+      "margin_min": 0.00207100123167038,
+      "mean_abs_a_inf": 0.5065219835657626,
+      "p90_abs_a_inf": 0.8489681899547578,
+      "mean_d0": 0.1389757227152586,
+      "mean_c0": 0.2028546065464616,
+      "mean_d2": 0.12224574847037903,
+      "fwd_s": 0.67
+    }
+  ],
+  "wall_s": 5.56,
+  "feature_version": 5,
+  "input_dim": 44
+}

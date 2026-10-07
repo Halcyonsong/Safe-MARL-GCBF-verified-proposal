@@ -1,0 +1,11 @@
+{
+  "policy_id": "gcbf_mid_step270",
+  "episodes": 256,
+  "eval_seed": 1234,
+  "reward": -200.796,
+  "cost": 7.504,
+  "safe_rate": 0.62549,
+  "finish_rate": 0.8383799999999999,
+  "success_rate": 0.56738,
+  "checkpoint": "baselines/gcbf/log/gcbf/seed0_20261006111544/models/270"
+}

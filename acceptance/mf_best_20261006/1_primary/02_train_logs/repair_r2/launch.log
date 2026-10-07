@@ -1,0 +1,5 @@
+[mf-r2] base=runs/meanfield/distill/mf_distill_20261005_v5/seed0/meanfield_mlp512_student_step9000.pkl
+[mf-r2] init=runs/meanfield/repair/mf_residual_v5_20261005/seed0/repair_best.pkl
+Mon Oct  5 21:09:51 CST 2026
+=== CE on r1 residual ===
+=== residual r2 train ===

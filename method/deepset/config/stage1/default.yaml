@@ -1,0 +1,43 @@
+# Stage1 default: Actor-distilled DeepSet (current main path).
+
+env: DoubleIntegrator
+area_size: 4.0
+num_agents: 8
+obs: 4
+n_rays: 32
+seed: 0
+
+architecture: deepset
+teacher_kind: actor
+steps: 8000
+batch_size: 16
+minibatch_size: 4096
+buffer_capacity: 131072
+rollout_length: 256
+refresh_every: 5
+hidden: 512
+lr: 1.0e-4
+save_every: 500
+eval_every: 500
+eval_episodes: 8
+
+danger_radius: 0.3
+danger_coef: 4.0
+
+n_max_agents: 8
+n_max_obs: 32
+aggregate: masked_sum
+padding: presence_zero
+
+teacher_run: baselines/gcbfplus/log/gcbf+/seed0_20261001232611
+teacher_step: 1000
+checkpoint: method/deepset/output/stage1/actor/deepset_actor512_student.pkl
+# Frozen Stage1 student for Stage2 formal verification:
+# method/deepset/output/stage1/frozen/deepset_actor512_stage1_baseline.pkl
+
+gnn_layers: 1
+horizon: 32
+buffer_size: 512
+lr_actor: 3.0e-5
+lr_cbf: 3.0e-5
+alpha: 1.0

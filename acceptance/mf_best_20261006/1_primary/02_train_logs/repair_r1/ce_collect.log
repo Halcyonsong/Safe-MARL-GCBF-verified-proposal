@@ -1,0 +1,43 @@
+[mf-ce] start episodes=32 danger_r=0.35 stride=2 ckpt=meanfield_mlp512_student_step9000.pkl
+[mf-ce] ep 1/32 kept=0 hit=0 danger=201 elapsed=17.9s
+[mf-ce] ep 4/32 kept=3 hit=3 danger=1055 elapsed=52.9s
+[mf-ce] ep 8/32 kept=127 hit=127 danger=2357 elapsed=101.0s
+[mf-ce] ep 12/32 kept=226 hit=226 danger=3570 elapsed=150.0s
+[mf-ce] ep 16/32 kept=270 hit=270 danger=4538 elapsed=200.1s
+[mf-ce] ep 20/32 kept=353 hit=353 danger=5787 elapsed=251.1s
+[mf-ce] ep 24/32 kept=416 hit=416 danger=6797 elapsed=299.2s
+[mf-ce] ep 28/32 kept=484 hit=484 danger=7982 elapsed=347.8s
+[mf-ce] ep 32/32 kept=542 hit=542 danger=9108 elapsed=397.7s
+{
+  "track": "meanfield",
+  "domain": "rollout_danger_two_step_L2",
+  "feature_version": 5,
+  "input_dim": 44,
+  "checkpoint": "runs/meanfield/distill/mf_distill_20261005_v5/seed0/meanfield_mlp512_student_step9000.pkl",
+  "policy_meta": {
+    "kind": "base",
+    "feature_version": 5,
+    "path": "runs/meanfield/distill/mf_distill_20261005_v5/seed0/meanfield_mlp512_student_step9000.pkl"
+  },
+  "episodes": 32,
+  "seed": 123,
+  "danger_radius": 0.35,
+  "stride": 2,
+  "collision_aa": 0.1,
+  "collision_ao": 0.05,
+  "n_agent_steps": 32768,
+  "n_danger": 9108,
+  "n_hit_two_step": 542,
+  "hit_rate_on_danger": 0.05950812472551603,
+  "n_kept": 542,
+  "n_labels_safe": 211,
+  "kind_counts": {
+    "aa": 272,
+    "ao": 260,
+    "both": 10,
+    "other": 0
+  },
+  "wall_time_s": 397.679,
+  "claim": "Empirical two-step L2 CEs (vectorized). Neighbor coasts; hits static. Not formal verification."
+}
+[mf-ce] DONE kept=542 hit_on_danger=5.95% wall=397.679s → runs/meanfield/repair/mf_residual_v5_20261005/seed0/ce_baseline.json

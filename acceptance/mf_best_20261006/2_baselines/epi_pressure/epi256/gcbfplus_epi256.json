@@ -1,0 +1,11 @@
+{
+  "policy_id": "gcbfplus_teacher",
+  "episodes": 256,
+  "eval_seed": 1234,
+  "reward": -4.921,
+  "cost": 0.652,
+  "safe_rate": 0.9526399999999999,
+  "finish_rate": 0.9526399999999999,
+  "success_rate": 0.9126000000000001,
+  "checkpoint": "baselines/gcbfplus/log/gcbf+/seed0_20261001232611/models/1000"
+}

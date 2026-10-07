@@ -1,0 +1,35 @@
+[
+  {
+    "step": 270,
+    "reward": -203.456,
+    "cost": 9.246,
+    "safe": 0.62109,
+    "finish": 0.8125,
+    "success": 0.55469,
+    "online_pol_refine": false,
+    "episodes": 32,
+    "eval_seed": 1234
+  },
+  {
+    "step": 250,
+    "reward": -211.328,
+    "cost": 8.129,
+    "safe": 0.53906,
+    "finish": 0.7460899999999999,
+    "success": 0.46875,
+    "online_pol_refine": false,
+    "episodes": 32,
+    "eval_seed": 1234
+  },
+  {
+    "step": 200,
+    "reward": -224.453,
+    "cost": 15.379,
+    "safe": 0.57422,
+    "finish": 0.67188,
+    "success": 0.44531,
+    "online_pol_refine": false,
+    "episodes": 32,
+    "eval_seed": 1234
+  }
+]

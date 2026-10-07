@@ -1,0 +1,12 @@
+{
+  "success_rate": 0.609,
+  "safe_rate": 0.625,
+  "finish_rate": 0.957,
+  "cost": 6.934,
+  "source": "BASELINE_COMPARE @32",
+  "policy_id": "informarl",
+  "num_agents": 8,
+  "episodes": 32,
+  "eval_seed": 1234,
+  "note": "train-protocol reference (not re-run)"
+}

@@ -1,0 +1,21 @@
+{
+  "stage": "cegar_r2",
+  "phase2_run_id": "phase2_seed0base_20261004",
+  "method": "V2d_r2",
+  "parent_v2d": "method/deepset/output/phase2/phase2_seed0base_20261004/seed0/V2d",
+  "residual_in": "method/deepset/output/phase2/phase2_seed0base_20261004/seed0/V2d/repair_best.pkl",
+  "base_checkpoint": "method/deepset/output/stage1/redistill/stage1_redistill_20261004_183322/seed0/deepset_actor512_student_best.pkl",
+  "verify_r1": "method/deepset/output/phase2/phase2_seed0base_20261004/seed0/V2d_r2/verify_r1_residual_sampling.json",
+  "ce_r2": "method/deepset/output/phase2/phase2_seed0base_20261004/seed0/V2d_r2/ce_r2.json",
+  "repair_best": "method/deepset/output/phase2/phase2_seed0base_20261004/seed0/V2d_r2/repair_r2_best.pkl",
+  "repair_last": "method/deepset/output/phase2/phase2_seed0base_20261004/seed0/V2d_r2/repair_r2.pkl",
+  "verify_r2": "method/deepset/output/phase2/phase2_seed0base_20261004/seed0/V2d_r2/verify_r2_residual_sampling.json",
+  "validate_32epi": "method/deepset/output/phase2/phase2_seed0base_20261004/seed0/V2d_r2/validate_32epi.txt",
+  "d_hit": "method/deepset/output/phase2/phase2_seed0base_20261004/seed0/V2d_r2/d_hit_seed123.json",
+  "residual_marabou_poc": "method/deepset/output/phase2/phase2_seed0base_20261004/seed0/V2d_r2/RESIDUAL_MARABOU_POC.md",
+  "steps_dir": "method/deepset/output/phase2/phase2_seed0base_20261004/seed0/V2d_r2/steps",
+  "steps": 600,
+  "min_success": 0.85,
+  "dual_ce_weight": 2.0,
+  "relocated_from": "method/deepset/output/phase2/phase2_seed0base_cegar_r2_20261004/seed0/V2d_r2"
+}

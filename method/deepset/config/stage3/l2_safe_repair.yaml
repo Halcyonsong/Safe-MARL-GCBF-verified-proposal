@@ -1,0 +1,11 @@
+# Stage3 r1-style repair: (1,0)+(0,1), historically max-clearance labels.
+# Prefer min_intervention going forward; keep this file for reproduction.
+# Reference defaults: method/deepset/config/stage3/default.yaml (CLI overrides these fields).
+
+buckets: [l2_aa_near, l2_ao_near]
+label_mode: max_clearance
+ce_json: method/deepset/output/stage3/ce/l2_counterexamples.json
+ce_weight: 4.0
+normal_source: teacher
+checkpoint: method/deepset/output/stage3/repair/deepset_l2_safe_repair.pkl
+steps: 600

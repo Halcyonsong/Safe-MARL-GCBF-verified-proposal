@@ -1,0 +1,110 @@
+[
+  {
+    "tag": "r2_accept",
+    "episodes": 32,
+    "CE": null,
+    "success_rate": 0.8203,
+    "safe_rate": 0.9648,
+    "finish_rate": 0.8398,
+    "cost": 0.3047
+  },
+  {
+    "tag": "r2_accept",
+    "episodes": 64,
+    "CE": null,
+    "success_rate": 0.826172,
+    "safe_rate": 0.949219,
+    "finish_rate": 0.849609,
+    "cost": 0.400390625
+  },
+  {
+    "tag": "r2_accept",
+    "episodes": 256,
+    "CE": null,
+    "success_rate": 0.835449,
+    "safe_rate": 0.956543,
+    "finish_rate": 0.86377,
+    "cost": 0.4423828125
+  },
+  {
+    "tag": "midF_r2",
+    "episodes": 32,
+    "CE": 183,
+    "success_rate": 0.83984375,
+    "safe_rate": 0.9765625,
+    "finish_rate": 0.8515625,
+    "cost": 0.19921875
+  },
+  {
+    "tag": "midF_r2",
+    "episodes": 64,
+    "CE": 183,
+    "success_rate": 0.837891,
+    "safe_rate": 0.964844,
+    "finish_rate": 0.857422,
+    "cost": 0.283203125
+  },
+  {
+    "tag": "midF_r2",
+    "episodes": 256,
+    "CE": 183,
+    "success_rate": 0.84082,
+    "safe_rate": 0.964844,
+    "finish_rate": 0.864746,
+    "cost": 0.3642578125
+  },
+  {
+    "tag": "midF_r3",
+    "episodes": 32,
+    "CE": 177,
+    "success_rate": 0.83203125,
+    "safe_rate": 0.9765625,
+    "finish_rate": 0.84375,
+    "cost": 0.20703125
+  },
+  {
+    "tag": "midF_r3",
+    "episodes": 64,
+    "CE": 177,
+    "success_rate": 0.832031,
+    "safe_rate": 0.964844,
+    "finish_rate": 0.851562,
+    "cost": 0.28125
+  },
+  {
+    "tag": "midF_r3",
+    "episodes": 256,
+    "CE": 177,
+    "success_rate": 0.833496,
+    "safe_rate": 0.96582,
+    "finish_rate": 0.856934,
+    "cost": 0.32861328125
+  },
+  {
+    "tag": "midF_r4",
+    "episodes": 32,
+    "CE": 173,
+    "success_rate": 0.828125,
+    "safe_rate": 0.97265625,
+    "finish_rate": 0.84375,
+    "cost": 0.21484375
+  },
+  {
+    "tag": "midF_r4",
+    "episodes": 64,
+    "CE": 173,
+    "success_rate": 0.826172,
+    "safe_rate": 0.960938,
+    "finish_rate": 0.847656,
+    "cost": 0.29296875
+  },
+  {
+    "tag": "midF_r4",
+    "episodes": 256,
+    "CE": 173,
+    "success_rate": 0.833008,
+    "safe_rate": 0.96582,
+    "finish_rate": 0.856445,
+    "cost": 0.33447265625
+  }
+]

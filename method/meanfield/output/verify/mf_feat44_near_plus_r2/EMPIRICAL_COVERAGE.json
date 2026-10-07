@@ -1,0 +1,52 @@
+{
+  "checkpoint": "method/meanfield/output/repair/mf_residual_v5_r2_20261005/seed0/repair_best.pkl",
+  "episodes": 24,
+  "seed": 20261005,
+  "stride": 2,
+  "n_agent_steps": 24576,
+  "n_has_threat": 11257,
+  "n_danger_d_le_0_35": 6816,
+  "band_on_danger": {
+    "in_near_L1": 5145,
+    "in_near_plus_L2": 5424,
+    "d0_below_0_14": 281,
+    "c0_above_0_30": 1216,
+    "d0_above_0_40": 0,
+    "pct_danger_in_L1_near": 75.48415492957747,
+    "pct_danger_in_L2_plus": 79.5774647887324,
+    "pct_danger_d0_lt_0_14": 4.122652582159624,
+    "pct_danger_c0_gt_0_30": 17.84037558685446
+  },
+  "two_step_L2_hits": {
+    "n_hit": 188,
+    "hit_rate_all_steps": 0.007649739583333334,
+    "hit_rate_on_danger": 0.027582159624413145,
+    "hits_inside_L2_plus": 0,
+    "hits_outside_L2_plus": 188,
+    "note": "Formal PROVEN says hits_inside_L2 should be ~0 (radial); nonzero => feature realizability gap or numerical."
+  },
+  "d0_on_danger_quantiles": {
+    "p10": 0.18277955055236816,
+    "p25": 0.23336265981197357,
+    "p50": 0.27519576251506805,
+    "p75": 0.3097354769706726,
+    "p90": 0.3346395343542099,
+    "min": 0.0,
+    "max": 0.3499191999435425
+  },
+  "c0_on_danger_quantiles": {
+    "p10": 0.0,
+    "p25": 0.0,
+    "p50": 0.023296828381717205,
+    "p75": 0.20530664920806885,
+    "p90": 0.47574692964553833,
+    "min": 0.0,
+    "max": 1.3577882051467896
+  },
+  "task_ref_32epi": {
+    "success": 0.82,
+    "safe": 0.965,
+    "finish": 0.84
+  },
+  "wall_s": 102.7
+}

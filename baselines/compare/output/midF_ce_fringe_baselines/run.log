@@ -1,0 +1,227 @@
+[collect] midF band d0∈[0.125,0.132] c0∈[0.25,0.3] target_agents=200 episodes≤800
+  epi=1 graphs=0 agents_in_band=0/200 wall=10.5s
+  epi=10 graphs=4 agents_in_band=5/200 wall=85.6s
+  epi=20 graphs=7 agents_in_band=8/200 wall=172.5s
+  [ckpt] partial pack n_in_band=10 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=30 graphs=12 agents_in_band=13/200 wall=259.4s
+  epi=40 graphs=18 agents_in_band=21/200 wall=345.5s
+  epi=50 graphs=19 agents_in_band=22/200 wall=432.5s
+  [ckpt] partial pack n_in_band=22 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=60 graphs=21 agents_in_band=24/200 wall=519.1s
+  epi=70 graphs=26 agents_in_band=29/200 wall=606.8s
+  [ckpt] partial pack n_in_band=31 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=80 graphs=30 agents_in_band=34/200 wall=690.9s
+  epi=90 graphs=32 agents_in_band=36/200 wall=775.5s
+  epi=100 graphs=32 agents_in_band=36/200 wall=861.8s
+  [ckpt] partial pack n_in_band=36 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=110 graphs=36 agents_in_band=40/200 wall=949.2s
+  epi=120 graphs=40 agents_in_band=45/200 wall=1037.9s
+  [ckpt] partial pack n_in_band=46 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=130 graphs=41 agents_in_band=46/200 wall=1127.3s
+  epi=140 graphs=41 agents_in_band=46/200 wall=1216.9s
+  epi=150 graphs=41 agents_in_band=46/200 wall=1306.5s
+  [ckpt] partial pack n_in_band=46 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=160 graphs=48 agents_in_band=54/200 wall=1395.6s
+  epi=170 graphs=53 agents_in_band=59/200 wall=1484.3s
+  [ckpt] partial pack n_in_band=59 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=180 graphs=53 agents_in_band=59/200 wall=1573.6s
+  epi=190 graphs=57 agents_in_band=63/200 wall=1663.6s
+  epi=200 graphs=59 agents_in_band=65/200 wall=1753.6s
+  [ckpt] partial pack n_in_band=65 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=210 graphs=63 agents_in_band=70/200 wall=1844.6s
+  epi=220 graphs=70 agents_in_band=77/200 wall=1931.7s
+  [ckpt] partial pack n_in_band=78 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=230 graphs=72 agents_in_band=79/200 wall=2017.9s
+  epi=240 graphs=77 agents_in_band=84/200 wall=2102.8s
+  epi=250 graphs=77 agents_in_band=84/200 wall=2189.0s
+  [ckpt] partial pack n_in_band=84 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=260 graphs=78 agents_in_band=85/200 wall=2274.7s
+  epi=270 graphs=79 agents_in_band=86/200 wall=2359.1s
+  [ckpt] partial pack n_in_band=87 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=280 graphs=80 agents_in_band=87/200 wall=2443.5s
+  epi=290 graphs=83 agents_in_band=92/200 wall=2528.0s
+  epi=300 graphs=85 agents_in_band=95/200 wall=2612.7s
+  [ckpt] partial pack n_in_band=95 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=310 graphs=88 agents_in_band=98/200 wall=2699.7s
+  epi=320 graphs=89 agents_in_band=99/200 wall=2785.3s
+  [ckpt] partial pack n_in_band=100 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=330 graphs=91 agents_in_band=101/200 wall=2870.1s
+  epi=340 graphs=95 agents_in_band=105/200 wall=2954.9s
+  epi=350 graphs=95 agents_in_band=105/200 wall=3036.8s
+  [ckpt] partial pack n_in_band=105 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=360 graphs=95 agents_in_band=105/200 wall=3118.6s
+  epi=370 graphs=98 agents_in_band=108/200 wall=3200.3s
+  [ckpt] partial pack n_in_band=113 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=380 graphs=103 agents_in_band=114/200 wall=3282.1s
+  epi=390 graphs=104 agents_in_band=115/200 wall=3363.7s
+  epi=400 graphs=113 agents_in_band=124/200 wall=3445.1s
+  [ckpt] partial pack n_in_band=124 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=410 graphs=115 agents_in_band=126/200 wall=3528.0s
+  epi=420 graphs=116 agents_in_band=127/200 wall=3610.1s
+  [ckpt] partial pack n_in_band=127 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=430 graphs=116 agents_in_band=127/200 wall=3692.1s
+  epi=440 graphs=118 agents_in_band=129/200 wall=3775.5s
+  epi=450 graphs=122 agents_in_band=133/200 wall=3859.5s
+  [ckpt] partial pack n_in_band=133 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=460 graphs=124 agents_in_band=135/200 wall=3943.8s
+  epi=470 graphs=127 agents_in_band=138/200 wall=4030.3s
+  [ckpt] partial pack n_in_band=140 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=480 graphs=130 agents_in_band=143/200 wall=4116.0s
+  epi=490 graphs=130 agents_in_band=143/200 wall=4202.0s
+  epi=500 graphs=133 agents_in_band=146/200 wall=4287.5s
+  [ckpt] partial pack n_in_band=146 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=510 graphs=138 agents_in_band=152/200 wall=4388.5s
+  epi=520 graphs=140 agents_in_band=155/200 wall=4495.3s
+  [ckpt] partial pack n_in_band=156 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=530 graphs=142 agents_in_band=157/200 wall=4596.7s
+  epi=540 graphs=143 agents_in_band=158/200 wall=4694.2s
+  epi=550 graphs=145 agents_in_band=160/200 wall=4786.0s
+  [ckpt] partial pack n_in_band=160 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=560 graphs=148 agents_in_band=165/200 wall=4875.4s
+  epi=570 graphs=150 agents_in_band=168/200 wall=4965.4s
+  [ckpt] partial pack n_in_band=168 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=580 graphs=153 agents_in_band=172/200 wall=5070.9s
+  epi=590 graphs=154 agents_in_band=173/200 wall=5174.1s
+  epi=600 graphs=156 agents_in_band=175/200 wall=5270.6s
+  [ckpt] partial pack n_in_band=175 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=610 graphs=158 agents_in_band=178/200 wall=5370.1s
+  epi=620 graphs=159 agents_in_band=179/200 wall=5461.6s
+  [ckpt] partial pack n_in_band=180 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=630 graphs=161 agents_in_band=182/200 wall=5551.7s
+  epi=640 graphs=163 agents_in_band=185/200 wall=5640.3s
+  epi=650 graphs=163 agents_in_band=185/200 wall=5739.2s
+  [ckpt] partial pack n_in_band=185 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=660 graphs=166 agents_in_band=189/200 wall=5841.4s
+  epi=670 graphs=169 agents_in_band=193/200 wall=5938.5s
+  [ckpt] partial pack n_in_band=196 → runs/compare_baselines/midF_env_sample/_partial_pack.pkl
+  epi=680 graphs=175 agents_in_band=199/200 wall=6032.5s
+[collect] saved runs/compare_baselines/midF_ce_fringe_baselines/env_pack.pkl graphs=176 in_band=200 wall=6046.06s
+[build] coast_a0 …
+  [coast_a0] scored 50/176 graphs
+  [coast_a0] scored 100/176 graphs
+  [coast_a0] scored 150/176 graphs
+[score] coast_a0: n=200 L2-safe=100.00% fail=0 margin_mean=0.0124 ‖a‖∞=0.000 wall=0.01s
+[build] mf_base …
+  [mf_base] scored 50/176 graphs
+  [mf_base] scored 100/176 graphs
+  [mf_base] scored 150/176 graphs
+[score] mf_base: n=200 L2-safe=100.00% fail=0 margin_mean=0.0096 ‖a‖∞=0.305 wall=0.51s
+[build] mf_r2 …
+  [mf_r2] scored 50/176 graphs
+  [mf_r2] scored 100/176 graphs
+  [mf_r2] scored 150/176 graphs
+[score] mf_r2: n=200 L2-safe=100.00% fail=0 margin_mean=0.0081 ‖a‖∞=0.478 wall=0.44s
+[build] mappo_lag …
+  [mappo_lag] scored 50/176 graphs
+  [mappo_lag] scored 100/176 graphs
+  [mappo_lag] scored 150/176 graphs
+[score] mappo_lag: n=200 L2-safe=96.50% fail=7 margin_mean=0.0067 ‖a‖∞=0.627 wall=0.39s
+[build] gcbfplus …
+  [gcbfplus] scored 50/176 graphs
+  [gcbfplus] scored 100/176 graphs
+  [gcbfplus] scored 150/176 graphs
+[score] gcbfplus: n=200 L2-safe=98.00% fail=4 margin_mean=0.0079 ‖a‖∞=0.497 wall=0.79s
+[build] informarl …
+  [informarl] scored 50/176 graphs
+  [informarl] scored 100/176 graphs
+  [informarl] scored 150/176 graphs
+[score] informarl: n=200 L2-safe=100.00% fail=0 margin_mean=0.0076 ‖a‖∞=0.523 wall=0.51s
+[
+  {
+    "policy": "coast_a0",
+    "n": 200,
+    "l2_safe_rate": 1.0,
+    "n_fail": 0,
+    "fail_rate": 0.0,
+    "margin_mean": 0.012356058496236794,
+    "margin_p10": 0.009118639647960669,
+    "margin_min": 0.007960789799690254,
+    "mean_abs_a_inf": 0.0,
+    "p90_abs_a_inf": 0.0,
+    "mean_d0": 0.12874112345278263,
+    "mean_c0": 0.2730844159424305,
+    "mean_d2": 0.11235605849623681,
+    "fwd_s": 0.01
+  },
+  {
+    "policy": "mf_base",
+    "n": 200,
+    "l2_safe_rate": 1.0,
+    "n_fail": 0,
+    "fail_rate": 0.0,
+    "margin_mean": 0.009614667277205731,
+    "margin_p10": 0.005914305305480957,
+    "margin_min": 0.003246437370777136,
+    "mean_abs_a_inf": 0.3045990243367851,
+    "p90_abs_a_inf": 0.5124765336513519,
+    "mean_d0": 0.12874112345278263,
+    "mean_c0": 0.2730844159424305,
+    "mean_d2": 0.10961466727720573,
+    "fwd_s": 0.51
+  },
+  {
+    "policy": "mf_r2",
+    "n": 200,
+    "l2_safe_rate": 1.0,
+    "n_fail": 0,
+    "fail_rate": 0.0,
+    "margin_mean": 0.008050651647737246,
+    "margin_p10": 0.003921941816806795,
+    "margin_min": 0.0007773357629776018,
+    "mean_abs_a_inf": 0.4783785387221724,
+    "p90_abs_a_inf": 0.750597047805786,
+    "mean_d0": 0.12874112345278263,
+    "mean_c0": 0.2730844159424305,
+    "mean_d2": 0.10805065164773726,
+    "fwd_s": 0.44
+  },
+  {
+    "policy": "mappo_lag",
+    "n": 200,
+    "l2_safe_rate": 0.965,
+    "n_fail": 7,
+    "fail_rate": 0.035,
+    "margin_mean": 0.006711648901253932,
+    "margin_p10": 0.002123648750782008,
+    "margin_min": -0.0010060575008392358,
+    "mean_abs_a_inf": 0.6271566216647625,
+    "p90_abs_a_inf": 1.0,
+    "mean_d0": 0.12874112345278263,
+    "mean_c0": 0.2730844159424305,
+    "mean_d2": 0.10671164890125392,
+    "fwd_s": 0.39
+  },
+  {
+    "policy": "gcbfplus",
+    "n": 200,
+    "l2_safe_rate": 0.98,
+    "n_fail": 4,
+    "fail_rate": 0.02,
+    "margin_mean": 0.007881063245944673,
+    "margin_p10": 0.00411695488095284,
+    "margin_min": -0.0013458204269409246,
+    "mean_abs_a_inf": 0.4972216944769025,
+    "p90_abs_a_inf": 0.8617578029632568,
+    "mean_d0": 0.12874112345278263,
+    "mean_c0": 0.2730844159424305,
+    "mean_d2": 0.10788106324594468,
+    "fwd_s": 0.79
+  },
+  {
+    "policy": "informarl",
+    "n": 200,
+    "l2_safe_rate": 1.0,
+    "n_fail": 0,
+    "fail_rate": 0.0,
+    "margin_mean": 0.007646893524676556,
+    "margin_p10": 0.004144618582725532,
+    "margin_min": 0.0006341980695724475,
+    "mean_abs_a_inf": 0.5232405523955822,
+    "p90_abs_a_inf": 0.8163941144943238,
+    "mean_d0": 0.12874112345278263,
+    "mean_c0": 0.2730844159424305,
+    "mean_d2": 0.10764689352467656,
+    "fwd_s": 0.51
+  }
+]
+wrote runs/compare_baselines/midF_ce_fringe_baselines/REPORT.md

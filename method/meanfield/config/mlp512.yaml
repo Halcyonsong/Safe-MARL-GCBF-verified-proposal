@@ -1,0 +1,5 @@
+# feature v5 + hidden 512
+defaults: default.yaml
+hidden: 512
+feature_version: 5
+quadrants: 4

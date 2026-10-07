@@ -1,0 +1,41 @@
+{
+  "name": "stage1_deepset_actor512_frozen",
+  "checkpoint": "method/deepset/output/stage1/frozen/deepset_actor512_stage1_baseline.pkl",
+  "sha256_16": "3d81fe5657a6394c",
+  "architecture": "deepset",
+  "hidden": 512,
+  "teacher_run": "baselines/gcbfplus/log/gcbf+/seed0_20261001232611",
+  "teacher_step": 1000,
+  "ego_dim": 8,
+  "entity_dim": 7,
+  "entity_slots": 40,
+  "n_max_agents": 8,
+  "n_max_obs": 32,
+  "train_metrics_short_eval": {
+    "step": 8000,
+    "loss": 0.017515679821372032,
+    "reward": -10.75129234790802,
+    "cost": 1.5625,
+    "safe_rate": 0.90625,
+    "finish_rate": 0.953125,
+    "success_rate": 0.890625
+  },
+  "independent_eval_32epi": {
+    "safe_rate": 0.94141,
+    "finish_rate": 0.92969,
+    "success_rate": 0.87109,
+    "reward": -11.639,
+    "cost": 0.953
+  },
+  "gcbfplus_teacher_eval_32epi_ref": {
+    "safe_rate": 0.95703,
+    "finish_rate": 0.95312,
+    "success_rate": 0.91406
+  },
+  "notes": [
+    "Empirical rollout metrics only; not formal verification.",
+    "This is the method Stage1 frozen DeepSet student for Stage2 formal verification.",
+    "Teacher/source policy is official GCBF+ under baseline/gcbfplus, kept for comparison.",
+    "No danger-set fine-tune applied; reserved as clean Stage1 baseline."
+  ]
+}

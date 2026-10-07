@@ -1,0 +1,16 @@
+{
+  "policy_id": "handcbf_dec_share_cbf",
+  "policy_kind": "handcrafted_cbf_qp",
+  "label": "HandCBF (DecShareCBF)",
+  "algo": "dec_share_cbf",
+  "alpha": 1.0,
+  "episodes": 32,
+  "eval_seed": 1234,
+  "reward": -38.494,
+  "cost": 0.0,
+  "safe_rate": 1.0,
+  "finish_rate": 0.76562,
+  "success_rate": 0.76562,
+  "wall_time_s": 88.365,
+  "claim": "Empirical rollout only. Online hand-crafted CBF-QP. Not formal verification."
+}

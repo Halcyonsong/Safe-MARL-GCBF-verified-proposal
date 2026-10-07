@@ -1,0 +1,36 @@
+> Running test.py Namespace(num_agents=None, obs=4, area_size=4.0, max_step=None, path='logs/DoubleIntegrator/gcbf/seed0_20261006111544', n_rays=32, alpha=1.0, max_travel=None, cbf=None, seed=1234, debug=False, cpu=False, u_ref=False, env='DoubleIntegrator', algo=None, step=270, epi=32, offset=0, no_video=True, nojit_rollout=False, log=True, dpi=100)
+step:  270
+jit rollout!
+epi: 0, reward: -251.085, cost: 17.500, safe rate: 37.500%,finish rate: 62.500%, success rate: 37.500%
+epi: 1, reward: -214.161, cost: 8.375, safe rate: 62.500%,finish rate: 87.500%, success rate: 62.500%
+epi: 2, reward: -209.490, cost: 4.875, safe rate: 62.500%,finish rate: 100.000%, success rate: 62.500%
+epi: 3, reward: -180.173, cost: 7.250, safe rate: 75.000%,finish rate: 87.500%, success rate: 75.000%
+epi: 4, reward: -219.697, cost: 0.000, safe rate: 100.000%,finish rate: 87.500%, success rate: 87.500%
+epi: 5, reward: -180.545, cost: 8.875, safe rate: 25.000%,finish rate: 87.500%, success rate: 25.000%
+epi: 6, reward: -157.020, cost: 0.000, safe rate: 100.000%,finish rate: 100.000%, success rate: 100.000%
+epi: 7, reward: -182.065, cost: 0.000, safe rate: 100.000%,finish rate: 62.500%, success rate: 62.500%
+epi: 8, reward: -225.338, cost: 22.000, safe rate: 50.000%,finish rate: 62.500%, success rate: 37.500%
+epi: 9, reward: -193.663, cost: 3.125, safe rate: 87.500%,finish rate: 100.000%, success rate: 87.500%
+epi: 10, reward: -184.234, cost: 3.250, safe rate: 75.000%,finish rate: 100.000%, success rate: 75.000%
+epi: 11, reward: -207.027, cost: 4.000, safe rate: 62.500%,finish rate: 62.500%, success rate: 62.500%
+epi: 12, reward: -196.880, cost: 2.125, safe rate: 75.000%,finish rate: 87.500%, success rate: 62.500%
+epi: 13, reward: -181.276, cost: 7.125, safe rate: 50.000%,finish rate: 87.500%, success rate: 37.500%
+epi: 14, reward: -206.823, cost: 0.000, safe rate: 100.000%,finish rate: 87.500%, success rate: 87.500%
+epi: 15, reward: -198.069, cost: 0.000, safe rate: 100.000%,finish rate: 75.000%, success rate: 75.000%
+epi: 16, reward: -225.753, cost: 26.250, safe rate: 37.500%,finish rate: 87.500%, success rate: 37.500%
+epi: 17, reward: -184.488, cost: 7.500, safe rate: 62.500%,finish rate: 87.500%, success rate: 50.000%
+epi: 18, reward: -200.601, cost: 9.250, safe rate: 37.500%,finish rate: 87.500%, success rate: 37.500%
+epi: 19, reward: -255.676, cost: 13.500, safe rate: 37.500%,finish rate: 62.500%, success rate: 25.000%
+epi: 20, reward: -215.065, cost: 2.125, safe rate: 87.500%,finish rate: 100.000%, success rate: 87.500%
+epi: 21, reward: -177.346, cost: 3.250, safe rate: 37.500%,finish rate: 87.500%, success rate: 37.500%
+epi: 22, reward: -213.855, cost: 35.375, safe rate: 50.000%,finish rate: 62.500%, success rate: 50.000%
+epi: 23, reward: -187.735, cost: 4.375, safe rate: 62.500%,finish rate: 100.000%, success rate: 62.500%
+epi: 24, reward: -186.650, cost: 13.125, safe rate: 25.000%,finish rate: 62.500%, success rate: 25.000%
+epi: 25, reward: -175.253, cost: 1.500, safe rate: 75.000%,finish rate: 87.500%, success rate: 62.500%
+epi: 26, reward: -183.590, cost: 0.750, safe rate: 75.000%,finish rate: 100.000%, success rate: 75.000%
+epi: 27, reward: -225.966, cost: 21.625, safe rate: 37.500%,finish rate: 62.500%, success rate: 25.000%
+epi: 28, reward: -269.903, cost: 42.000, safe rate: 25.000%,finish rate: 75.000%, success rate: 25.000%
+epi: 29, reward: -235.792, cost: 12.750, safe rate: 37.500%,finish rate: 50.000%, success rate: 25.000%
+epi: 30, reward: -225.612, cost: 0.000, safe rate: 100.000%,finish rate: 75.000%, success rate: 75.000%
+epi: 31, reward: -159.751, cost: 14.000, safe rate: 37.500%,finish rate: 75.000%, success rate: 37.500%
+reward: -203.456, min/max reward: -269.903/-157.020, cost: 9.246, min/max cost: 0.000/42.000, safe_rate: 62.109%, finish_rate: 81.250%, success_rate: 55.469%

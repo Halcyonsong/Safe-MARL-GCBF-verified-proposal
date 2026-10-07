@@ -1,0 +1,1 @@
+/home/xiang/workspace/python-project/Safe-MARL-GCBF-verified-proposal/baselines/mappo_lag/output/mappo_lag/seed0_train/best.pkl

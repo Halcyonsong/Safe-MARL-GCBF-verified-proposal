@@ -1,0 +1,257 @@
+[mf1] arch=meanfield_mlp feature_v=5 (4quad wmean+invttc) track=meanfield teacher=logs/DoubleIntegrator/gcbf+/seed0_20261001232611 step=1000 input_dim=44 hidden=512 samples=32768 n_agents=8 n_rays=32 steps=10000 batch=16 minibatch=4096 danger_r=0.3 danger_c=4.0 eval_every=250 eval_seed=1234 lr=0.0001 seed=0
+step=0001 distill_loss=0.149153 mae=0.139549 buffer=65536 elapsed=7.1s
+step=0050 distill_loss=0.139877 mae=0.106885 buffer=131072 elapsed=32.2s
+step=0100 distill_loss=0.078751 mae=0.094004 buffer=131072 elapsed=54.7s
+step=0150 distill_loss=0.062133 mae=0.090683 buffer=131072 elapsed=77.2s
+step=0200 distill_loss=0.049991 mae=0.082820 buffer=131072 elapsed=99.9s
+step=0250 distill_loss=0.043232 mae=0.081049 buffer=131072 elapsed=122.6s
+[eval] step=0250 safe=37.50% finish=17.19% success=6.25% reward=-152.091 cost=19.188
+[mf1] best checkpoint=runs/meanfield/distill/mf_distill_20261005_v5/seed0/meanfield_mlp512_student_best.pkl success=6.25% loss=0.043232
+step=0300 distill_loss=0.042330 mae=0.076837 buffer=131072 elapsed=148.9s
+step=0350 distill_loss=0.040460 mae=0.074233 buffer=131072 elapsed=171.7s
+step=0400 distill_loss=0.043601 mae=0.076423 buffer=131072 elapsed=194.6s
+step=0450 distill_loss=0.039862 mae=0.071692 buffer=131072 elapsed=217.5s
+step=0500 distill_loss=0.041964 mae=0.067460 buffer=131072 elapsed=240.3s
+[eval] step=0500 safe=57.81% finish=75.00% success=51.56% reward=-118.793 cost=7.422
+[mf1] best checkpoint=runs/meanfield/distill/mf_distill_20261005_v5/seed0/meanfield_mlp512_student_best.pkl success=51.56% loss=0.041964
+step=0550 distill_loss=0.034572 mae=0.065826 buffer=131072 elapsed=266.5s
+step=0600 distill_loss=0.030685 mae=0.063858 buffer=131072 elapsed=289.6s
+step=0650 distill_loss=0.036800 mae=0.062151 buffer=131072 elapsed=312.6s
+step=0700 distill_loss=0.035805 mae=0.064777 buffer=131072 elapsed=335.8s
+step=0750 distill_loss=0.028870 mae=0.052731 buffer=131072 elapsed=358.8s
+[eval] step=0750 safe=67.19% finish=95.31% success=65.62% reward=-41.840 cost=5.016
+[mf1] best checkpoint=runs/meanfield/distill/mf_distill_20261005_v5/seed0/meanfield_mlp512_student_best.pkl success=65.62% loss=0.028870
+step=0800 distill_loss=0.031706 mae=0.052212 buffer=131072 elapsed=384.6s
+step=0850 distill_loss=0.034447 mae=0.054121 buffer=131072 elapsed=407.7s
+step=0900 distill_loss=0.027671 mae=0.052144 buffer=131072 elapsed=430.7s
+step=0950 distill_loss=0.029081 mae=0.049884 buffer=131072 elapsed=453.9s
+step=1000 distill_loss=0.033261 mae=0.057651 buffer=131072 elapsed=477.2s
+[eval] step=1000 safe=73.44% finish=76.56% success=60.94% reward=-34.687 cost=5.031
+step=1050 distill_loss=0.029236 mae=0.051879 buffer=131072 elapsed=503.3s
+step=1100 distill_loss=0.025470 mae=0.049481 buffer=131072 elapsed=526.6s
+step=1150 distill_loss=0.026974 mae=0.051843 buffer=131072 elapsed=549.9s
+step=1200 distill_loss=0.026037 mae=0.051455 buffer=131072 elapsed=573.2s
+step=1250 distill_loss=0.033019 mae=0.050709 buffer=131072 elapsed=597.0s
+[eval] step=1250 safe=73.44% finish=95.31% success=70.31% reward=-22.934 cost=4.859
+[mf1] best checkpoint=runs/meanfield/distill/mf_distill_20261005_v5/seed0/meanfield_mlp512_student_best.pkl success=70.31% loss=0.033019
+step=1300 distill_loss=0.030324 mae=0.055558 buffer=131072 elapsed=623.5s
+step=1350 distill_loss=0.030189 mae=0.049610 buffer=131072 elapsed=647.1s
+step=1400 distill_loss=0.024865 mae=0.046499 buffer=131072 elapsed=670.8s
+step=1450 distill_loss=0.026167 mae=0.047524 buffer=131072 elapsed=694.4s
+step=1500 distill_loss=0.029598 mae=0.053391 buffer=131072 elapsed=718.3s
+[eval] step=1500 safe=70.31% finish=87.50% success=64.06% reward=-24.345 cost=4.578
+step=1550 distill_loss=0.037287 mae=0.054300 buffer=131072 elapsed=745.1s
+step=1600 distill_loss=0.023542 mae=0.046448 buffer=131072 elapsed=768.8s
+step=1650 distill_loss=0.024801 mae=0.044801 buffer=131072 elapsed=792.6s
+step=1700 distill_loss=0.025802 mae=0.046458 buffer=131072 elapsed=816.4s
+step=1750 distill_loss=0.030211 mae=0.055846 buffer=131072 elapsed=840.4s
+[eval] step=1750 safe=68.75% finish=68.75% success=50.00% reward=-24.364 cost=4.766
+step=1800 distill_loss=0.023412 mae=0.045569 buffer=131072 elapsed=867.4s
+step=1850 distill_loss=0.025552 mae=0.049726 buffer=131072 elapsed=891.3s
+step=1900 distill_loss=0.027004 mae=0.045976 buffer=131072 elapsed=915.1s
+step=1950 distill_loss=0.025404 mae=0.045811 buffer=131072 elapsed=939.0s
+step=2000 distill_loss=0.025634 mae=0.046973 buffer=131072 elapsed=962.9s
+[eval] step=2000 safe=62.50% finish=93.75% success=59.38% reward=-21.973 cost=6.406
+step=2050 distill_loss=0.025773 mae=0.043360 buffer=131072 elapsed=989.7s
+step=2100 distill_loss=0.027087 mae=0.051625 buffer=131072 elapsed=1013.9s
+step=2150 distill_loss=0.021137 mae=0.043744 buffer=131072 elapsed=1037.6s
+step=2200 distill_loss=0.027695 mae=0.046688 buffer=131072 elapsed=1061.5s
+step=2250 distill_loss=0.024068 mae=0.051373 buffer=131072 elapsed=1085.5s
+[eval] step=2250 safe=78.12% finish=90.62% success=71.88% reward=-20.688 cost=4.891
+[mf1] best checkpoint=runs/meanfield/distill/mf_distill_20261005_v5/seed0/meanfield_mlp512_student_best.pkl success=71.88% loss=0.024068
+step=2300 distill_loss=0.021150 mae=0.041522 buffer=131072 elapsed=1112.0s
+step=2350 distill_loss=0.025196 mae=0.045467 buffer=131072 elapsed=1136.1s
+step=2400 distill_loss=0.023889 mae=0.045562 buffer=131072 elapsed=1160.2s
+step=2450 distill_loss=0.022552 mae=0.044020 buffer=131072 elapsed=1184.0s
+step=2500 distill_loss=0.024915 mae=0.049020 buffer=131072 elapsed=1208.0s
+[eval] step=2500 safe=65.62% finish=89.06% success=62.50% reward=-22.764 cost=9.484
+step=2550 distill_loss=0.022789 mae=0.042841 buffer=131072 elapsed=1234.9s
+step=2600 distill_loss=0.025403 mae=0.044594 buffer=131072 elapsed=1258.9s
+step=2650 distill_loss=0.024248 mae=0.045629 buffer=131072 elapsed=1282.8s
+step=2700 distill_loss=0.024489 mae=0.045907 buffer=131072 elapsed=1306.8s
+step=2750 distill_loss=0.024887 mae=0.044511 buffer=131072 elapsed=1330.6s
+[eval] step=2750 safe=75.00% finish=95.31% success=73.44% reward=-14.010 cost=3.828
+[mf1] best checkpoint=runs/meanfield/distill/mf_distill_20261005_v5/seed0/meanfield_mlp512_student_best.pkl success=73.44% loss=0.024887
+step=2800 distill_loss=0.021952 mae=0.044540 buffer=131072 elapsed=1357.8s
+step=2850 distill_loss=0.024457 mae=0.045415 buffer=131072 elapsed=1381.9s
+step=2900 distill_loss=0.022981 mae=0.042877 buffer=131072 elapsed=1405.7s
+step=2950 distill_loss=0.024525 mae=0.043174 buffer=131072 elapsed=1429.9s
+step=3000 distill_loss=0.022150 mae=0.043977 buffer=131072 elapsed=1453.9s
+[eval] step=3000 safe=76.56% finish=92.19% success=71.88% reward=-18.537 cost=3.641
+step=3050 distill_loss=0.021945 mae=0.042852 buffer=131072 elapsed=1480.9s
+step=3100 distill_loss=0.020696 mae=0.039448 buffer=131072 elapsed=1505.1s
+step=3150 distill_loss=0.019864 mae=0.040269 buffer=131072 elapsed=1529.0s
+step=3200 distill_loss=0.024526 mae=0.043922 buffer=131072 elapsed=1553.3s
+step=3250 distill_loss=0.025269 mae=0.045499 buffer=131072 elapsed=1577.2s
+[eval] step=3250 safe=73.44% finish=93.75% success=73.44% reward=-17.689 cost=5.469
+step=3300 distill_loss=0.022308 mae=0.043311 buffer=131072 elapsed=1604.1s
+step=3350 distill_loss=0.025162 mae=0.042677 buffer=131072 elapsed=1628.3s
+step=3400 distill_loss=0.023017 mae=0.044855 buffer=131072 elapsed=1652.5s
+step=3450 distill_loss=0.024364 mae=0.042741 buffer=131072 elapsed=1676.9s
+step=3500 distill_loss=0.025355 mae=0.042688 buffer=131072 elapsed=1701.0s
+[eval] step=3500 safe=76.56% finish=90.62% success=71.88% reward=-13.531 cost=7.172
+step=3550 distill_loss=0.021332 mae=0.040877 buffer=131072 elapsed=1728.1s
+step=3600 distill_loss=0.022995 mae=0.041691 buffer=131072 elapsed=1751.4s
+step=3650 distill_loss=0.024321 mae=0.043063 buffer=131072 elapsed=1775.1s
+step=3700 distill_loss=0.022292 mae=0.043644 buffer=131072 elapsed=1798.6s
+step=3750 distill_loss=0.024382 mae=0.045340 buffer=131072 elapsed=1823.0s
+[eval] step=3750 safe=73.44% finish=93.75% success=71.88% reward=-14.755 cost=4.500
+step=3800 distill_loss=0.021690 mae=0.041953 buffer=131072 elapsed=1850.4s
+step=3850 distill_loss=0.022749 mae=0.043126 buffer=131072 elapsed=1874.5s
+step=3900 distill_loss=0.021738 mae=0.041496 buffer=131072 elapsed=1898.7s
+step=3950 distill_loss=0.021120 mae=0.043146 buffer=131072 elapsed=1922.8s
+step=4000 distill_loss=0.023220 mae=0.041796 buffer=131072 elapsed=1946.8s
+[eval] step=4000 safe=68.75% finish=93.75% success=68.75% reward=-17.229 cost=5.266
+step=4050 distill_loss=0.022404 mae=0.040111 buffer=131072 elapsed=1974.1s
+step=4100 distill_loss=0.020606 mae=0.041287 buffer=131072 elapsed=1998.3s
+step=4150 distill_loss=0.022245 mae=0.041188 buffer=131072 elapsed=2022.7s
+step=4200 distill_loss=0.022760 mae=0.043533 buffer=131072 elapsed=2046.8s
+step=4250 distill_loss=0.026684 mae=0.041616 buffer=131072 elapsed=2070.7s
+[eval] step=4250 safe=73.44% finish=95.31% success=71.88% reward=-13.852 cost=5.703
+step=4300 distill_loss=0.020378 mae=0.040497 buffer=131072 elapsed=2097.7s
+step=4350 distill_loss=0.022748 mae=0.041620 buffer=131072 elapsed=2122.0s
+step=4400 distill_loss=0.018667 mae=0.038564 buffer=131072 elapsed=2146.4s
+step=4450 distill_loss=0.023488 mae=0.042476 buffer=131072 elapsed=2170.6s
+step=4500 distill_loss=0.020431 mae=0.039482 buffer=131072 elapsed=2194.8s
+[eval] step=4500 safe=81.25% finish=93.75% success=76.56% reward=-13.245 cost=2.219
+[mf1] best checkpoint=runs/meanfield/distill/mf_distill_20261005_v5/seed0/meanfield_mlp512_student_best.pkl success=76.56% loss=0.020431
+step=4550 distill_loss=0.021115 mae=0.042673 buffer=131072 elapsed=2221.6s
+step=4600 distill_loss=0.022370 mae=0.041526 buffer=131072 elapsed=2245.7s
+step=4650 distill_loss=0.020621 mae=0.039843 buffer=131072 elapsed=2270.0s
+step=4700 distill_loss=0.023076 mae=0.040506 buffer=131072 elapsed=2294.4s
+step=4750 distill_loss=0.021124 mae=0.041418 buffer=131072 elapsed=2318.8s
+[eval] step=4750 safe=71.88% finish=92.19% success=71.88% reward=-16.355 cost=4.750
+step=4800 distill_loss=0.020475 mae=0.038912 buffer=131072 elapsed=2346.0s
+step=4850 distill_loss=0.018119 mae=0.039244 buffer=131072 elapsed=2370.2s
+step=4900 distill_loss=0.019935 mae=0.041136 buffer=131072 elapsed=2394.5s
+step=4950 distill_loss=0.022231 mae=0.041190 buffer=131072 elapsed=2418.0s
+step=5000 distill_loss=0.018679 mae=0.041290 buffer=131072 elapsed=2441.7s
+[eval] step=5000 safe=78.12% finish=90.62% success=71.88% reward=-17.452 cost=3.094
+step=5050 distill_loss=0.020265 mae=0.039605 buffer=131072 elapsed=2468.3s
+step=5100 distill_loss=0.022695 mae=0.042979 buffer=131072 elapsed=2491.9s
+step=5150 distill_loss=0.019597 mae=0.042178 buffer=131072 elapsed=2515.5s
+step=5200 distill_loss=0.020461 mae=0.041899 buffer=131072 elapsed=2539.8s
+step=5250 distill_loss=0.022108 mae=0.040684 buffer=131072 elapsed=2564.1s
+[eval] step=5250 safe=79.69% finish=95.31% success=78.12% reward=-14.185 cost=3.859
+[mf1] best checkpoint=runs/meanfield/distill/mf_distill_20261005_v5/seed0/meanfield_mlp512_student_best.pkl success=78.12% loss=0.022108
+step=5300 distill_loss=0.020369 mae=0.038670 buffer=131072 elapsed=2591.1s
+step=5350 distill_loss=0.022957 mae=0.039506 buffer=131072 elapsed=2615.6s
+step=5400 distill_loss=0.020135 mae=0.039919 buffer=131072 elapsed=2640.1s
+step=5450 distill_loss=0.026918 mae=0.045484 buffer=131072 elapsed=2664.4s
+step=5500 distill_loss=0.022777 mae=0.042630 buffer=131072 elapsed=2688.7s
+[eval] step=5500 safe=79.69% finish=93.75% success=76.56% reward=-15.156 cost=4.578
+step=5550 distill_loss=0.025085 mae=0.042059 buffer=131072 elapsed=2715.9s
+step=5600 distill_loss=0.019616 mae=0.038978 buffer=131072 elapsed=2740.6s
+step=5650 distill_loss=0.021726 mae=0.039359 buffer=131072 elapsed=2765.2s
+step=5700 distill_loss=0.019137 mae=0.037271 buffer=131072 elapsed=2789.5s
+step=5750 distill_loss=0.017875 mae=0.039051 buffer=131072 elapsed=2813.8s
+[eval] step=5750 safe=84.38% finish=93.75% success=78.12% reward=-19.146 cost=2.562
+[mf1] best checkpoint=runs/meanfield/distill/mf_distill_20261005_v5/seed0/meanfield_mlp512_student_best.pkl success=78.12% loss=0.017875
+step=5800 distill_loss=0.015694 mae=0.038009 buffer=131072 elapsed=2840.8s
+step=5850 distill_loss=0.022191 mae=0.039496 buffer=131072 elapsed=2865.3s
+step=5900 distill_loss=0.019947 mae=0.039536 buffer=131072 elapsed=2889.4s
+step=5950 distill_loss=0.020656 mae=0.041894 buffer=131072 elapsed=2913.5s
+step=6000 distill_loss=0.019510 mae=0.039085 buffer=131072 elapsed=2937.8s
+[eval] step=6000 safe=71.88% finish=92.19% success=71.88% reward=-15.334 cost=4.031
+step=6050 distill_loss=0.021614 mae=0.038822 buffer=131072 elapsed=2964.9s
+step=6100 distill_loss=0.018818 mae=0.037986 buffer=131072 elapsed=2989.4s
+step=6150 distill_loss=0.019241 mae=0.038308 buffer=131072 elapsed=3013.4s
+step=6200 distill_loss=0.019860 mae=0.038991 buffer=131072 elapsed=3037.6s
+step=6250 distill_loss=0.018798 mae=0.037362 buffer=131072 elapsed=3062.0s
+[eval] step=6250 safe=78.12% finish=96.88% success=76.56% reward=-13.507 cost=4.031
+step=6300 distill_loss=0.020560 mae=0.040212 buffer=131072 elapsed=3089.2s
+step=6350 distill_loss=0.019451 mae=0.038084 buffer=131072 elapsed=3113.6s
+step=6400 distill_loss=0.019672 mae=0.039586 buffer=131072 elapsed=3137.9s
+step=6450 distill_loss=0.019805 mae=0.037800 buffer=131072 elapsed=3162.0s
+step=6500 distill_loss=0.020749 mae=0.041093 buffer=131072 elapsed=3186.1s
+[eval] step=6500 safe=73.44% finish=92.19% success=68.75% reward=-16.217 cost=4.375
+step=6550 distill_loss=0.018087 mae=0.037353 buffer=131072 elapsed=3213.2s
+step=6600 distill_loss=0.022994 mae=0.038895 buffer=131072 elapsed=3237.6s
+step=6650 distill_loss=0.019218 mae=0.037822 buffer=131072 elapsed=3261.9s
+step=6700 distill_loss=0.018963 mae=0.039982 buffer=131072 elapsed=3286.8s
+step=6750 distill_loss=0.020749 mae=0.039004 buffer=131072 elapsed=3311.5s
+[eval] step=6750 safe=73.44% finish=92.19% success=70.31% reward=-15.111 cost=4.359
+step=6800 distill_loss=0.019342 mae=0.038954 buffer=131072 elapsed=3338.9s
+step=6850 distill_loss=0.017712 mae=0.037107 buffer=131072 elapsed=3363.4s
+step=6900 distill_loss=0.019497 mae=0.037687 buffer=131072 elapsed=3387.7s
+step=6950 distill_loss=0.021452 mae=0.037921 buffer=131072 elapsed=3412.0s
+step=7000 distill_loss=0.022312 mae=0.040027 buffer=131072 elapsed=3436.4s
+[eval] step=7000 safe=78.12% finish=95.31% success=76.56% reward=-11.731 cost=4.141
+step=7050 distill_loss=0.020184 mae=0.038395 buffer=131072 elapsed=3463.4s
+step=7100 distill_loss=0.020544 mae=0.042003 buffer=131072 elapsed=3487.8s
+step=7150 distill_loss=0.019613 mae=0.038484 buffer=131072 elapsed=3512.3s
+step=7200 distill_loss=0.021363 mae=0.038191 buffer=131072 elapsed=3536.6s
+step=7250 distill_loss=0.019391 mae=0.040180 buffer=131072 elapsed=3561.0s
+[eval] step=7250 safe=78.12% finish=92.19% success=75.00% reward=-16.416 cost=4.297
+step=7300 distill_loss=0.018961 mae=0.039560 buffer=131072 elapsed=3588.4s
+step=7350 distill_loss=0.017980 mae=0.036074 buffer=131072 elapsed=3612.8s
+step=7400 distill_loss=0.019200 mae=0.038247 buffer=131072 elapsed=3637.0s
+step=7450 distill_loss=0.021262 mae=0.038937 buffer=131072 elapsed=3661.2s
+step=7500 distill_loss=0.020648 mae=0.037399 buffer=131072 elapsed=3686.1s
+[eval] step=7500 safe=84.38% finish=96.88% success=82.81% reward=-13.354 cost=2.609
+[mf1] best checkpoint=runs/meanfield/distill/mf_distill_20261005_v5/seed0/meanfield_mlp512_student_best.pkl success=82.81% loss=0.020648
+step=7550 distill_loss=0.017488 mae=0.037355 buffer=131072 elapsed=3713.4s
+step=7600 distill_loss=0.021132 mae=0.040694 buffer=131072 elapsed=3737.8s
+step=7650 distill_loss=0.019274 mae=0.038744 buffer=131072 elapsed=3762.0s
+step=7700 distill_loss=0.022303 mae=0.040186 buffer=131072 elapsed=3786.3s
+step=7750 distill_loss=0.018879 mae=0.035686 buffer=131072 elapsed=3810.6s
+[eval] step=7750 safe=78.12% finish=96.88% success=76.56% reward=-13.946 cost=2.875
+step=7800 distill_loss=0.019482 mae=0.038738 buffer=131072 elapsed=3837.7s
+step=7850 distill_loss=0.019438 mae=0.038366 buffer=131072 elapsed=3861.9s
+step=7900 distill_loss=0.019029 mae=0.038742 buffer=131072 elapsed=3886.1s
+step=7950 distill_loss=0.021843 mae=0.037797 buffer=131072 elapsed=3910.2s
+step=8000 distill_loss=0.020855 mae=0.039812 buffer=131072 elapsed=3934.4s
+[eval] step=8000 safe=78.12% finish=96.88% success=76.56% reward=-12.382 cost=3.281
+step=8050 distill_loss=0.024333 mae=0.040167 buffer=131072 elapsed=3961.7s
+step=8100 distill_loss=0.020899 mae=0.039364 buffer=131072 elapsed=3986.2s
+step=8150 distill_loss=0.021768 mae=0.039354 buffer=131072 elapsed=4010.4s
+step=8200 distill_loss=0.021200 mae=0.041086 buffer=131072 elapsed=4034.6s
+step=8250 distill_loss=0.018431 mae=0.037039 buffer=131072 elapsed=4059.0s
+[eval] step=8250 safe=81.25% finish=96.88% success=79.69% reward=-12.209 cost=2.750
+step=8300 distill_loss=0.018044 mae=0.037209 buffer=131072 elapsed=4086.1s
+step=8350 distill_loss=0.019685 mae=0.037040 buffer=131072 elapsed=4110.4s
+step=8400 distill_loss=0.018029 mae=0.035568 buffer=131072 elapsed=4134.7s
+step=8450 distill_loss=0.020921 mae=0.039667 buffer=131072 elapsed=4159.1s
+step=8500 distill_loss=0.018455 mae=0.038543 buffer=131072 elapsed=4183.3s
+[eval] step=8500 safe=75.00% finish=96.88% success=73.44% reward=-12.460 cost=3.516
+step=8550 distill_loss=0.021343 mae=0.038705 buffer=131072 elapsed=4210.5s
+step=8600 distill_loss=0.019768 mae=0.037297 buffer=131072 elapsed=4235.0s
+step=8650 distill_loss=0.019810 mae=0.038607 buffer=131072 elapsed=4259.4s
+step=8700 distill_loss=0.021637 mae=0.038970 buffer=131072 elapsed=4283.6s
+step=8750 distill_loss=0.016179 mae=0.035793 buffer=131072 elapsed=4307.4s
+[eval] step=8750 safe=78.12% finish=92.19% success=76.56% reward=-12.801 cost=4.969
+step=8800 distill_loss=0.018879 mae=0.038809 buffer=131072 elapsed=4334.0s
+step=8850 distill_loss=0.019196 mae=0.037913 buffer=131072 elapsed=4357.8s
+step=8900 distill_loss=0.018517 mae=0.035633 buffer=131072 elapsed=4381.5s
+step=8950 distill_loss=0.017580 mae=0.036667 buffer=131072 elapsed=4404.8s
+step=9000 distill_loss=0.018806 mae=0.036800 buffer=131072 elapsed=4428.4s
+[eval] step=9000 safe=79.69% finish=95.31% success=75.00% reward=-12.889 cost=3.094
+step=9050 distill_loss=0.019970 mae=0.038221 buffer=131072 elapsed=4454.8s
+step=9100 distill_loss=0.019574 mae=0.036743 buffer=131072 elapsed=4478.4s
+step=9150 distill_loss=0.018068 mae=0.036969 buffer=131072 elapsed=4502.2s
+step=9200 distill_loss=0.018578 mae=0.037844 buffer=131072 elapsed=4525.4s
+step=9250 distill_loss=0.018997 mae=0.037164 buffer=131072 elapsed=4550.2s
+[eval] step=9250 safe=84.38% finish=96.88% success=82.81% reward=-12.052 cost=3.141
+[mf1] best checkpoint=runs/meanfield/distill/mf_distill_20261005_v5/seed0/meanfield_mlp512_student_best.pkl success=82.81% loss=0.018997
+step=9300 distill_loss=0.019859 mae=0.036746 buffer=131072 elapsed=4577.5s
+step=9350 distill_loss=0.019035 mae=0.036250 buffer=131072 elapsed=4602.1s
+step=9400 distill_loss=0.017249 mae=0.034813 buffer=131072 elapsed=4626.1s
+step=9450 distill_loss=0.022194 mae=0.039847 buffer=131072 elapsed=4650.5s
+step=9500 distill_loss=0.017023 mae=0.035322 buffer=131072 elapsed=4675.1s
+[eval] step=9500 safe=79.69% finish=96.88% success=79.69% reward=-13.654 cost=3.719
+step=9550 distill_loss=0.016679 mae=0.036086 buffer=131072 elapsed=4702.1s
+step=9600 distill_loss=0.018480 mae=0.037596 buffer=131072 elapsed=4726.6s
+step=9650 distill_loss=0.017792 mae=0.035929 buffer=131072 elapsed=4750.9s
+step=9700 distill_loss=0.018248 mae=0.036363 buffer=131072 elapsed=4775.1s
+step=9750 distill_loss=0.020629 mae=0.038044 buffer=131072 elapsed=4799.3s
+[eval] step=9750 safe=71.88% finish=98.44% success=70.31% reward=-11.960 cost=5.094
+step=9800 distill_loss=0.020563 mae=0.042673 buffer=131072 elapsed=4826.3s
+step=9850 distill_loss=0.021003 mae=0.038246 buffer=131072 elapsed=4850.7s
+step=9900 distill_loss=0.018642 mae=0.036892 buffer=131072 elapsed=4875.1s
+step=9950 distill_loss=0.022463 mae=0.040311 buffer=131072 elapsed=4899.5s
+step=10000 distill_loss=0.019406 mae=0.040160 buffer=131072 elapsed=4923.7s
+[eval] step=10000 safe=79.69% finish=96.88% success=78.12% reward=-11.216 cost=3.281
+[mf1] done wall=4926.516s best_success_short=82.81% @ step 9250 ckpt=runs/meanfield/distill/mf_distill_20261005_v5/seed0/meanfield_mlp512_student.pkl best=runs/meanfield/distill/mf_distill_20261005_v5/seed0/meanfield_mlp512_student_best.pkl csv=runs/meanfield/distill/mf_distill_20261005_v5/seed0/meanfield_mlp512_student.csv
+checkpoint=runs/meanfield/distill/mf_distill_20261005_v5/seed0/meanfield_mlp512_student_best.pkl architecture=meanfield_mlp episodes=32 reward=-14.848 cost=4.855 safe_rate=80.859% finish_rate=94.141% success_rate=77.734%
+NOTE: empirical only; mean-field track; not formal verification.
+wrote runs/meanfield/distill/mf_distill_20261005_v5/seed0/validate_32epi.json

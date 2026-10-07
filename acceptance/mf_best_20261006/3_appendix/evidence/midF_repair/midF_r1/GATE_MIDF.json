@@ -1,0 +1,17 @@
+{
+  "tag": "midF_r1",
+  "midF_status": "VIOLATED_WITH_CES",
+  "near_plus_status": "PROVEN_FULL",
+  "metrics_32": {
+    "reward": -26.47571349143982,
+    "cost": 0.1875,
+    "safe_rate": 0.98046875,
+    "finish_rate": 0.84375,
+    "success_rate": 0.83203125
+  },
+  "midF_PROVEN": false,
+  "near_plus_ok": true,
+  "safe_ok": true,
+  "ACCEPT_MIDF_CANDIDATE": false,
+  "note": "Side-branch only. Do not promote without explicit user lock. acceptance/mf_best_20261006/1_primary untouched."
+}

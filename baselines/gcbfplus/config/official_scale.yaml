@@ -1,0 +1,32 @@
+# Official-scale GCBF+ baseline settings.
+# Prefer these when GPU memory is sufficient.
+
+env: DoubleIntegrator
+algo: gcbf+
+area_size: 4.0
+num_agents: 8
+obs: 4
+n_rays: 32
+seed: 0
+
+steps: 1000
+n_env_train: 16
+n_env_test: 32
+buffer_size: 512
+batch_size: 256
+inner_epoch: 8
+horizon: 32
+gnn_layers: 1
+alpha: 1.0
+
+lr_actor: 3.0e-5
+lr_cbf: 3.0e-5
+loss_action_coef: 1.0e-4
+loss_unsafe_coef: 1.0
+loss_safe_coef: 1.0
+loss_h_dot_coef: 0.01
+
+eval_interval: 1
+eval_epi: 1
+save_interval: 10
+log_dir: ./logs

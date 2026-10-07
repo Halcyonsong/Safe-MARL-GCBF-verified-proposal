@@ -1,0 +1,31 @@
+{
+  "track": "meanfield",
+  "domain": "rollout_danger_two_step_L2",
+  "feature_version": 5,
+  "input_dim": 44,
+  "checkpoint": "method/meanfield/output/repair/mf_residual_v5_r2_20261005/seed0/repair_best.pkl",
+  "policy_meta": {
+    "kind": "residual",
+    "path": "method/meanfield/output/repair/mf_residual_v5_r2_20261005/seed0/repair_best.pkl"
+  },
+  "episodes": 24,
+  "seed": 789,
+  "danger_radius": 0.35,
+  "stride": 2,
+  "collision_aa": 0.1,
+  "collision_ao": 0.05,
+  "n_agent_steps": 24576,
+  "n_danger": 7089,
+  "n_hit_two_step": 33,
+  "hit_rate_on_danger": 0.004655099449851883,
+  "n_kept": 33,
+  "n_labels_safe": 15,
+  "kind_counts": {
+    "aa": 0,
+    "ao": 33,
+    "both": 0,
+    "other": 0
+  },
+  "wall_time_s": 300.304,
+  "claim": "Empirical two-step L2 CEs (vectorized). Neighbor coasts; hits static. Not formal verification."
+}

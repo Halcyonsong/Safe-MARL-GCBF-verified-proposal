@@ -1,0 +1,12 @@
+{
+  "success_rate": 0.914,
+  "safe_rate": 0.957,
+  "finish_rate": 0.953,
+  "cost": 0.441,
+  "source": "BASELINE_COMPARE @32",
+  "policy_id": "gcbfplus",
+  "num_agents": 8,
+  "episodes": 32,
+  "eval_seed": 1234,
+  "note": "train-protocol reference (not re-run)"
+}

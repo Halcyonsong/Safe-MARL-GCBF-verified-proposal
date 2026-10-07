@@ -1,0 +1,131 @@
+{
+  "claim": "Empirical two-step radial L2 on real env graphs whose (d0,c0) lie in the mid-F semantic band. NOT formal verification. Formal mid-F product-box probe on MF-r2 was VIOLATED (204 CEs).",
+  "band": {
+    "d0": [
+      0.125,
+      0.132
+    ],
+    "c0": [
+      0.25,
+      0.3
+    ],
+    "R": 0.1
+  },
+  "collect": {
+    "n_in_band": 200,
+    "n_graphs": 176,
+    "episodes_used": 683,
+    "explorer": "mf_base",
+    "note": "Semantic (d0,c0) band on real GraphsTuple \u2014 NOT the formal 44-D product box. Other feature dims follow the env, not box bounds."
+  },
+  "paths": {
+    "mf_base": "method/meanfield/output/distill/mf_distill_20261005_v5/seed0/meanfield_mlp512_student_step9000.pkl",
+    "mf_r2": "method/meanfield/output/repair/mf_residual_v5_r2_20261005/seed0/repair_best.pkl",
+    "mappo_lag": "/home/xiang/workspace/python-project/Safe-MARL-GCBF-verified-proposal/baselines/mappo_lag/output/mappo_lag/seed0_train/best.pkl",
+    "ds_r2": "method/deepset/output/phase2/phase2_seed0base_20261004/seed0/V2d_r2/repair_r2_best.pkl",
+    "informarl": "/home/xiang/workspace/python-project/Safe-MARL-GCBF-verified-proposal/baselines/informarl/output/informarl/seed0_train/best.pkl",
+    "gcbfplus_run": "baselines/gcbfplus/log/gcbf+/seed0_20261001232611",
+    "gcbfplus_step": 1000
+  },
+  "rows": [
+    {
+      "policy": "coast_a0",
+      "n": 200,
+      "l2_safe_rate": 1.0,
+      "n_fail": 0,
+      "fail_rate": 0.0,
+      "margin_mean": 0.012356058496236794,
+      "margin_p10": 0.009118639647960669,
+      "margin_min": 0.007960789799690254,
+      "mean_abs_a_inf": 0.0,
+      "p90_abs_a_inf": 0.0,
+      "mean_d0": 0.12874112345278263,
+      "mean_c0": 0.2730844159424305,
+      "mean_d2": 0.11235605849623681,
+      "fwd_s": 0.01
+    },
+    {
+      "policy": "mf_base",
+      "n": 200,
+      "l2_safe_rate": 1.0,
+      "n_fail": 0,
+      "fail_rate": 0.0,
+      "margin_mean": 0.009614667277205731,
+      "margin_p10": 0.005914305305480957,
+      "margin_min": 0.003246437370777136,
+      "mean_abs_a_inf": 0.3045990243367851,
+      "p90_abs_a_inf": 0.5124765336513519,
+      "mean_d0": 0.12874112345278263,
+      "mean_c0": 0.2730844159424305,
+      "mean_d2": 0.10961466727720573,
+      "fwd_s": 0.51
+    },
+    {
+      "policy": "mf_r2",
+      "n": 200,
+      "l2_safe_rate": 1.0,
+      "n_fail": 0,
+      "fail_rate": 0.0,
+      "margin_mean": 0.008050651647737246,
+      "margin_p10": 0.003921941816806795,
+      "margin_min": 0.0007773357629776018,
+      "mean_abs_a_inf": 0.4783785387221724,
+      "p90_abs_a_inf": 0.750597047805786,
+      "mean_d0": 0.12874112345278263,
+      "mean_c0": 0.2730844159424305,
+      "mean_d2": 0.10805065164773726,
+      "fwd_s": 0.44
+    },
+    {
+      "policy": "mappo_lag",
+      "n": 200,
+      "l2_safe_rate": 0.965,
+      "n_fail": 7,
+      "fail_rate": 0.035,
+      "margin_mean": 0.006711648901253932,
+      "margin_p10": 0.002123648750782008,
+      "margin_min": -0.0010060575008392358,
+      "mean_abs_a_inf": 0.6271566216647625,
+      "p90_abs_a_inf": 1.0,
+      "mean_d0": 0.12874112345278263,
+      "mean_c0": 0.2730844159424305,
+      "mean_d2": 0.10671164890125392,
+      "fwd_s": 0.39
+    },
+    {
+      "policy": "gcbfplus",
+      "n": 200,
+      "l2_safe_rate": 0.98,
+      "n_fail": 4,
+      "fail_rate": 0.02,
+      "margin_mean": 0.007881063245944673,
+      "margin_p10": 0.00411695488095284,
+      "margin_min": -0.0013458204269409246,
+      "mean_abs_a_inf": 0.4972216944769025,
+      "p90_abs_a_inf": 0.8617578029632568,
+      "mean_d0": 0.12874112345278263,
+      "mean_c0": 0.2730844159424305,
+      "mean_d2": 0.10788106324594468,
+      "fwd_s": 0.79
+    },
+    {
+      "policy": "informarl",
+      "n": 200,
+      "l2_safe_rate": 1.0,
+      "n_fail": 0,
+      "fail_rate": 0.0,
+      "margin_mean": 0.007646893524676556,
+      "margin_p10": 0.004144618582725532,
+      "margin_min": 0.0006341980695724475,
+      "mean_abs_a_inf": 0.5232405523955822,
+      "p90_abs_a_inf": 0.8163941144943238,
+      "mean_d0": 0.12874112345278263,
+      "mean_c0": 0.2730844159424305,
+      "mean_d2": 0.10764689352467656,
+      "fwd_s": 0.51
+    }
+  ],
+  "wall_s": 4.99,
+  "feature_version": 5,
+  "input_dim": 44
+}

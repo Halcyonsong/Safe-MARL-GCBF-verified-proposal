@@ -1,0 +1,22 @@
+# Stage1 Actor-distillation with DeepSet capacity hidden=512.
+
+teacher_kind: actor
+hidden: 512
+steps: 8000
+batch_size: 16
+minibatch_size: 4096
+buffer_capacity: 131072
+rollout_length: 256
+refresh_every: 5
+lr: 1.0e-4
+
+danger_radius: 0.3
+danger_coef: 4.0
+
+eval_every: 500
+eval_episodes: 8
+save_every: 500
+
+checkpoint: method/deepset/output/stage1/actor/deepset_actor512_student.pkl
+# Train from scratch at 512; previous best is hidden=256 and incompatible.
+init_from: null

@@ -1,0 +1,12 @@
+{
+  "success_rate": 0.879,
+  "safe_rate": 0.934,
+  "finish_rate": 0.941,
+  "cost": 1.039,
+  "source": "BASELINE_COMPARE @32",
+  "policy_id": "ds_r2",
+  "num_agents": 8,
+  "episodes": 32,
+  "eval_seed": 1234,
+  "note": "train-protocol reference (not re-run)"
+}

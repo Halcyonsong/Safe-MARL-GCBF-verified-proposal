@@ -1,0 +1,18 @@
+{
+  "steps": 400,
+  "seed": 0,
+  "n_envs": 8,
+  "gnn_layers": 2,
+  "lr": 0.0003,
+  "cost_weight": 1.0,
+  "gamma": 0.99,
+  "gae_lambda": 0.95,
+  "clip_eps": 0.2,
+  "ppo_epochs": 4,
+  "num_minibatches": 4,
+  "ent_coef": 0.01,
+  "max_grad_norm": 1.0,
+  "eval_every": 50,
+  "eval_epi": 16,
+  "out_dir": "baselines/informarl/output/informarl/seed0_train"
+}

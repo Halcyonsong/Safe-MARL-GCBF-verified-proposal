@@ -1,0 +1,41 @@
+{
+  "policy_id": "gcbf_baseline",
+  "policy_kind": "gcbf",
+  "label": "gcbf_official_non_plus",
+  "checkpoint": "baselines/gcbf/log/gcbf/seed0_20261006100552/models/1000",
+  "artifacts": "baselines/gcbf/output/gcbf/",
+  "algo": "gcbf",
+  "env": "DoubleIntegrator",
+  "num_agents": 8,
+  "area_size": 4.0,
+  "obs": 4,
+  "n_rays": 32,
+  "train_seed": 0,
+  "train_steps": 1000,
+  "train_hparams": {
+    "n_env_train": 2,
+    "n_env_test": 4,
+    "batch_size": 32,
+    "inner_epoch": 4,
+    "buffer_size": 256,
+    "lr_actor": 3e-05,
+    "lr_cbf": 3e-05,
+    "note": "Same memory-limited scale as scripts/run_baseline_gcbfplus.sh"
+  },
+  "episodes": 32,
+  "eval_seed": 1234,
+  "teacher_step": 1000,
+  "reward": -52.222,
+  "cost": 6.629,
+  "safe_rate": 0.5390625,
+  "finish_rate": 0.9140625,
+  "success_rate": 0.515625,
+  "claim": "Empirical rollout only. Official GCBF (non-plus) comparison baseline. Not formal verification.",
+  "compare_ref_gcbfplus_32epi": {
+    "run": "baselines/gcbfplus/log/gcbf+/seed0_20261001232611",
+    "success_rate": 0.9140625,
+    "safe_rate": 0.95703125,
+    "finish_rate": 0.953125
+  },
+  "recorded_at": "2026-10-06T02:43:34Z"
+}

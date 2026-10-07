@@ -1,0 +1,359 @@
+{
+  "track": "meanfield",
+  "verify_kind": "feature44_box_full_coverage_two_step_L2",
+  "checkpoint": "method/meanfield/output/repair/mf_residual_v5_r2_20261005/seed0/repair_best.pkl",
+  "base_checkpoint": "method/meanfield/output/distill/mf_distill_20261005_v5/seed0/meanfield_mlp512_student_step9000.pkl",
+  "mode": "near_plus",
+  "design": {
+    "query_domain": "each free dim of 44-D MF feature",
+    "property": "two_step_radial_L2",
+    "deepset_buckets": false,
+    "aa_ao_primary_split": false
+  },
+  "config": {
+    "max_splits": 800,
+    "max_depth": 14,
+    "marabou_timeout": 20,
+    "marabou_max_width": 0.08,
+    "use_marabou": true,
+    "wall_limit_s": 900.0,
+    "d_min": null,
+    "d_max": null,
+    "close_hi": null,
+    "radius": 0.1
+  },
+  "claims": [
+    {
+      "claim": "mf_near_plus",
+      "status": "PROVEN_FULL",
+      "manifest": {
+        "name": "mf_near_plus",
+        "mode": "near_plus",
+        "feature_version": 5,
+        "input_dim": 44,
+        "feature_layout": {
+          "version": 5,
+          "ego": [
+            0,
+            8
+          ],
+          "agent_quad_n_mind_cmax_cwmean_invttc": [
+            8,
+            28
+          ],
+          "obs_quad_n_mind_cmax_invttc": [
+            28,
+            44
+          ],
+          "quadrants": "Q0:dx>=0,dy>=0; Q1:dx<0,dy>=0; Q2:dx<0,dy<0; Q3:dx>=0,dy<0",
+          "d_empty": "comm_radius",
+          "dist_weight": "exp(-d/(DIST_TAU_SCALE*comm_radius))",
+          "dist_tau_scale": 0.5,
+          "inv_ttc_max_clip": 20.0,
+          "time_threat": "inv_ttc_max of nearest-in-quad (not mean)",
+          "global_nearest": false
+        },
+        "radius": 0.1,
+        "collision_aa_ref": 0.1,
+        "collision_ao_ref": 0.05,
+        "notes": "Bounded acceptance preventable band (near_plus). min_d\u2208[0.14,0.4], |close|\u22640.3, inv_ttc\u22648, agent Q0 occupied. Two-step radial L2 R=0.1. Physics envelope d0-\u03b1\u00b7c0-\u03b2 \u2265 0.14-0.06\u00b70.30-0.009=0.113>0.10. Excludes coast-doomed (d\u22720.12) and extreme close (|c|>0.3). No DeepSet (k,m) / aa-ao claim split.",
+        "dimensions": [
+          {
+            "i": 0,
+            "name": "ego_px",
+            "lo": 0.0,
+            "hi": 4.0
+          },
+          {
+            "i": 1,
+            "name": "ego_py",
+            "lo": 0.0,
+            "hi": 4.0
+          },
+          {
+            "i": 2,
+            "name": "ego_vx",
+            "lo": -0.5,
+            "hi": 0.5
+          },
+          {
+            "i": 3,
+            "name": "ego_vy",
+            "lo": -0.5,
+            "hi": 0.5
+          },
+          {
+            "i": 4,
+            "name": "goal_dx",
+            "lo": -2.0,
+            "hi": 2.0
+          },
+          {
+            "i": 5,
+            "name": "goal_dy",
+            "lo": -2.0,
+            "hi": 2.0
+          },
+          {
+            "i": 6,
+            "name": "goal_dvx",
+            "lo": -1.0,
+            "hi": 1.0
+          },
+          {
+            "i": 7,
+            "name": "goal_dvy",
+            "lo": -1.0,
+            "hi": 1.0
+          },
+          {
+            "i": 8,
+            "name": "agent_Q0_n",
+            "lo": 1.0,
+            "hi": 4.0
+          },
+          {
+            "i": 9,
+            "name": "agent_Q0_min_d",
+            "lo": 0.14,
+            "hi": 0.4
+          },
+          {
+            "i": 10,
+            "name": "agent_Q0_close_max",
+            "lo": -0.3,
+            "hi": 0.3
+          },
+          {
+            "i": 11,
+            "name": "agent_Q0_close_wmean",
+            "lo": -0.3,
+            "hi": 0.3
+          },
+          {
+            "i": 12,
+            "name": "agent_Q0_inv_ttc_max",
+            "lo": 0.0,
+            "hi": 8.0
+          },
+          {
+            "i": 13,
+            "name": "agent_Q1_n",
+            "lo": 0.0,
+            "hi": 4.0
+          },
+          {
+            "i": 14,
+            "name": "agent_Q1_min_d",
+            "lo": 0.14,
+            "hi": 0.4
+          },
+          {
+            "i": 15,
+            "name": "agent_Q1_close_max",
+            "lo": -0.3,
+            "hi": 0.3
+          },
+          {
+            "i": 16,
+            "name": "agent_Q1_close_wmean",
+            "lo": -0.3,
+            "hi": 0.3
+          },
+          {
+            "i": 17,
+            "name": "agent_Q1_inv_ttc_max",
+            "lo": 0.0,
+            "hi": 8.0
+          },
+          {
+            "i": 18,
+            "name": "agent_Q2_n",
+            "lo": 0.0,
+            "hi": 4.0
+          },
+          {
+            "i": 19,
+            "name": "agent_Q2_min_d",
+            "lo": 0.14,
+            "hi": 0.4
+          },
+          {
+            "i": 20,
+            "name": "agent_Q2_close_max",
+            "lo": -0.3,
+            "hi": 0.3
+          },
+          {
+            "i": 21,
+            "name": "agent_Q2_close_wmean",
+            "lo": -0.3,
+            "hi": 0.3
+          },
+          {
+            "i": 22,
+            "name": "agent_Q2_inv_ttc_max",
+            "lo": 0.0,
+            "hi": 8.0
+          },
+          {
+            "i": 23,
+            "name": "agent_Q3_n",
+            "lo": 0.0,
+            "hi": 4.0
+          },
+          {
+            "i": 24,
+            "name": "agent_Q3_min_d",
+            "lo": 0.14,
+            "hi": 0.4
+          },
+          {
+            "i": 25,
+            "name": "agent_Q3_close_max",
+            "lo": -0.3,
+            "hi": 0.3
+          },
+          {
+            "i": 26,
+            "name": "agent_Q3_close_wmean",
+            "lo": -0.3,
+            "hi": 0.3
+          },
+          {
+            "i": 27,
+            "name": "agent_Q3_inv_ttc_max",
+            "lo": 0.0,
+            "hi": 8.0
+          },
+          {
+            "i": 28,
+            "name": "obs_Q0_n",
+            "lo": 0.0,
+            "hi": 4.0
+          },
+          {
+            "i": 29,
+            "name": "obs_Q0_min_d",
+            "lo": 0.14,
+            "hi": 0.4
+          },
+          {
+            "i": 30,
+            "name": "obs_Q0_close_max",
+            "lo": -0.3,
+            "hi": 0.3
+          },
+          {
+            "i": 31,
+            "name": "obs_Q0_inv_ttc_max",
+            "lo": 0.0,
+            "hi": 8.0
+          },
+          {
+            "i": 32,
+            "name": "obs_Q1_n",
+            "lo": 0.0,
+            "hi": 4.0
+          },
+          {
+            "i": 33,
+            "name": "obs_Q1_min_d",
+            "lo": 0.14,
+            "hi": 0.4
+          },
+          {
+            "i": 34,
+            "name": "obs_Q1_close_max",
+            "lo": -0.3,
+            "hi": 0.3
+          },
+          {
+            "i": 35,
+            "name": "obs_Q1_inv_ttc_max",
+            "lo": 0.0,
+            "hi": 8.0
+          },
+          {
+            "i": 36,
+            "name": "obs_Q2_n",
+            "lo": 0.0,
+            "hi": 4.0
+          },
+          {
+            "i": 37,
+            "name": "obs_Q2_min_d",
+            "lo": 0.14,
+            "hi": 0.4
+          },
+          {
+            "i": 38,
+            "name": "obs_Q2_close_max",
+            "lo": -0.3,
+            "hi": 0.3
+          },
+          {
+            "i": 39,
+            "name": "obs_Q2_inv_ttc_max",
+            "lo": 0.0,
+            "hi": 8.0
+          },
+          {
+            "i": 40,
+            "name": "obs_Q3_n",
+            "lo": 0.0,
+            "hi": 4.0
+          },
+          {
+            "i": 41,
+            "name": "obs_Q3_min_d",
+            "lo": 0.14,
+            "hi": 0.4
+          },
+          {
+            "i": 42,
+            "name": "obs_Q3_close_max",
+            "lo": -0.3,
+            "hi": 0.3
+          },
+          {
+            "i": 43,
+            "name": "obs_Q3_inv_ttc_max",
+            "lo": 0.0,
+            "hi": 8.0
+          }
+        ],
+        "query_domain": "R44_feature_box_only",
+        "property": "two_step_L2_radial_overapprox",
+        "not_deepset_buckets": true
+      },
+      "stats": {
+        "proven_leaves": 1,
+        "violated_real": 0,
+        "false_sat_relaxed": 0,
+        "unknown_leaves": 0,
+        "ibp_property_hits": 1,
+        "marabou_proven": 0,
+        "marabou_calls": 0,
+        "marabou_timeouts": 0,
+        "splits": 0,
+        "n_ces": 0,
+        "n_unknown_boxes": 0
+      },
+      "wall_time_s": 0.002,
+      "unknown_boxes_preview": [],
+      "n_unknown_boxes_total": 0,
+      "design": {
+        "query_domain": "44D_feature_box_per_free_dim",
+        "property": "two_step_radial_L2",
+        "not_deepset_km_buckets": true,
+        "not_primary_aa_ao_split": true,
+        "split_priority": "min_d_and_close_max",
+        "marabou_max_prop_width": 0.08
+      },
+      "soundness": "IBP/Marabou UNSAT proves the radial two-step property on the feature sub-box (sufficient for planar collision under same d0/c0). Real CEs re-checked with true deploy policy on the same property. PARTIAL = resource-bounded incomplete coverage of X, not a full pass."
+    }
+  ],
+  "n_counterexamples_total": 0,
+  "aggregate_status": "PROVEN_FULL"
+}

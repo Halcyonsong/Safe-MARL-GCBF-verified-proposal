@@ -1,0 +1,1 @@
+/home/xiang/workspace/python-project/Safe-MARL-GCBF-verified-proposal/baselines/informarl/output/informarl/seed0_train/best.pkl

@@ -1,0 +1,11 @@
+{
+  "policy_id": "gcbfplus",
+  "num_agents": 32,
+  "episodes": 32,
+  "eval_seed": 1234,
+  "reward": -21.306,
+  "cost": 0.874,
+  "safe_rate": 0.9375,
+  "finish_rate": 0.86426,
+  "success_rate": 0.81934
+}

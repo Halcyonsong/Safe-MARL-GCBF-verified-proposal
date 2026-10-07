@@ -1,0 +1,22 @@
+{
+  "policy_kind": "deepset_residual_gate",
+  "checkpoint": "method/deepset/output/phase2/phase2_seed0base_20261004/seed0/V2d_r2/repair_r2_best.pkl",
+  "base_checkpoint": "method/deepset/output/stage1/redistill/stage1_redistill_20261004_183322/seed0/deepset_actor512_student_best.pkl",
+  "architecture": "deepset_residual_gate",
+  "gate_mode": "hybrid",
+  "episodes": 32,
+  "eval_seed": 1234,
+  "num_agents": 32,
+  "reward": -41.54890739917755,
+  "reward_std": 8.391096734186545,
+  "cost": 1.8349609375,
+  "cost_std": 1.676946061797232,
+  "safe_rate": 0.89453125,
+  "finish_rate": 0.806640625,
+  "success_rate": 0.7392578125,
+  "n_agent_trials": 1024,
+  "success_se_agent": 0.013719984965688043,
+  "safe_se_agent": 0.009598639469297723,
+  "wall_time_s": 11.487,
+  "claim": "Empirical rollout only. Not formal verification."
+}

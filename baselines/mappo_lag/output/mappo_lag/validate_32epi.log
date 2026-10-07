@@ -1,0 +1,11 @@
+{
+  "success_rate": 0.683594,
+  "safe_rate": 0.90625,
+  "finish_rate": 0.726562,
+  "cost": 1.3828125,
+  "reward": -23.48083208501339,
+  "wall_time_s": 4.686,
+  "train_step": 350,
+  "lambda": 3.419375000000002
+}
+wrote runs/baseline/mappo_lag/validate_32epi.json

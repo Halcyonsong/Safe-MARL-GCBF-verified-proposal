@@ -1,0 +1,63 @@
+{
+  "protocol": {
+    "env": "DoubleIntegrator",
+    "num_agents": 8,
+    "area_size": 4.0,
+    "obs": 4,
+    "n_rays": 32,
+    "seed": 1234,
+    "n_graphs": 32,
+    "warmup": 40,
+    "repeats": 200,
+    "metric": "ms per control call (all agents); excludes env.step",
+    "device": "gpu"
+  },
+  "methods": {
+    "mf_r2": {
+      "checkpoint": "/home/xiang/workspace/python-project/Safe-MARL-GCBF-verified-proposal/acceptance/mf_final_20261012/5_frozen_sources/mf_planar_netdep_20261011/1_primary/01_models/residual_netdep_r3/repair_manual_pick.pkl",
+      "compute": "mf_r2",
+      "n": 200,
+      "mean_ms": 1.359075179680076,
+      "median_ms": 1.349369002127787,
+      "p95_ms": 1.4494112008833326,
+      "min_ms": 1.2416530007612891,
+      "max_ms": 2.0637080015148968,
+      "std_ms": 0.0851770628170776
+    },
+    "gcbfplus": {
+      "checkpoint": "/home/xiang/workspace/python-project/Safe-MARL-GCBF-verified-proposal/baselines/gcbfplus/log/gcbf+/seed0_20261001232611/models/1000",
+      "compute": "gcbfplus",
+      "n": 200,
+      "mean_ms": 1.3775365548281115,
+      "median_ms": 1.3534410027205013,
+      "p95_ms": 1.5711709511379008,
+      "min_ms": 1.260386998183094,
+      "max_ms": 1.929753998410888,
+      "std_ms": 0.09662650302552149
+    },
+    "handcbf": {
+      "checkpoint": "dec_share_cbf(alpha=1.0)",
+      "compute": "handcbf",
+      "n": 200,
+      "mean_ms": 6.54104717024893,
+      "median_ms": 5.952008501481032,
+      "p95_ms": 10.531496553812758,
+      "min_ms": 3.1848989965510555,
+      "max_ms": 14.093211000727024,
+      "std_ms": 2.1884455311804456
+    },
+    "netdep_r3": {
+      "checkpoint": "/home/xiang/workspace/python-project/Safe-MARL-GCBF-verified-proposal/acceptance/mf_final_20261012/5_frozen_sources/mf_planar_netdep_20261011/1_primary/01_models/residual_netdep_r3/repair_manual_pick.pkl",
+      "compute": "netdep_r3",
+      "n": 200,
+      "mean_ms": 1.359075179680076,
+      "median_ms": 1.349369002127787,
+      "p95_ms": 1.4494112008833326,
+      "min_ms": 1.2416530007612891,
+      "max_ms": 2.0637080015148968,
+      "std_ms": 0.0851770628170776,
+      "note": "same build_mf_fn path as mf_r2; weights=netdep_r3 manual_pick"
+    }
+  },
+  "pack_note": "Primary MF row for this pack is methods.netdep_r3 (alias of mf_r2 key from bench script)."
+}

@@ -216,9 +216,15 @@ def main() -> None:
     )
     ap.add_argument(
         "--score-mode",
-        choices=("success_safe", "success_finish"),
+        choices=("success_safe", "success_finish", "safe_success", "safe_cost"),
         default="success_safe",
-        help="best-ckpt selection: success_safe=2*suc+safe (default); success_finish=2*suc+fin (finish-oriented)",
+        help=(
+            "best-ckpt selection on short eval: "
+            "success_safe=2*suc+safe (legacy main); "
+            "success_finish=2*suc+fin; "
+            "safe_success=2*safe+suc (prefer collision cut); "
+            "safe_cost=safe - 0.02*cost"
+        ),
     )
     args = ap.parse_args()
 
@@ -408,9 +414,14 @@ def main() -> None:
                 gate_mix=args.gate_mix,
                 delta_clip=args.delta_clip,
             )
-            # score: default prefer success then safe; finish-oriented side-branch available
+            # score: pick best short-eval ckpt (8–16 epi is noisy; mode matters)
             if args.score_mode == "success_finish":
                 score = 2.0 * m["success_rate"] + m["finish_rate"]
+            elif args.score_mode == "safe_success":
+                # Prefer collision reduction; do not lock early high-success/low-safe
+                score = 2.0 * m["safe_rate"] + m["success_rate"]
+            elif args.score_mode == "safe_cost":
+                score = m["safe_rate"] - 0.02 * float(m.get("cost", 0.0))
             else:
                 score = 2.0 * m["success_rate"] + m["safe_rate"]
             is_best = score > best_score

@@ -1,2 +1,47 @@
-# Auto detect text files and perform LF normalization
-* text=auto
+# Line endings: normalize to LF in the repo and in the working tree (Linux / CI).
+# Avoids "LF will be replaced by CRLF" noise from ambiguous * text=auto.
+* text=auto eol=lf
+
+# Explicit text types (still LF)
+*.md     text eol=lf
+*.txt    text eol=lf
+*.py     text eol=lf
+*.sh     text eol=lf
+*.tex    text eol=lf
+*.bib    text eol=lf
+*.json   text eol=lf
+*.yaml   text eol=lf
+*.yml    text eol=lf
+*.toml   text eol=lf
+*.csv    text eol=lf
+*.svg    text eol=lf
+*.html   text eol=lf
+*.css    text eol=lf
+*.js     text eol=lf
+*.ts     text eol=lf
+.gitignore text eol=lf
+.gitattributes text eol=lf
+
+# Binary — never touch line endings
+*.pkl    binary
+*.pt     binary
+*.pth    binary
+*.onnx   binary
+*.npz   binary
+*.h5     binary
+*.pdf    binary
+*.png    binary
+*.jpg    binary
+*.jpeg   binary
+*.gif    binary
+*.webp   binary
+*.zip    binary
+*.gz     binary
+*.bz2    binary
+*.xz     binary
+*.7z     binary
+*.whl    binary
+*.so     binary
+*.dylib  binary
+*.dll    binary
+*.bin    binary

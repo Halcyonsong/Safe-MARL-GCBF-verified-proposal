@@ -174,10 +174,26 @@ def _add_physics_gate(net, x_vars: Sequence[int], w: MFResidualWeights) -> int:
 
 
 def _add_mccormick(net, g: int, d: int, z: int, dlo: float, dhi: float) -> None:
+    """McCormick envelope for z = g * d with g ∈ [0, 1], d ∈ [dlo, dhi].
+
+    Standard four inequalities (sound outer approx of the bilinear product):
+      z ≥ dlo * g
+      z ≥ d + dhi * g - dhi
+      z ≤ d + dlo * g - dlo
+      z ≤ dhi * g
+
+    NOTE: a previous sign error on the last inequality (z ≥ dhi*g) made any
+    positive-width box encode as globally UNSAT, so SafeSet "proven" was a
+    false certificate. Keep the last line as z - dhi*g ≤ 0.
+    """
+    # z >= dlo * g    <=>  dlo*g - z <= 0
     _le(net, [(dlo, g), (-1.0, z)], 0.0)
+    # z >= d + dhi*g - dhi  <=>  d + dhi*g - z <= dhi
     _le(net, [(1.0, d), (dhi, g), (-1.0, z)], dhi)
+    # z <= d + dlo*g - dlo  <=>  z - d - dlo*g <= -dlo
     _le(net, [(1.0, z), (-1.0, d), (-dlo, g)], -dlo)
-    _le(net, [(-1.0, z), (dhi, g)], 0.0)
+    # z <= dhi * g    <=>  z - dhi*g <= 0
+    _le(net, [(1.0, z), (-dhi, g)], 0.0)
 
 
 def _abs_upper(net, v: int) -> int:
@@ -314,4 +330,136 @@ def marabou_subbox(
         "method": "marabou_radial",
         "detail": str(code),
         "elapsed_s": elapsed,
+    }
+
+
+def _encode_deploy_action(
+    w: MFResidualWeights,
+    feat_lo: np.ndarray,
+    feat_hi: np.ndarray,
+):
+    """Shared Deploy encoding: returns (net, x_vars, action_vars).
+
+    Also enforces reachable contract goal_dv ≡ -v (eqs on dims 6,7).
+    """
+    feat_lo = np.asarray(feat_lo, dtype=np.float64)
+    feat_hi = np.asarray(feat_hi, dtype=np.float64)
+    net = Marabou.MarabouNetwork()
+    x_vars = [net.getNewVariable() for _ in range(len(feat_lo))]
+    for v, lo, hi in zip(x_vars, feat_lo, feat_hi):
+        net.setLowerBound(v, float(lo))
+        net.setUpperBound(v, float(hi))
+    # goal_dv = -v  (reachable_v1 contract; dims: v=2,3 goal_dv=6,7)
+    if len(x_vars) >= 8:
+        _eq(net, [(1.0, x_vars[6]), (1.0, x_vars[2])], 0.0)  # gdvx + vx = 0
+        _eq(net, [(1.0, x_vars[7]), (1.0, x_vars[3])], 0.0)  # gdvy + vy = 0
+
+    base_raw = _add_mlp(net, x_vars, w.base)
+    delta_raw = _add_mlp(net, x_vars, w.delta)
+    delta_c = _add_clip_delta(net, delta_raw, w.delta_clip)
+    g = _add_physics_gate(net, x_vars, w)
+
+    d_iv = ibp_mlp(w.delta, feat_lo, feat_hi)
+    dlo = np.clip(d_iv.lo, -w.delta_clip, w.delta_clip)
+    dhi = np.clip(d_iv.hi, -w.delta_clip, w.delta_clip)
+    zvars = []
+    for j in range(2):
+        z = net.getNewVariable()
+        lo_j, hi_j = float(min(dlo[j], dhi[j])), float(max(dlo[j], dhi[j]))
+        net.setLowerBound(z, min(0.0, lo_j, hi_j))
+        net.setUpperBound(z, max(0.0, lo_j, hi_j))
+        _add_mccormick(net, g, delta_c[j], z, lo_j, hi_j)
+        zvars.append(z)
+    raw = []
+    for b, z in zip(base_raw, zvars):
+        a = net.getNewVariable()
+        _eq(net, [(1.0, b), (1.0, z), (-1.0, a)], 0.0)
+        raw.append(a)
+    action = _add_clip_pm1(net, raw)
+    return net, x_vars, action
+
+
+def build_safeset_violation_query(
+    w: MFResidualWeights,
+    feat_lo: np.ndarray,
+    feat_hi: np.ndarray,
+    *,
+    a_min: float,
+    ay_abs: float = 1.0,
+) -> tuple:
+    """SAT iff some x has Deploy(x) outside SafeSet {ax≥a_min, |ay|≤ay_abs}.
+
+    Encoding: ax ≤ a_min - eps  (violation of ax≥a_min).
+    |ay|≤ay_abs is usually 1.0 (= action clip), so only ax matters.
+    """
+    net, x_vars, action = _encode_deploy_action(w, feat_lo, feat_hi)
+    eps = 1e-5
+    # violation of ax ≥ a_min  ⇔  ax ≤ a_min - eps
+    net.setUpperBound(action[0], float(a_min) - eps)
+    # optional: force |ay| already in [-1,1] via clip; if ay_abs < 1 could add
+    # but default ay_abs=1 matches clip.
+
+    big = 1e4
+    nvars = int(net.numVars) if not callable(net.numVars) else int(net.numVars())
+    for v in range(nvars):
+        if not net.lowerBoundExists(v):
+            net.setLowerBound(v, -big)
+        if not net.upperBoundExists(v):
+            net.setUpperBound(v, big)
+    return net, x_vars, action
+
+
+def marabou_safeset_subbox(
+    w: MFResidualWeights,
+    feat_lo: np.ndarray,
+    feat_hi: np.ndarray,
+    *,
+    a_min: float,
+    ay_abs: float = 1.0,
+    timeout_s: int = 30,
+) -> dict:
+    """UNSAT ⇒ every x in feat box has Deploy.ax ≥ a_min (SafeSet membership)."""
+    t0 = time.time()
+    try:
+        net, x_vars, action = build_safeset_violation_query(
+            w, feat_lo, feat_hi, a_min=a_min, ay_abs=ay_abs
+        )
+        code, vals, _stats = _solve(net, timeout_s)
+    except Exception as e:
+        return {
+            "status": "error",
+            "method": "marabou_safeset_ax_ge",
+            "detail": str(e),
+            "elapsed_s": round(time.time() - t0, 3),
+            "a_min": float(a_min),
+        }
+
+    elapsed = round(time.time() - t0, 3)
+    code_l = str(code).lower()
+    if "unsat" in code_l:
+        return {
+            "status": "proven",
+            "method": "marabou_safeset_ax_ge",
+            "detail": str(code),
+            "elapsed_s": elapsed,
+            "a_min": float(a_min),
+        }
+    if "sat" in code_l and "unsat" not in code_l:
+        x_ce = [float(vals.get(v, 0.0)) for v in x_vars] if vals else None
+        a_ce = [float(vals.get(v, 0.0)) for v in action] if vals else None
+        return {
+            "status": "sat_candidate",
+            "method": "marabou_safeset_ax_ge",
+            "detail": str(code),
+            "elapsed_s": elapsed,
+            "a_min": float(a_min),
+            "x": x_ce,
+            "a_relaxed": a_ce,
+        }
+    return {
+        "status": "timeout" if "timeout" in code_l or "unknown" in code_l else "unknown",
+        "method": "marabou_safeset_ax_ge",
+        "detail": str(code),
+        "elapsed_s": elapsed,
+        "a_min": float(a_min),
     }

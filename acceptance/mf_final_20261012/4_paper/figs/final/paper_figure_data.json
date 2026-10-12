@@ -1,0 +1,409 @@
+{
+  "meta": {
+    "package": "acceptance/mf_planar_netdep_20261011",
+    "created": "2026-10-11",
+    "protocol": {
+      "env": "DoubleIntegrator",
+      "n_agents_train": 8,
+      "area": 4.0,
+      "obs": 4,
+      "rays": 32,
+      "seed": 1234,
+      "main_epi": 32
+    },
+    "note": "Figures for planar netdep acceptance. Deploy = MF residual r2. NO DeepSet (DS). Numbers from part/ + pack EVAL. Formal claim = planar SafeSet M1\u2013M3 (not envelope).",
+    "recommended_figures": [
+      "fig1_repair_ce_hit",
+      "fig2_repair_task_metrics",
+      "fig3_baseline_main_bar",
+      "fig4_transfer_n",
+      "fig5_latency",
+      "fig6_pressure_stability",
+      "fig7_pareto_safe_success",
+      "fig8_formal_m_ladder"
+    ],
+    "excluded": [
+      "DS-r2",
+      "DeepSet",
+      "fig_arch_matrix_shapes (optional method only)"
+    ],
+    "figures_dir": "figs/final",
+    "legacy_dir": "figs/legacy"
+  },
+  "fig1_repair_ce_hit": {
+    "title": "Empirical two-step L2 hit rate on danger (repair trajectory)",
+    "caption_hint": "CE residual repair reduces danger-step two-step L2 hits ~12.7\u00d7 (base\u2192r2). part Table 3.",
+    "ylabel": "hit_on_danger (%)",
+    "stages": [
+      {
+        "id": "base",
+        "label": "Base (v5)",
+        "hit_on_danger": 0.0595,
+        "n_hit": 542,
+        "n_danger": 9108
+      },
+      {
+        "id": "r1",
+        "label": "Residual r1",
+        "hit_on_danger": 0.0131,
+        "n_hit": 128,
+        "n_danger": 9783
+      },
+      {
+        "id": "r2",
+        "label": "Residual r2 \u2605",
+        "hit_on_danger": 0.0047,
+        "n_hit": 33,
+        "n_danger": 7089
+      }
+    ],
+    "reduction_label": "\u224812.7\u00d7 reduction",
+    "source": "part/part5_experiments.md Table 3 \u00b7 mf_best r1/r2 CE"
+  },
+  "fig2_repair_task_metrics": {
+    "title": "Task metrics before/after residual repair (@32-epi)",
+    "caption_hint": "Repair raises safe (+15.6pp) and cuts cost; finish trades off (more conservative). part Table 3.",
+    "metrics": [
+      "success",
+      "safe",
+      "finish"
+    ],
+    "cost_axis": true,
+    "stages": [
+      {
+        "id": "base",
+        "label": "Base",
+        "success": 0.777,
+        "safe": 0.809,
+        "finish": 0.941,
+        "cost": 4.86
+      },
+      {
+        "id": "r1",
+        "label": "r1",
+        "success": 0.832,
+        "safe": 0.93,
+        "finish": 0.879,
+        "cost": 0.72
+      },
+      {
+        "id": "r2",
+        "label": "r2 \u2605",
+        "success": 0.82,
+        "safe": 0.965,
+        "finish": 0.84,
+        "cost": 0.305
+      }
+    ],
+    "source": "part/part5_experiments.md Table 3"
+  },
+  "fig3_baseline_main_bar": {
+    "title": "Main-protocol comparison (@32-epi, N=8)",
+    "caption_hint": "MF-r2: high safe/cost + planar M1\u2013M3 formal certificate. No DS. part Table 1.",
+    "order": [
+      "MF-r2",
+      "GCBF+",
+      "GCBF",
+      "HandCBF",
+      "MAPPO-Lag",
+      "InforMARL"
+    ],
+    "highlight": "MF-r2",
+    "formal_badge": "\u2605 planar M1\u2013M3",
+    "methods": {
+      "MF-r2": {
+        "role": "formal_main",
+        "success": 0.82,
+        "safe": 0.965,
+        "finish": 0.84,
+        "cost": 0.305,
+        "formal": true
+      },
+      "GCBF+": {
+        "role": "teacher",
+        "success": 0.914,
+        "safe": 0.957,
+        "finish": 0.953,
+        "cost": 0.44,
+        "formal": false
+      },
+      "GCBF": {
+        "role": "ablation",
+        "success": 0.555,
+        "safe": 0.621,
+        "finish": 0.812,
+        "cost": 9.25,
+        "formal": false
+      },
+      "HandCBF": {
+        "role": "external_qp",
+        "success": 0.848,
+        "safe": 1.0,
+        "finish": 0.848,
+        "cost": 0.0,
+        "formal": false
+      },
+      "MAPPO-Lag": {
+        "role": "baseline",
+        "success": 0.684,
+        "safe": 0.906,
+        "finish": 0.727,
+        "cost": 1.38,
+        "formal": false
+      },
+      "InforMARL": {
+        "role": "baseline",
+        "success": 0.609,
+        "safe": 0.625,
+        "finish": 0.957,
+        "cost": 6.93,
+        "formal": false
+      }
+    },
+    "source": "part/part5_experiments.md Table 1"
+  },
+  "fig4_transfer_n": {
+    "title": "Zero-shot transfer to more agents (trained at N=8)",
+    "caption_hint": "MF-r2 keeps high safe at N=32 (90.7%); success drop is finish-limited. Certificate does not extrapolate in N. No DS.",
+    "n_list": [
+      8,
+      16,
+      32
+    ],
+    "methods": {
+      "GCBF+": {
+        "8": {
+          "success": 0.914,
+          "safe": 0.957,
+          "finish": 0.953,
+          "cost": 0.44
+        },
+        "16": {
+          "success": 0.887,
+          "safe": 0.961,
+          "finish": 0.918,
+          "cost": 0.45
+        },
+        "32": {
+          "success": 0.819,
+          "safe": 0.938,
+          "finish": 0.864,
+          "cost": 0.87
+        }
+      },
+      "HandCBF": {
+        "8": {
+          "success": 0.848,
+          "safe": 1.0,
+          "finish": 0.848,
+          "cost": 0.0
+        },
+        "16": {
+          "success": 0.766,
+          "safe": 1.0,
+          "finish": 0.766,
+          "cost": 0.0
+        },
+        "32": {
+          "success": 0.637,
+          "safe": 0.97,
+          "finish": 0.648,
+          "cost": 0.55
+        }
+      },
+      "MF-r2": {
+        "8": {
+          "success": 0.82,
+          "safe": 0.965,
+          "finish": 0.84,
+          "cost": 0.31
+        },
+        "16": {
+          "success": 0.729,
+          "safe": 0.943,
+          "finish": 0.756,
+          "cost": 0.73
+        },
+        "32": {
+          "success": 0.484,
+          "safe": 0.907,
+          "finish": 0.508,
+          "cost": 1.23
+        }
+      },
+      "MAPPO-Lag": {
+        "8": {
+          "success": 0.684,
+          "safe": 0.906,
+          "finish": 0.727,
+          "cost": 1.38
+        },
+        "16": {
+          "success": 0.574,
+          "safe": 0.783,
+          "finish": 0.697,
+          "cost": 3.6
+        },
+        "32": {
+          "success": 0.392,
+          "safe": 0.54,
+          "finish": 0.625,
+          "cost": 8.33
+        }
+      },
+      "InforMARL": {
+        "8": {
+          "success": 0.609,
+          "safe": 0.625,
+          "finish": 0.957,
+          "cost": 6.93
+        },
+        "16": {
+          "success": 0.447,
+          "safe": 0.459,
+          "finish": 0.957,
+          "cost": 8.96
+        },
+        "32": {
+          "success": 0.253,
+          "safe": 0.254,
+          "finish": 0.961,
+          "cost": 14.87
+        }
+      }
+    },
+    "source": "part \u00a75.2 + mf_best_r2_reference/transfer_n"
+  },
+  "fig5_latency": {
+    "title": "Control compute latency (ms / 8-agent call, excl. env.step)",
+    "caption_hint": "MF-r2 matches GCBF+ neural forward; much faster than online QP HandCBF. part Table 1 latency column.",
+    "methods": {
+      "MF-r2": {
+        "median_ms": 1.373,
+        "mean_ms": 1.543,
+        "p95_ms": 1.628
+      },
+      "GCBF+": {
+        "median_ms": 1.394,
+        "mean_ms": 1.406,
+        "p95_ms": 1.574
+      },
+      "HandCBF": {
+        "median_ms": 4.718,
+        "mean_ms": 5.201,
+        "p95_ms": 8.552
+      }
+    },
+    "source": "part Table 1 (aligned mf_best latency protocol)"
+  },
+  "fig6_pressure_stability": {
+    "title": "MF-r2 stability under longer evaluation",
+    "caption_hint": "Success/safe/finish stable 32\u2192256 epi. part \u00a75.4 pressure table.",
+    "method": "MF-r2",
+    "points": [
+      {
+        "epi": 32,
+        "success": 0.82,
+        "safe": 0.965,
+        "finish": 0.84,
+        "cost": 0.305
+      },
+      {
+        "epi": 64,
+        "success": 0.826,
+        "safe": 0.949,
+        "finish": 0.85,
+        "cost": 0.4
+      },
+      {
+        "epi": 256,
+        "success": 0.835,
+        "safe": 0.957,
+        "finish": 0.864,
+        "cost": 0.442
+      }
+    ],
+    "source": "part/part5_experiments.md pressure table"
+  },
+  "fig7_pareto_safe_success": {
+    "title": "Safe vs success (@32-epi)",
+    "caption_hint": "MF-r2 in high-safe region with planar formal certificate marker. No DS.",
+    "points": [
+      {
+        "id": "MF-r2",
+        "success": 0.82,
+        "safe": 0.965,
+        "formal": true
+      },
+      {
+        "id": "GCBF+",
+        "success": 0.914,
+        "safe": 0.957,
+        "formal": false
+      },
+      {
+        "id": "GCBF",
+        "success": 0.555,
+        "safe": 0.621,
+        "formal": false
+      },
+      {
+        "id": "HandCBF",
+        "success": 0.848,
+        "safe": 1.0,
+        "formal": false
+      },
+      {
+        "id": "MAPPO-Lag",
+        "success": 0.684,
+        "safe": 0.906,
+        "formal": false
+      },
+      {
+        "id": "InforMARL",
+        "success": 0.609,
+        "safe": 0.625,
+        "formal": false
+      }
+    ],
+    "source": "part Table 1"
+  },
+  "fig8_formal_m_ladder": {
+    "title": "Planar netdep formal ladder (MF-r2 \u00b7 same Deploy)",
+    "caption_hint": "M1\u2013M3 all PROVEN_FULL on scoped X; wall time grows with vg; sample ax_min stays >0. part Table 2.",
+    "levels": [
+      {
+        "id": "M1",
+        "label": "M1\nvg\u00b10.01",
+        "vg": 0.01,
+        "wall_s": 65.0,
+        "ax_min": 0.874,
+        "status": "PROVEN_FULL"
+      },
+      {
+        "id": "M2",
+        "label": "M2\nvg\u00b10.05",
+        "vg": 0.05,
+        "wall_s": 713.0,
+        "ax_min": 0.85,
+        "status": "PROVEN_FULL"
+      },
+      {
+        "id": "M3",
+        "label": "M3 \u2605\nvg\u00b10.10",
+        "vg": 0.1,
+        "wall_s": 1704.0,
+        "ax_min": 0.819,
+        "status": "PROVEN_FULL"
+      }
+    ],
+    "task_constant": {
+      "success": 0.82,
+      "safe": 0.965,
+      "finish": 0.84,
+      "cost": 0.305,
+      "note": "Same residual_r2 checkpoint for all M levels"
+    },
+    "source": "part/part5_experiments.md Table 2 \u00b7 mf_best_r2_same_X"
+  }
+}

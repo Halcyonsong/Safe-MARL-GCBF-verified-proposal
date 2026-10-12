@@ -1,0 +1,167 @@
+{
+  "title": "planar_reachable_v1 box\u2192env shared baselines",
+  "N": 256,
+  "seed": 20261010,
+  "physics": {
+    "cv": 0.06,
+    "ca": 0.009,
+    "p2x_coast_lo": 0.09999999999999999,
+    "p2x_coast_hi": 0.107,
+    "p2x_worst_a": 0.091,
+    "p2x_best_a": 0.10899999999999999,
+    "radius": 0.1,
+    "network_dependent": true,
+    "envelope_any_a_safe": false,
+    "note": "If envelope_any_a_safe, box is meaningless for controller cert.",
+    "signed_a_matters": true,
+    "property": "planar_two_step_L2_not_radial",
+    "ibp_proof": "min_norm_aabb(p2_box) >= R",
+    "feat_contract": {
+      "version": "reachable_v1",
+      "comm_radius": 0.5,
+      "goal_xy_aabb": [
+        -0.5,
+        0.5
+      ],
+      "goal_xy_note": "AABB over-approx of extract disk ||g||<=comm; sample uses disk",
+      "goal_dv_equals_minus_v": true,
+      "goal_dv_bounds": [
+        -0.5,
+        0.5
+      ],
+      "v_bounds": [
+        -0.5,
+        0.5
+      ],
+      "legacy_wide_goal_abs2": false
+    }
+  },
+  "construction": "reachable claim sample \u2192 EnvState (goal_v=0, goal_xy from x, threat=ego-rel)",
+  "meta_summary": {
+    "rel_err_mean": 8.31476727893071e-08,
+    "feat_l2_mean": 2.0833082285863758,
+    "goal_dv_err_max": 0.0
+  },
+  "rows": [
+    {
+      "policy": "coast_a0",
+      "n": 256,
+      "n_fail": 0,
+      "fail_rate": 0.0,
+      "safe_rate": 1.0,
+      "margin_mean": 0.00578905192543914,
+      "ax_mean": 0.0,
+      "repairable_frac": null,
+      "fwd_s": 0.0
+    },
+    {
+      "policy": "const_a=-1",
+      "n": 256,
+      "n_fail": 219,
+      "fail_rate": 0.85546875,
+      "safe_rate": 0.14453125,
+      "margin_mean": -0.0029902633921207364,
+      "ax_mean": -1.0,
+      "repairable_frac": 1.0,
+      "fwd_s": 0.0
+    },
+    {
+      "policy": "const_a=+1",
+      "n": 256,
+      "n_fail": 0,
+      "fail_rate": 0.0,
+      "safe_rate": 1.0,
+      "margin_mean": 0.014601839294252626,
+      "ax_mean": 1.0,
+      "repairable_frac": null,
+      "fwd_s": 0.0
+    },
+    {
+      "policy": "mf_base",
+      "n": 256,
+      "n_fail": 0,
+      "fail_rate": 0.0,
+      "safe_rate": 1.0,
+      "margin_mean": 0.008067277028602018,
+      "ax_mean": 0.25252442684723064,
+      "repairable_frac": null,
+      "fwd_s": 0.35
+    },
+    {
+      "policy": "mf_r2",
+      "n": 256,
+      "n_fail": 0,
+      "fail_rate": 0.0,
+      "safe_rate": 1.0,
+      "margin_mean": 0.011411676548071192,
+      "ax_mean": 0.556766678171698,
+      "repairable_frac": null,
+      "fwd_s": 0.35
+    },
+    {
+      "policy": "netdep_r3",
+      "n": 256,
+      "n_fail": 0,
+      "fail_rate": 0.0,
+      "safe_rate": 1.0,
+      "margin_mean": 0.010721834657840811,
+      "ax_mean": 0.4755781626990938,
+      "repairable_frac": null,
+      "fwd_s": 0.34
+    },
+    {
+      "policy": "mappo_lag",
+      "n": 256,
+      "n_fail": 6,
+      "fail_rate": 0.0234375,
+      "safe_rate": 0.9765625,
+      "margin_mean": 0.010088239339146009,
+      "ax_mean": 0.45383715961361304,
+      "repairable_frac": 1.0,
+      "fwd_s": 0.3
+    },
+    {
+      "policy": "gcbfplus",
+      "n": 256,
+      "n_fail": 0,
+      "fail_rate": 0.0,
+      "safe_rate": 1.0,
+      "margin_mean": 0.011559955152338406,
+      "ax_mean": 0.6781451634597033,
+      "repairable_frac": null,
+      "fwd_s": 0.56
+    },
+    {
+      "policy": "informarl",
+      "n": 256,
+      "n_fail": 35,
+      "fail_rate": 0.13671875,
+      "safe_rate": 0.86328125,
+      "margin_mean": 0.006252511387239966,
+      "ax_mean": 0.044744872033334104,
+      "repairable_frac": 1.0,
+      "fwd_s": 0.5
+    },
+    {
+      "policy": "handcbf",
+      "n": 128,
+      "n_fail": 0,
+      "fail_rate": 0.0,
+      "safe_rate": 1.0,
+      "margin_mean": 0.008261327726944517,
+      "ax_mean": 0.254612614029611,
+      "repairable_frac": null,
+      "fwd_s": 2.69
+    },
+    {
+      "policy": "oracle_11x11",
+      "n": 256,
+      "n_fail": 0,
+      "fail_rate": 0.0,
+      "safe_rate": 1.0,
+      "margin_mean": 0.016449862967496877,
+      "ax_mean": 1.0,
+      "repairable_frac": null
+    }
+  ]
+}

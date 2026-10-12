@@ -1,0 +1,84 @@
+{
+  "checkpoint": "acceptance/mf_final_20261012/5_frozen_sources/mf_best_20261006/1_primary/01_models/residual_r2/repair_best.pkl",
+  "ladder": {
+    "M1": {
+      "status": "PROVEN_FULL",
+      "wall_s": 64.954,
+      "root": "proven",
+      "root_t": 27.712,
+      "ax_min_sample": 0.8739832351176314
+    },
+    "M2": {
+      "status": "PROVEN_FULL",
+      "wall_s": 713.053,
+      "root": "timeout",
+      "root_t": 600.63,
+      "ax_min_sample": 0.850431974348646,
+      "cover": {
+        "status": "PROVEN_FULL",
+        "method": "marabou_vg_bisect",
+        "leaves": [
+          {
+            "name": "planar_netdep_reachable_pose_fixed_vg0.05_thr_mid_lo",
+            "status": "proven",
+            "t": 18.79,
+            "vg_w": 0.05,
+            "vlo": -0.05,
+            "vhi": 0.0,
+            "detail": "unsat"
+          },
+          {
+            "name": "planar_netdep_reachable_pose_fixed_vg0.05_thr_mid_hi",
+            "status": "proven",
+            "t": 43.909,
+            "vg_w": 0.05,
+            "vlo": 0.0,
+            "vhi": 0.05,
+            "detail": "unsat"
+          }
+        ],
+        "proven": [
+          "planar_netdep_reachable_pose_fixed_vg0.05_thr_mid_lo",
+          "planar_netdep_reachable_pose_fixed_vg0.05_thr_mid_hi"
+        ],
+        "unknown": []
+      }
+    },
+    "M3": {
+      "status": "PROVEN_FULL",
+      "wall_s": 1704.002,
+      "root": "timeout",
+      "root_t": 900.619,
+      "ax_min_sample": 0.8192554839733366,
+      "cover": {
+        "status": "PROVEN_FULL",
+        "method": "marabou_vg_bisect",
+        "leaves": [
+          {
+            "name": "planar_netdep_reachable_pose_fixed_vg0.1_thr_mid_lo",
+            "status": "proven",
+            "t": 150.102,
+            "vg_w": 0.1,
+            "vlo": -0.1,
+            "vhi": 0.0,
+            "detail": "unsat"
+          },
+          {
+            "name": "planar_netdep_reachable_pose_fixed_vg0.1_thr_mid_hi",
+            "status": "proven",
+            "t": 562.685,
+            "vg_w": 0.1,
+            "vlo": 0.0,
+            "vhi": 0.1,
+            "detail": "unsat"
+          }
+        ],
+        "proven": [
+          "planar_netdep_reachable_pose_fixed_vg0.1_thr_mid_lo",
+          "planar_netdep_reachable_pose_fixed_vg0.1_thr_mid_hi"
+        ],
+        "unknown": []
+      }
+    }
+  }
+}

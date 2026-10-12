@@ -1,0 +1,197 @@
+{
+  "aggregate_status": "PROVEN_FULL",
+  "track": "mf_best_r2_M2",
+  "encoding_fixed": true,
+  "mccormick_bug_fixed": true,
+  "network_dependent": true,
+  "envelope_any_a_safe": false,
+  "checkpoint": "acceptance/mf_final_20261012/5_frozen_sources/mf_best_20261006/1_primary/01_models/residual_r2/repair_best.pkl",
+  "checkpoint_note": "mf_best residual r2; same planar X as netdep_r3 M-ladder",
+  "X": {
+    "rel": {
+      "dx": [
+        0.118,
+        0.122
+      ],
+      "dy": [
+        -0.04,
+        0.04
+      ],
+      "dvx": [
+        -0.3,
+        -0.25
+      ],
+      "dvy": [
+        -0.05,
+        0.05
+      ]
+    },
+    "px_py": [
+      2.0,
+      2.0
+    ],
+    "vg_half": 0.05,
+    "threat": "midpoint_of_coupled_box",
+    "R": 0.1
+  },
+  "safeset_a_min": -5.820766091346741e-11,
+  "physics": {
+    "cv": 0.06,
+    "ca": 0.009,
+    "p2x_coast_lo": 0.09999999999999999,
+    "p2x_coast_hi": 0.107,
+    "p2x_worst_a": 0.091,
+    "p2x_best_a": 0.10899999999999999,
+    "radius": 0.1,
+    "network_dependent": true,
+    "envelope_any_a_safe": false,
+    "note": "If envelope_any_a_safe, box is meaningless for controller cert.",
+    "signed_a_matters": true,
+    "property": "planar_two_step_L2_not_radial",
+    "ibp_proof": "Deploy\u2286SafeSet(ax\u2265a_min) or min_norm_aabb(p2_box)\u2265R",
+    "feat_contract": {
+      "version": "reachable_v1",
+      "comm_radius": 0.5,
+      "goal_xy_aabb": [
+        -0.05,
+        0.05
+      ],
+      "goal_xy_note": "AABB over-approx of extract disk ||g||<=comm; sample uses disk",
+      "goal_dv_equals_minus_v": true,
+      "goal_dv_bounds": [
+        -0.05,
+        0.05
+      ],
+      "v_bounds": [
+        -0.05,
+        0.05
+      ],
+      "legacy_wide_goal_abs2": false
+    }
+  },
+  "encoding_sanity_unconstrained": {
+    "status": "sat",
+    "elapsed_s": 17.033
+  },
+  "root_marabou": {
+    "status": "timeout",
+    "method": "marabou_safeset_ax_ge",
+    "detail": "TIMEOUT",
+    "elapsed_s": 600.63,
+    "a_min": -5.820766091346741e-11
+  },
+  "cover": {
+    "status": "PROVEN_FULL",
+    "method": "marabou_vg_bisect",
+    "leaves": [
+      {
+        "name": "planar_netdep_reachable_pose_fixed_vg0.05_thr_mid_lo",
+        "status": "proven",
+        "t": 18.79,
+        "vg_w": 0.05,
+        "vlo": -0.05,
+        "vhi": 0.0,
+        "detail": "unsat"
+      },
+      {
+        "name": "planar_netdep_reachable_pose_fixed_vg0.05_thr_mid_hi",
+        "status": "proven",
+        "t": 43.909,
+        "vg_w": 0.05,
+        "vlo": 0.0,
+        "vhi": 0.05,
+        "detail": "unsat"
+      }
+    ],
+    "proven": [
+      "planar_netdep_reachable_pose_fixed_vg0.05_thr_mid_lo",
+      "planar_netdep_reachable_pose_fixed_vg0.05_thr_mid_hi"
+    ],
+    "unknown": []
+  },
+  "counterfactual_ax_ge_0.99": {
+    "status": "sat_candidate",
+    "method": "marabou_safeset_ax_ge",
+    "detail": "sat",
+    "elapsed_s": 32.558,
+    "a_min": 0.99,
+    "x": [
+      2.0,
+      2.0,
+      -0.006140471974560159,
+      -0.05,
+      0.0012618608076367574,
+      -0.05,
+      0.006140471974560159,
+      0.05,
+      1.0,
+      0.12319501538281613,
+      0.2706548645616491,
+      0.2706548645616491,
+      2.2202381479353273,
+      0.0,
+      0.5,
+      0.0,
+      0.0,
+      0.0,
+      0.0,
+      0.5,
+      0.0,
+      0.0,
+      0.0,
+      1.0,
+      0.12319501538281613,
+      0.2706548645616491,
+      0.2706548645616491,
+      2.2202381479353273,
+      0.0,
+      0.5,
+      0.0,
+      0.0,
+      0.0,
+      0.5,
+      0.0,
+      0.0,
+      0.0,
+      0.5,
+      0.0,
+      0.0,
+      0.0,
+      0.5,
+      0.0,
+      0.0
+    ],
+    "a_relaxed": [
+      0.7458241928676284,
+      -0.6559596289668315
+    ]
+  },
+  "samples": {
+    "n": 512,
+    "ax_min": 0.850431974348646,
+    "ax_mean": 0.8756668570520508,
+    "ax_max": 0.8969413892912372,
+    "n_ce": 0
+  },
+  "diagnostics": {
+    "a_mid": [
+      0.8782743709030325,
+      -0.36695694551529023
+    ],
+    "p2_brake": [
+      0.09449999999999999,
+      0.0
+    ],
+    "p2_gas": [
+      0.11249999999999999,
+      0.0
+    ],
+    "p2_deploy_mid": [
+      0.11140446933812728,
+      -0.0033026125096376115
+    ]
+  },
+  "wall_s": 713.053,
+  "ACTIVE_written": false,
+  "claim": "Marabou UNSAT \u21d2 Deploy.ax\u2265a_min on scoped X (netdep). Weights=mf_best r2."
+}

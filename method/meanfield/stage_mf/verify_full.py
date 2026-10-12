@@ -331,9 +331,9 @@ def main() -> None:
     ap.add_argument("--checkpoint", default="")
     ap.add_argument(
         "--mode",
-        choices=["smoke", "near", "near_plus", "full"],
+        choices=["smoke", "near", "near_plus", "netdep", "full"],
         default="smoke",
-        help="smoke | near | near_plus (bounded acceptance) | full",
+        help="smoke | near | near_plus (main accept) | netdep (side-branch meaningful) | full",
     )
     ap.add_argument("--max-splits", type=int, default=800)
     ap.add_argument("--max-depth", type=int, default=14)
@@ -349,7 +349,9 @@ def main() -> None:
     ap.add_argument("--d-max", type=float, default=None,
                     help="override near/full min_d hi (default: mode preset)")
     ap.add_argument("--close-hi", type=float, default=None,
-                    help="override |close| upper (default: mode preset)")
+                    help="override close upper (default: mode preset)")
+    ap.add_argument("--close-lo", type=float, default=None,
+                    help="override close lower (default: mode preset; netdep uses high-close fringe)")
     ap.add_argument("--radius", type=float, default=0.10, help="two-step R (default AA)")
     ap.add_argument("--out-dir", default="")
     ap.add_argument(
@@ -373,6 +375,7 @@ def main() -> None:
         mode=args.mode,
         radius=args.radius,
         close_hi=args.close_hi,
+        close_lo=args.close_lo,
     )
 
     stamp = time.strftime("%Y%m%d_%H%M%S")
@@ -405,6 +408,7 @@ def main() -> None:
             "d_min": args.d_min,
             "d_max": args.d_max,
             "close_hi": args.close_hi,
+            "close_lo": args.close_lo,
             "radius": args.radius,
         },
         "claims": [],

@@ -1,0 +1,22 @@
+{
+  "policy_id": "mf_r2",
+  "architecture": "meanfield_residual_phys",
+  "checkpoint": "/home/xiang/workspace/python-project/Safe-MARL-GCBF-verified-proposal/method/meanfield/output/repair/mf_residual_v5_netdep_r2_20261010/seed0/repair_last.pkl",
+  "feature_version": 5,
+  "input_dim": 44,
+  "episodes": 32,
+  "eval_seed": 1234,
+  "num_agents": 8,
+  "n_rays": 32,
+  "area_size": 4.0,
+  "obs": 4,
+  "max_step": 256,
+  "reward": -28.156755059957504,
+  "cost": 0.47265625,
+  "safe_rate": 0.949219,
+  "finish_rate": 0.855469,
+  "success_rate": 0.816406,
+  "n_agent_trials": 256,
+  "wall_time_s": 6.363,
+  "claim": "Empirical MF residual transfer. Not formal verification."
+}

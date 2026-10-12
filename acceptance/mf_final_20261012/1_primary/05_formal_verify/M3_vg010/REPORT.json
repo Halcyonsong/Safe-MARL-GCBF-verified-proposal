@@ -1,0 +1,110 @@
+{
+  "aggregate_status": "PROVEN_FULL",
+  "track": "enlarge_M3_vg010",
+  "encoding_fixed": true,
+  "network_dependent": true,
+  "envelope_any_a_safe": false,
+  "checkpoint": "method/meanfield/output/repair/mf_residual_v5_netdep_r3_20261010/seed0/repair_manual_pick.pkl",
+  "X": {
+    "rel": "same_M1_fringe",
+    "px_py": [
+      2,
+      2
+    ],
+    "vg_half": 0.1,
+    "threat": "midpoint",
+    "R": 0.1
+  },
+  "safeset_a_min": -5.820766091346741e-11,
+  "physics": {
+    "cv": 0.06,
+    "ca": 0.009,
+    "p2x_coast_lo": 0.09999999999999999,
+    "p2x_coast_hi": 0.107,
+    "p2x_worst_a": 0.091,
+    "p2x_best_a": 0.10899999999999999,
+    "radius": 0.1,
+    "network_dependent": true,
+    "envelope_any_a_safe": false,
+    "note": "If envelope_any_a_safe, box is meaningless for controller cert.",
+    "signed_a_matters": true,
+    "property": "planar_two_step_L2_not_radial",
+    "ibp_proof": "Deploy\u2286SafeSet(ax\u2265a_min) or min_norm_aabb(p2_box)\u2265R",
+    "feat_contract": {
+      "version": "reachable_v1",
+      "comm_radius": 0.5,
+      "goal_xy_aabb": [
+        -0.1,
+        0.1
+      ],
+      "goal_xy_note": "AABB over-approx of extract disk ||g||<=comm; sample uses disk",
+      "goal_dv_equals_minus_v": true,
+      "goal_dv_bounds": [
+        -0.1,
+        0.1
+      ],
+      "v_bounds": [
+        -0.1,
+        0.1
+      ],
+      "legacy_wide_goal_abs2": false
+    }
+  },
+  "root_marabou": {
+    "status": "timeout",
+    "elapsed_s": 900.332,
+    "detail": "TIMEOUT"
+  },
+  "cover": {
+    "status": "PROVEN_FULL",
+    "method": "marabou_vg_bisect",
+    "leaves": [
+      {
+        "name": "planar_netdep_reachable_pose_fixed_vg0.1_thr_mid_lo",
+        "status": "proven",
+        "t": 371.974,
+        "vg_w": 0.1
+      },
+      {
+        "name": "planar_netdep_reachable_pose_fixed_vg0.1_thr_mid_hi",
+        "status": "proven",
+        "t": 145.425,
+        "vg_w": 0.1
+      }
+    ],
+    "unknown": [],
+    "proven": [
+      "planar_netdep_reachable_pose_fixed_vg0.1_thr_mid_lo",
+      "planar_netdep_reachable_pose_fixed_vg0.1_thr_mid_hi"
+    ]
+  },
+  "counterfactual_ax_ge_0.99": {
+    "status": "sat_candidate",
+    "elapsed_s": 60.293
+  },
+  "samples": {
+    "n": 512,
+    "ax_min": 0.6501611489411155,
+    "ax_mean": 0.7125091710376337,
+    "ax_max": 0.7472228900998533,
+    "n_ce": 0
+  },
+  "true_ces_n": 0,
+  "encoding_sanity": "sat",
+  "diagnostics": {
+    "a_mid": [
+      0.719548927493427,
+      -0.1988599948179805
+    ],
+    "p2_brake": [
+      0.09449999999999999,
+      0.0
+    ],
+    "p2_deploy_mid": [
+      0.10997594034744083,
+      -0.0017897399533618242
+    ]
+  },
+  "wall_s": 1523.951,
+  "ACTIVE_written": false
+}

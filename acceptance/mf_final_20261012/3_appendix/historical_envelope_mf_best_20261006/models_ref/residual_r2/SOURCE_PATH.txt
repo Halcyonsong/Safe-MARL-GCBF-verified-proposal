@@ -1,0 +1,3 @@
+# 与主 Deploy 同权重；为减重复已不在此存 pkl。
+PRIMARY: 1_primary/01_models/residual_mf_best_r2_ref/repair_best.pkl
+ARCHIVE: 5_frozen_sources/mf_best_20261006/1_primary/01_models/residual_r2/repair_best.pkl

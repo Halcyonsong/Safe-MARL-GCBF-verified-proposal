@@ -68,7 +68,8 @@ def _load_onnx_with_box(onnx_path: Path, box_lo: np.ndarray, box_hi: np.ndarray)
 
 
 def _solve(net, timeout_s: int):
-    options = Marabou.createOptions(timeoutInSeconds=int(timeout_s))
+    # verbosity=0 keeps Marabou from flooding stdout (still honors timeout).
+    options = Marabou.createOptions(timeoutInSeconds=int(timeout_s), verbosity=0)
     ret = net.solve(options=options, verbose=False)
     exit_code, vals = ret[0], ret[1]
     stats = ret[2] if len(ret) > 2 else None

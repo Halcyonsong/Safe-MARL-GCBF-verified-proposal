@@ -1,0 +1,11 @@
+{
+  "reward": -27.526234928518534,
+  "cost": 0.4423828125,
+  "safe_rate": 0.95654296875,
+  "finish_rate": 0.86376953125,
+  "success_rate": 0.83544921875,
+  "policy_id": "mf_residual_r2",
+  "checkpoint": "acceptance/mf_final_20261012/5_frozen_sources/mf_best_20261006/1_primary/01_models/residual_r2/repair_best.pkl",
+  "episodes": 256,
+  "eval_seed": 1234
+}

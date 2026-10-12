@@ -109,15 +109,39 @@ baselines/**/output/**/steps/
 baselines/**/output/**/models/
 
 # =============================================================================
-# Acceptance pack: track in full (incl. L3 appendix)
+# Acceptance pack: ONLY mf_final main tree (evidence + md drafts + figs)
 # =============================================================================
-# (no ignore rules — acceptance/ is uploaded)
+# Entry: acceptance/README.md → acceptance/mf_final_20261012/
+#
+# NOT tracked:
+acceptance/**/5_frozen_sources/
+acceptance/**/aamas_2027_template/
+acceptance/**/AAMAS_*.pdf
+acceptance/**/AAMAS_*.tex
+acceptance/**/aamas.cls
+acceptance/**/ACM-Reference-Format.bst
+# LaTeX build junk
+acceptance/**/*.aux
+acceptance/**/*.bbl
+acceptance/**/*.blg
+acceptance/**/*.fdb_latexmk
+acceptance/**/*.fls
+acceptance/**/*.synctex.gz
+acceptance/**/*.toc
+acceptance/**/*-blx.bib
+acceptance/**/*.run.xml
+# Fig previews (PDF is enough for pack; regenerate PNG locally if needed)
+acceptance/**/figs/**/*.png
+acceptance/**/figs/legacy/
 
 # =============================================================================
 # Global weight hygiene (extra safety net)
 # =============================================================================
-# Intermediate step checkpoints anywhere (ACTIVE exceptions already un-ignored)
+# Intermediate step checkpoints anywhere (ACTIVE + acceptance exceptions below)
 **/steps/
 **/*_step[0-9]*.pkl
-# Re-allow the one MF ACTIVE step9000 file after the global step rule
+# Re-allow the MF ACTIVE step9000 distill checkpoint
 !method/meanfield/output/distill/mf_distill_20261005_v5/seed0/meanfield_mlp512_student_step9000.pkl
+# Re-allow acceptance-pack base Deploy copies (same step9000; must be trackable)
+!acceptance/**/meanfield_mlp512_student_step9000.pkl
+!acceptance/**/base_v5/meanfield_mlp512_student_step*.pkl

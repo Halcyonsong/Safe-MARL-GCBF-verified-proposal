@@ -11,7 +11,7 @@ export JAX_PLATFORMS="${JAX_PLATFORMS:-cpu}"
 export PYTHONUNBUFFERED=1
 
 CKPT="${1:-$(cat method/meanfield/output/ACTIVE_MF_RESIDUAL.txt 2>/dev/null | tr -d '[:space:]')}"
-MODE="${2:-smoke}"   # smoke | near | near_plus | full
+MODE="${2:-smoke}"   # smoke | near | near_plus | netdep | full
 OUT="${3:-}"
 
 if [ -z "$CKPT" ] || [ ! -f "$CKPT" ]; then
@@ -33,6 +33,7 @@ ARGS=(
 if [ -n "${D_MIN:-}" ]; then ARGS+=(--d-min "$D_MIN"); fi
 if [ -n "${D_MAX:-}" ]; then ARGS+=(--d-max "$D_MAX"); fi
 if [ -n "${CLOSE_HI:-}" ]; then ARGS+=(--close-hi "$CLOSE_HI"); fi
+if [ -n "${CLOSE_LO:-}" ]; then ARGS+=(--close-lo "$CLOSE_LO"); fi
 if [ -n "$OUT" ]; then
   ARGS+=(--out-dir "$OUT")
 fi

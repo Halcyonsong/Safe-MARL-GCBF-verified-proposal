@@ -172,6 +172,7 @@ def default_mf_claims(
     mode: str = "near",
     radius: float | None = None,
     close_hi: float | None = None,
+    close_lo: float | None = None,
 ) -> list[MFClaim]:
     """Build MF claims: **one primary box per mode** (no aa/ao split).
 
@@ -234,6 +235,7 @@ def default_mf_claims(
         dm = 0.15 if d_min is None else float(d_min)
         dM = 0.35 if d_max is None else float(d_max)
         ch = 0.25 if close_hi is None else float(close_hi)
+        cl = -ch if close_lo is None else float(close_lo)
         feat = feature_box(
             d_min=dm,
             d_max=dM,
@@ -242,7 +244,7 @@ def default_mf_claims(
             goal_abs=2.0,
             n_agent_max=4.0,
             n_obs_max=4.0,
-            close_lo=-ch,
+            close_lo=cl,
             close_hi=ch,
             inv_ttc_max=8.0,
             force_occupied=True,
@@ -259,6 +261,7 @@ def default_mf_claims(
         dm = 0.14 if d_min is None else float(d_min)
         dM = 0.40 if d_max is None else float(d_max)
         ch = 0.30 if close_hi is None else float(close_hi)
+        cl = -ch if close_lo is None else float(close_lo)
         feat = feature_box(
             d_min=dm,
             d_max=dM,
@@ -267,7 +270,7 @@ def default_mf_claims(
             goal_abs=2.0,
             n_agent_max=4.0,
             n_obs_max=4.0,
-            close_lo=-ch,
+            close_lo=cl,
             close_hi=ch,
             inv_ttc_max=8.0,
             force_occupied=True,
@@ -282,6 +285,43 @@ def default_mf_claims(
             "No DeepSet (k,m) / aa-ao claim split."
         )
         mode = "near_plus"
+    elif mode in ("netdep", "net_dep", "fringe"):
+        # Side-branch meaningful band: network-dependent + coast-preventable.
+        # Physics (α=0.06, β=0.009, R=0.10):
+        #   d2_lo(|a|_∞=1) = d_min - α·c_hi - β = 0.118 - 0.018 - 0.009 = 0.091 < R
+        #   d2_hi_easy(|a|=1) = 0.122 - α·0.25 - β = 0.098 < R  → whole box can fail under bad a
+        #   coast hard: d_min - α·c_hi = 0.100 ≥ R → throttle/coast can still save
+        # NOT the near_plus envelope (there d2_lo=0.113 > R).
+        dm = 0.118 if d_min is None else float(d_min)
+        dM = 0.122 if d_max is None else float(d_max)
+        ch = 0.30 if close_hi is None else float(close_hi)
+        cl = 0.25 if close_lo is None else float(close_lo)
+        if cl > ch:
+            raise ValueError(f"netdep close_lo={cl} > close_hi={ch}")
+        feat = feature_box(
+            d_min=dm,
+            d_max=dM,
+            area=4.0,
+            v_abs=V_LIM,
+            goal_abs=2.0,
+            n_agent_max=4.0,
+            n_obs_max=4.0,
+            close_lo=cl,
+            close_hi=ch,
+            inv_ttc_max=8.0,
+            force_occupied=True,
+        )
+        name = "mf_netdep"
+        notes = (
+            "Side-branch NETWORK-DEPENDENT preventable fringe (not main acceptance). "
+            f"min_d∈[{dm},{dM}], close∈[{cl},{ch}], inv_ttc≤8, agent Q0 occupied. "
+            f"Two-step radial L2 R={R}. "
+            "Physics: d2_lo(|a|=1)=d_min-α·c_hi-β < R (bad a can collide); "
+            "coast d_min-α·c_hi ≥ R (throttle can save). "
+            "Deliberately excludes near_plus-style envelope bulk. "
+            "Does NOT promote to acceptance; ACTIVE_* unchanged by side-branch scripts."
+        )
+        mode = "netdep"
     elif mode == "full":
         dm = 0.12 if d_min is None else float(d_min)
         dM = 0.50 if d_max is None else float(d_max)
@@ -301,7 +341,7 @@ def default_mf_claims(
     else:
         raise ValueError(
             f"unknown MF claim mode={mode!r}; "
-            "expected smoke|near|near_plus|full"
+            "expected smoke|near|near_plus|netdep|full"
         )
 
     return [

@@ -1,3 +1,0 @@
-checkpoint=method/meanfield/output/distill/mf_distill_20261005_v5/seed0/meanfield_mlp512_student_best.pkl architecture=meanfield_mlp episodes=32 reward=-14.848 cost=4.855 safe_rate=80.859% finish_rate=94.141% success_rate=77.734%
-NOTE: empirical only; mean-field track; not formal verification.
-wrote method/meanfield/output/distill/mf_distill_20261005_v5/seed0/validate_32epi.json
